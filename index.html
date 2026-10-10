@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendidikan Agama Islam Kelas X - Yudriman, SIQ, S.Pd.I, M.Pd</title>
+    
+    <!-- Google Fonts: Playfair Display (Luxury Serif) & Montserrat (Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Config for Luxury Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'luxury-gold': '#D4AF37',
+                        'luxury-gold-light': '#F4E8C1',
+                        'luxury-emerald': '#064E3B',
+                        'luxury-dark': '#0A0A0A',
+                        'luxury-cream': '#FAF9F6',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Montserrat"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(135deg, #D4AF37 0%, #F4E8C1 50%, #B8941F 100%)',
+                        'dark-gradient': 'linear-gradient(to bottom, #0A0A0A, #064E3B)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Effects */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E8C1 50%, #B8941F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -5px rgba(212, 175, 55, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+            border-color: #D4AF37;
+        }
+
+        .image-frame {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Decorative Line */
+        .gold-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+            width: 100px;
+            margin: 1rem auto;
+        }
+    </style>
+</head>
+<body class="bg-luxury-cream text-gray-800 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-luxury-dark/90 backdrop-blur-md border-b border-luxury-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <span class="font-serif text-2xl font-bold text-gold-gradient">PAI Kelas X</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#beranda" class="text-gray-300 hover:text-luxury-gold transition-colors duration-300 text-sm uppercase tracking-widest">Beranda</a>
+                    <a href="#tentang" class="text-gray-300 hover:text-luxury-gold transition-colors duration-300 text-sm uppercase tracking-widest">Tentang Buku</a>
+                    <a href="#materi" class="text-gray-300 hover:text-luxury-gold transition-colors duration-300 text-sm uppercase tracking-widest">Daftar Pertemuan</a>
+                    <a href="#kontak" class="text-gray-300 hover:text-luxury-gold transition-colors duration-300 text-sm uppercase tracking-widest">Kontak</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-luxury-dark">
+        <!-- Background Decorative Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-luxury-emerald rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            
+            <!-- Book Cover & Author Photo -->
+            <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start space-y-8">
+                <!-- GANTI GAMBAR DI SINI: Pastikan file 'cover-buku.png' ada di folder yang sama -->
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gold-gradient rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <img src="cover-buku.png" alt="Cover Buku Pendidikan Agama Islam Kelas X" 
+                         class="relative image-frame rounded-lg w-72 lg:w-80 object-cover transform group-hover:scale-[1.02] transition duration-500"
+                         onerror="this.src='https://placehold.co/400x600/064E3B/D4AF37?text=Cover+Buku+PAI'; this.alt='Placeholder Cover'">
+                </div>
+                
+                <!-- Author Photo -->
+                <div class="flex items-center gap-4 bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-luxury-gold/20">
+                    <!-- GANTI GAMBAR DI SINI: Pastikan file 'photo-penulis.png' ada di folder yang sama -->
+                    <img src="photo-penulis.png" alt="Foto Penulis Yudriman" 
+                         class="w-16 h-16 rounded-full object-cover border-2 border-luxury-gold"
+                         onerror="this.src='https://placehold.co/100x100/D4AF37/0A0A0A?text=YP'; this.alt='Placeholder Foto'">
+                    <div>
+                        <p class="text-luxury-gold font-serif font-bold text-lg">Yudriman, SIQ, S.Pd.I, M.Pd</p>
+                        <p class="text-gray-400 text-sm">Penulis & Pendidik</p>
+                        <p class="text-gray-500 text-xs mt-1">SMKN I KOTO BALINGKA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Text -->
+            <div class="w-full lg:w-1/2 text-center lg:text-left space-y-6">
+                <div class="inline-block px-4 py-1 rounded-full border border-luxury-gold/30 bg-luxury-gold/10 text-luxury-gold text-xs font-semibold tracking-widest uppercase mb-2">
+                    Edisi Semester 1
+                </div>
+                <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                    Pendidikan Agama Islam <br>
+                    <span class="text-gold-gradient">Kelas X</span>
+                </h1>
+                <div class="gold-line mx-auto lg:mx-0"></div>
+                <p class="text-gray-300 text-lg leading-relaxed max-w-2xl">
+                    Sebuah panduan komprehensif yang dirancang untuk membentuk karakter islami, mengasah kompetensi dalam kebaikan, dan membangun etos kerja yang berlandaskan nilai-nilai Al-Qur'an dan Hadis.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                    <a href="#materi" class="px-8 py-4 bg-gold-gradient text-luxury-dark font-bold rounded-lg shadow-lg hover:shadow-luxury-gold/30 transform hover:-translate-y-1 transition duration-300 text-center">
+                        Jelajahi Materi
+                    </a>
+                    <a href="mailto:yudialthof@gmail.com" class="px-8 py-4 border border-luxury-gold text-luxury-gold font-semibold rounded-lg hover:bg-luxury-gold/10 transition duration-300 text-center">
+                        Hubungi Penulis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-luxury-emerald mb-4">Tentang Buku Ini</h2>
+            <div class="gold-line"></div>
+            <p class="text-gray-600 leading-relaxed text-lg mt-6">
+                Buku ini disusun secara sistematis dalam <strong>16 pertemuan</strong> yang mencakup kajian Al-Qur'an dan Hadis, Akhlak, Fikih Muamalah, serta Sejarah Peradaban Islam. Setiap bab dirancang dengan pendekatan modern yang relevan bagi siswa SMK, dilengkapi dengan refleksi dan evaluasi untuk mengukur pemahaman secara holistik.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="p-6 rounded-xl bg-luxury-cream border border-luxury-gold/20">
+                    <div class="text-4xl mb-3">📖</div>
+                    <h3 class="font-serif font-bold text-luxury-emerald text-xl mb-2">Berbasis Al-Qur'an</h3>
+                    <p class="text-sm text-gray-600">Setiap materi berlandaskan dalil naqli yang shahih dan relevan dengan kehidupan modern.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-luxury-cream border border-luxury-gold/20">
+                    <div class="text-4xl mb-3">🎯</div>
+                    <h3 class="font-serif font-bold text-luxury-emerald text-xl mb-2">Kompetensi & Etos</h3>
+                    <p class="text-sm text-gray-600">Fokus pada pembentukan karakter kompetitif dalam kebaikan dan etos kerja unggul.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-luxury-cream border border-luxury-gold/20">
+                    <div class="text-4xl mb-3">🕌</div>
+                    <h3 class="font-serif font-bold text-luxury-emerald text-xl mb-2">Kontekstual</h3>
+                    <p class="text-sm text-gray-600">Materi dikaitkan dengan konteks kekinian, termasuk muamalah modern dan sejarah lokal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materi / Pertemuan Section -->
+    <section id="materi" class="py-20 bg-luxury-dark relative">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjEyLCAxNzUsIDU1LCAwLjA1KSIvPjwvc3ZnPg==')] opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Struktur Pembelajaran</h2>
+                <div class="gold-line"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">16 Pertemuan terstruktur untuk memandu proses belajar mengajar selama satu semester penuh.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                
+                <!-- Pertemuan 1 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">01</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Kompetensi dalam Kebaikan</h3>
+                    <p class="text-gray-400 text-sm mb-4">Kajian Q.S. Al-Ma'idah: 48 dan hadis tentang perintah berkompetisi dalam kebaikan.</p>
+                    <a href="1.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 2 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">02</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Urgensi Etos Kerja</h3>
+                    <p class="text-gray-400 text-sm mb-4">Kajian Q.S. At-Taubah: 105 dan hadis tentang pentingnya etos kerja dalam Islam.</p>
+                    <a href="2.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 3 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">03</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Peran Syu'bul Iman</h3>
+                    <p class="text-gray-400 text-sm mb-4">Menata kehidupan dengan membiasakan diri bersifat disiplin, jujur, dan bertanggung jawab.</p>
+                    <a href="3.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 4 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">04</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Menghindari Akhlak Mazmumah</h3>
+                    <p class="text-gray-400 text-sm mb-4">Mengenali dan menjauhi sikap hidup berfoya-foya, riya', sum'ah, dan takabur.</p>
+                    <a href="4.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 5 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">05</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Fikih Muamalah Modern</h3>
+                    <p class="text-gray-400 text-sm mb-4">Penerapan prinsip syariah dalam asuransi, perbankan, dan koperasi.</p>
+                    <a href="5.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 6 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">06</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Sejarah Islam di Indonesia</h3>
+                    <p class="text-gray-400 text-sm mb-4">Peran tokoh ulama dan jejak kerajaan Islam dalam penyebaran agama di Nusantara.</p>
+                    <a href="6.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 7 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">07</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Penyembelihan Hewan</h3>
+                    <p class="text-gray-400 text-sm mb-4">Hukum dan tata cara penyembelihan hewan sesuai syariat (Aqiqah dan Qurban).</p>
+                    <a href="7.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 8: UTS -->
+                <div class="card-hover bg-luxury-gold/10 backdrop-blur-sm border border-luxury-gold rounded-xl p-6 flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-luxury-gold text-luxury-dark text-xs font-bold px-3 py-1 rounded-bl-lg">EVALUASI</div>
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-40 mb-2">08</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Ujian Tengah Semester</h3>
+                    <p class="text-gray-300 text-sm mb-4">Evaluasi komprehensif materi pertemuan 1 s.d. 7.</p>
+                    <a href="8.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 bg-luxury-gold text-luxury-dark rounded-lg hover:bg-white transition duration-300 text-sm font-bold">
+                        Akses UTS <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 9 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">09</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Makanan dan Minuman</h3>
+                    <p class="text-gray-400 text-sm mb-4">Mengenal kriteria halal dan haram serta dampaknya bagi kehidupan.</p>
+                    <a href="9.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 10 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">10</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Menghindari Perilaku Tercela</h3>
+                    <p class="text-gray-400 text-sm mb-4">Mewaspadai ananiah, ghadab, hasad, gibah, dan namimah dalam pergaulan.</p>
+                    <a href="10.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 11 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">11</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Mawas Diri</h3>
+                    <p class="text-gray-400 text-sm mb-4">Mengamalkan sikap tafakur, tadabbur, dan tadzakkur dalam kehidupan sehari-hari.</p>
+                    <a href="11.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 12 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">12</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Zakat, Infak, dan Sedekah</h3>
+                    <p class="text-gray-400 text-sm mb-4">Pengertian, hukum, dan pengelolaan ZIS untuk kesejahteraan umat.</p>
+                    <a href="12.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 13 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">13</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Haji dan Umrah</h3>
+                    <p class="text-gray-400 text-sm mb-4">Hukum, syarat, rukun, dan sunnah haji serta umrah menurut syariat Islam.</p>
+                    <a href="13.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 14 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">14</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Peradaban Islam Masa Kejayaan</h3>
+                    <p class="text-gray-400 text-sm mb-4">Sejarah pertumbuhan ilmu pengetahuan Islam pada masa Abbasiyah.</p>
+                    <a href="14.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 15 -->
+                <div class="card-hover bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col">
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-20 mb-2">15</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Keteladanan Dakwah Rasulullah</h3>
+                    <p class="text-gray-400 text-sm mb-4">Strategi dan nilai-nilai dakwah Rasulullah SAW periode Madinah.</p>
+                    <a href="15.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 border border-luxury-gold text-luxury-gold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm font-semibold">
+                        Buka Materi <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+                <!-- Pertemuan 16: UAS -->
+                <div class="card-hover bg-luxury-gold/10 backdrop-blur-sm border border-luxury-gold rounded-xl p-6 flex flex-col relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-luxury-gold text-luxury-dark text-xs font-bold px-3 py-1 rounded-bl-lg">EVALUASI</div>
+                    <div class="text-luxury-gold font-serif text-5xl font-bold opacity-40 mb-2">16</div>
+                    <h3 class="text-white font-bold text-lg mb-3 flex-grow">Ujian Akhir Semester</h3>
+                    <p class="text-gray-300 text-sm mb-4">Evaluasi komprehensif seluruh materi Semester 1.</p>
+                    <a href="16.html" target="_blank" class="inline-flex items-center justify-center px-4 py-2 bg-luxury-gold text-luxury-dark rounded-lg hover:bg-white transition duration-300 text-sm font-bold">
+                        Akses UAS <span class="ml-2">→</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="kontak" class="bg-luxury-dark border-t border-white/10 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <h3 class="font-serif text-2xl font-bold text-gold-gradient mb-4">Pendidikan Agama Islam Kelas X</h3>
+                    <p class="text-gray-400 max-w-md mb-6">
+                        Didedikasikan untuk peserta didik SMKN I Koto Balingka dan seluruh pelajar yang ingin mendalami agama Islam dengan pendekatan modern, stylish, dan berlandaskan ilmu yang otentik.
+                    </p>
+                    <div class="flex space-x-4">
+                        <!-- Social/Contact Icons (Placeholder) -->
+                        <a href="mailto:yudialthof@gmail.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-luxury-gold hover:bg-luxury-gold hover:text-luxury-dark transition duration-300">
+                            ✉️
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest text-sm mb-6">Informasi Penulis</h4>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start">
+                            <span class="text-luxury-gold mr-3">👤</span>
+                            <div>
+                                <p class="text-white font-semibold">Yudriman, SIQ, S.Pd.I, M.Pd</p>
+                                <p class="text-sm">Guru Pendidikan Agama Islam</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-luxury-gold mr-3">🏫</span>
+                            <div>
+                                <p class="text-white font-semibold">SMKN I KOTO BALINGKA</p>
+                                <p class="text-sm">Kabupaten Pasaman Barat</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-luxury-gold mr-3">📧</span>
+                            <div>
+                                <a href="mailto:yudialthof@gmail.com" class="hover:text-luxury-gold transition duration-300">yudialthof@gmail.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; 2026 Yudriman, SIQ, S.Pd.I, M.Pd. All rights reserved.
+                </p>
+                <p class="text-gray-600 text-xs mt-2 md:mt-0">
+                    Designed with elegance for Islamic Education.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

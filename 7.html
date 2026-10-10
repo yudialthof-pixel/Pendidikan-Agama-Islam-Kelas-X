@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS - Pendidikan Agama Islam Kelas X Semester 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'luxury-gold': '#D4AF37',
+                        'luxury-gold-light': '#F4E8C1',
+                        'luxury-emerald': '#064E3B',
+                        'luxury-dark': '#0A0A0A',
+                        'luxury-cream': '#FAF9F6',
+                    },
+                    fontFamily: {
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'sans': ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E8C1 50%, #B8941F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gold-line { height: 2px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); width: 80px; margin: 1rem auto; }
+        .card-q { transition: all 0.3s ease; }
+        .card-q:hover { border-color: #D4AF37; box-shadow: 0 4px 15px rgba(212,175,55,0.1); }
+        .correct-answer { background-color: #d1fae5 !important; border-color: #10b981 !important; }
+        .wrong-answer { background-color: #fee2e2 !important; border-color: #ef4444 !important; }
+    </style>
+</head>
+<body class="bg-luxury-cream text-gray-800 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-luxury-dark/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="font-serif text-xl font-bold text-gold-gradient">PAI Kelas X</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-luxury-gold transition-colors text-sm uppercase tracking-widest">Beranda</a>
+                    <a href="index.html#materi" class="text-gray-300 hover:text-luxury-gold transition-colors text-sm uppercase tracking-widest">Daftar Pertemuan</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="pt-24 pb-12 bg-luxury-dark text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-luxury-gold rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-48 h-48 bg-luxury-emerald rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4">
+            <span class="inline-block px-4 py-1 rounded-full border border-luxury-gold/30 bg-luxury-gold/10 text-luxury-gold text-xs font-semibold tracking-widest uppercase mb-4">Pertemuan ke-8</span>
+            <h1 class="font-serif text-3xl md:text-5xl font-bold text-white leading-tight mb-4">
+                Ujian Tengah Semester <br>
+                <span class="text-gold-gradient">Pendidikan Agama Islam Kelas X</span>
+            </h1>
+            <div class="gold-line"></div>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto mt-4">
+                Evaluasi komprehensif materi Pertemuan 1 s.d. 6: Al-Qur'an & Hadis, Akhlak, Fikih Muamalah, dan Sejarah Peradaban Islam.
+            </p>
+            <div class="mt-6 flex flex-wrap justify-center gap-3 text-xs">
+                <span class="px-3 py-1 bg-white/10 rounded-full text-gray-300">📝 20 Pilihan Ganda</span>
+                <span class="px-3 py-1 bg-white/10 rounded-full text-gray-300">☑️ 10 PG Kompleks</span>
+                <span class="px-3 py-1 bg-white/10 rounded-full text-gray-300">✅ 5 Benar/Salah</span>
+                <span class="px-3 py-1 bg-white/10 rounded-full text-gray-300">🔗 5 Menjodohkan</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-16">
+
+        <!-- Warning -->
+        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-8 hidden" id="warning-msg">
+            <p class="text-red-700 font-semibold">⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!</p>
+        </div>
+
+        <!-- Data Siswa -->
+        <section class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-luxury-gold/10 mb-12">
+            <h2 class="font-serif text-2xl font-bold text-luxury-emerald mb-6">📋 Data Siswa</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">* Nama Lengkap</label>
+                    <input type="text" id="nama" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold focus:border-transparent outline-none" placeholder="Masukkan nama lengkap">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">* NIS</label>
+                    <input type="text" id="nis" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold focus:border-transparent outline-none" placeholder="Masukkan NIS">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">* Tanggal</label>
+                    <input type="date" id="tanggal" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold focus:border-transparent outline-none">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-1">* Kelas</label>
+                    <select id="kelas" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold focus:border-transparent outline-none">
+                        <option value="">Pilih Kelas</option>
+                        <option value="X TKJ 1">X TKJ 1</option>
+                        <option value="X TKJ 2">X TKJ 2</option>
+                        <option value="X TSM 1">X TSM 1</option>
+                        <option value="X TSM 2">X TSM 2</option>
+                        <option value="X AKL 1">X AKL 1</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== BAGIAN A: PILIHAN GANDA (20 SOAL) ===================== -->
+        <section class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="font-serif text-2xl font-bold text-luxury-dark">📝 Bagian A – Pilihan Ganda</h2>
+                <p class="text-gray-500 text-sm">20 soal · Skor 2,5 per soal · Total 50 poin · Pilih satu jawaban yang paling tepat</p>
+                <div class="gold-line"></div>
+            </div>
+            <div class="space-y-4" id="pg-container">
+
+                <!-- PG 1 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">1. Lafal <em>fastabiqul khairat</em> dalam Q.S. Al-Ma'idah: 48 memiliki arti...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q1" value="a" class="accent-luxury-gold"><span>Berlomba-lomba dalam kebaikan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q1" value="b" class="accent-luxury-gold"><span>Bersabar dalam menghadapi musibah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q1" value="c" class="accent-luxury-gold"><span>Bertawakal sepenuhnya kepada Allah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q1" value="d" class="accent-luxury-gold"><span>Bersyukur atas segala nikmat</span></label>
+                    </div>
+                </div>
+                <!-- PG 2 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">2. Fungsi Al-Qur'an sebagai <em>muhaimin</em> terhadap kitab-kitab sebelumnya adalah...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q2" value="a" class="accent-luxury-gold"><span>Menghapus seluruh syariat terdahulu</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q2" value="b" class="accent-luxury-gold"><span>Menjadi batu ujian dan penjaga kebenaran</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q2" value="c" class="accent-luxury-gold"><span>Menggantikan semua kitab secara fisik</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q2" value="d" class="accent-luxury-gold"><span>Menyempurnakan bahasa Arab saja</span></label>
+                    </div>
+                </div>
+                <!-- PG 3 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">3. Q.S. At-Taubah: 105 secara eksplisit memerintahkan umat Islam untuk...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q3" value="a" class="accent-luxury-gold"><span>Berdiam diri dan beribadah di masjid</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q3" value="b" class="accent-luxury-gold"><span>Bekerja dengan sungguh-sungguh</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q3" value="c" class="accent-luxury-gold"><span>Memerangi semua orang kafir</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q3" value="d" class="accent-luxury-gold"><span>Meninggalkan urusan duniawi</span></label>
+                    </div>
+                </div>
+                <!-- PG 4 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">4. Konsep <em>itqan</em> dalam etos kerja Islam berarti...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q4" value="a" class="accent-luxury-gold"><span>Bekerja secepat mungkin tanpa mempedulikan kualitas</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q4" value="b" class="accent-luxury-gold"><span>Bekerja sungguh-sungguh, teliti, dan profesional</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q4" value="c" class="accent-luxury-gold"><span>Bekerja hanya ketika diawasi atasan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q4" value="d" class="accent-luxury-gold"><span>Bekerja semata-mata untuk pujian</span></label>
+                    </div>
+                </div>
+                <!-- PG 5 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">5. <em>Syu'bul Iman</em> secara bahasa berarti...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q5" value="a" class="accent-luxury-gold"><span>Rukun-rukun iman</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q5" value="b" class="accent-luxury-gold"><span>Cabang-cabang iman</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q5" value="c" class="accent-luxury-gold"><span>Syarat-syarat iman</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q5" value="d" class="accent-luxury-gold"><span>Pembatal-pembatal iman</span></label>
+                    </div>
+                </div>
+                <!-- PG 6 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">6. Menurut hadis riwayat Muslim, cabang iman yang paling tinggi nilainya adalah...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q6" value="a" class="accent-luxury-gold"><span>Menyingkirkan gangguan dari jalan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q6" value="b" class="accent-luxury-gold"><span>Rasa malu</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q6" value="c" class="accent-luxury-gold"><span>Mengucapkan Laa ilaaha illallaah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q6" value="d" class="accent-luxury-gold"><span>Menunaikan shalat lima waktu</span></label>
+                    </div>
+                </div>
+                <!-- PG 7 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">7. Sikap hidup berfoya-foya dan berlebihan dalam membelanjakan harta disebut...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q7" value="a" class="accent-luxury-gold"><span>Israf</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q7" value="b" class="accent-luxury-gold"><span>Iqtishad</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q7" value="c" class="accent-luxury-gold"><span>Ihsan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q7" value="d" class="accent-luxury-gold"><span>Infak</span></label>
+                    </div>
+                </div>
+                <!-- PG 8 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">8. <em>Riya'</em> adalah sikap...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q8" value="a" class="accent-luxury-gold"><span>Beramal semata-mata karena Allah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q8" value="b" class="accent-luxury-gold"><span>Beramal agar dilihat dan dipuji manusia</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q8" value="c" class="accent-luxury-gold"><span>Beramal secara sembunyi-sembunyi</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q8" value="d" class="accent-luxury-gold"><span>Beramal dengan penuh keikhlasan</span></label>
+                    </div>
+                </div>
+                <!-- PG 9 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">9. <em>Sum'ah</em> berbeda dengan riya' karena sum'ah berkaitan dengan keinginan...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q9" value="a" class="accent-luxury-gold"><span>Dilihat oleh orang lain</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q9" value="b" class="accent-luxury-gold"><span>Didengar oleh orang lain</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q9" value="c" class="accent-luxury-gold"><span>Dirasakan oleh orang lain</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q9" value="d" class="accent-luxury-gold"><span>Ditiru oleh orang lain</span></label>
+                    </div>
+                </div>
+                <!-- PG 10 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">10. <em>Takabur</em> artinya...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q10" value="a" class="accent-luxury-gold"><span>Rendah hati dan tawadhu</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q10" value="b" class="accent-luxury-gold"><span>Sombong dan merasa lebih tinggi dari orang lain</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q10" value="c" class="accent-luxury-gold"><span>Dermawan dan pemurah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q10" value="d" class="accent-luxury-gold"><span>Sabar dan pemaaf</span></label>
+                    </div>
+                </div>
+                <!-- PG 11 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">11. Prinsip utama asuransi syariah yang membedakannya dari asuransi konvensional adalah...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q11" value="a" class="accent-luxury-gold"><span><em>Transfer of risk</em> (pengalihan risiko)</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q11" value="b" class="accent-luxury-gold"><span><em>Sharing of risk</em> / takaful (saling menanggung)</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q11" value="c" class="accent-luxury-gold"><span>Spekulasi dan perjudian</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q11" value="d" class="accent-luxury-gold"><span>Bunga tetap yang dijamin</span></label>
+                    </div>
+                </div>
+                <!-- PG 12 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">12. Akad yang umum digunakan dalam bank syariah untuk produk simpanan/tabungan adalah...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q12" value="a" class="accent-luxury-gold"><span><em>Mudharabah</em> dan <em>Wadiah</em></span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q12" value="b" class="accent-luxury-gold"><span>Riba dan Gharar</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q12" value="c" class="accent-luxury-gold"><span>Judi dan spekulasi</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q12" value="d" class="accent-luxury-gold"><span>Bunga majemuk</span></label>
+                    </div>
+                </div>
+                <!-- PG 13 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">13. Koperasi syariah beroperasi berdasarkan prinsip...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q13" value="a" class="accent-luxury-gold"><span>Keuntungan maksimal semata</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q13" value="b" class="accent-luxury-gold"><span>Kebersamaan, keadilan, dan syariah Islam</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q13" value="c" class="accent-luxury-gold"><span>Persaingan bebas tanpa batas</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q13" value="d" class="accent-luxury-gold"><span>Monopoli pasar</span></label>
+                    </div>
+                </div>
+                <!-- PG 14 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">14. Islam pertama kali masuk ke Indonesia terutama melalui jalur...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q14" value="a" class="accent-luxury-gold"><span>Peperangan dan penaklukan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q14" value="b" class="accent-luxury-gold"><span>Perdagangan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q14" value="c" class="accent-luxury-gold"><span>Penjajahan bangsa Arab</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q14" value="d" class="accent-luxury-gold"><span>Migrasi besar-besaran</span></label>
+                    </div>
+                </div>
+                <!-- PG 15 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">15. Salah satu tokoh Wali Songo yang dikenal menyebarkan Islam di Jawa melalui seni dan budaya adalah...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q15" value="a" class="accent-luxury-gold"><span>Imam Syafi'i</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q15" value="b" class="accent-luxury-gold"><span>Sunan Kalijaga</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q15" value="c" class="accent-luxury-gold"><span>Imam Bukhari</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q15" value="d" class="accent-luxury-gold"><span>Ibnu Sina</span></label>
+                    </div>
+                </div>
+                <!-- PG 16 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">16. Sikap <em>ghibthah</em> (iri yang dibolehkan) menurut hadis adalah iri kepada orang yang...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q16" value="a" class="accent-luxury-gold"><span>Memiliki jabatan tinggi di pemerintahan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q16" value="b" class="accent-luxury-gold"><span>Diberi harta atau ilmu lalu diamalkan di jalan Allah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q16" value="c" class="accent-luxury-gold"><span>Memiliki rumah dan kendaraan mewah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q16" value="d" class="accent-luxury-gold"><span>Lebih populer di media sosial</span></label>
+                    </div>
+                </div>
+                <!-- PG 17 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">17. Berikut yang <strong>BUKAN</strong> contoh penerapan <em>Syu'bul Iman</em> di lingkungan sekolah adalah...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q17" value="a" class="accent-luxury-gold"><span>Datang tepat waktu</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q17" value="b" class="accent-luxury-gold"><span>Jujur saat mengerjakan ujian</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q17" value="c" class="accent-luxury-gold"><span>Menyontek agar mendapatkan nilai bagus</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q17" value="d" class="accent-luxury-gold"><span>Bertanggung jawab atas tugas kelompok</span></label>
+                    </div>
+                </div>
+                <!-- PG 18 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">18. Hal yang secara tegas diharamkan dalam muamalah Islam adalah...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q18" value="a" class="accent-luxury-gold"><span>Jual beli</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q18" value="b" class="accent-luxury-gold"><span>Sewa-menyewa</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q18" value="c" class="accent-luxury-gold"><span>Riba</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q18" value="d" class="accent-luxury-gold"><span>Bagi hasil</span></label>
+                    </div>
+                </div>
+                <!-- PG 19 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">19. Kerajaan Islam pertama di Indonesia yang terletak di Sumatera adalah...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q19" value="a" class="accent-luxury-gold"><span>Kesultanan Demak</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q19" value="b" class="accent-luxury-gold"><span>Samudera Pasai</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q19" value="c" class="accent-luxury-gold"><span>Mataram Islam</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q19" value="d" class="accent-luxury-gold"><span>Kesultanan Ternate</span></label>
+                    </div>
+                </div>
+                <!-- PG 20 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">20. Hadis riwayat Thabrani menyatakan bahwa Allah mencintai hamba yang...</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q20" value="a" class="accent-luxury-gold"><span>Paling kaya di antara yang lain</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q20" value="b" class="accent-luxury-gold"><span>Bersungguh-sungguh (<em>itqan</em>) dalam pekerjaannya</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q20" value="c" class="accent-luxury-gold"><span>Selalu beristirahat dan menghindari beban</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="radio" name="q20" value="d" class="accent-luxury-gold"><span>Mampu menghindari tanggung jawab</span></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== BAGIAN B: PG KOMPLEKS (10 SOAL) ===================== -->
+        <section class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="font-serif text-2xl font-bold text-luxury-dark">☑️ Bagian B – Pilihan Ganda Kompleks</h2>
+                <p class="text-gray-500 text-sm">10 soal · Skor 3 per soal · Total 30 poin · Pilih <strong>lebih dari satu</strong> jawaban yang benar</p>
+                <div class="gold-line"></div>
+            </div>
+            <div class="space-y-4" id="pgk-container">
+
+                <!-- PGK 1 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">1. Berikut yang termasuk implementasi <em>fastabiqul khairat</em> di lingkungan sekolah adalah... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq1" value="a" class="accent-luxury-gold"><span>Saling membantu teman yang kesulitan memahami pelajaran</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq1" value="b" class="accent-luxury-gold"><span>Berlomba menyontek agar nilai tinggi</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq1" value="c" class="accent-luxury-gold"><span>Bersaing meraih prestasi akademik dengan jujur</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq1" value="d" class="accent-luxury-gold"><span>Berlomba-lomba dalam ibadah dan amal saleh</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq1" value="e" class="accent-luxury-gold"><span>Saling menjatuhkan dan menjelekkan teman</span></label>
+                    </div>
+                </div>
+                <!-- PGK 2 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">2. Ciri-ciri etos kerja Islami meliputi... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq2" value="a" class="accent-luxury-gold"><span>Disiplin</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq2" value="b" class="accent-luxury-gold"><span>Jujur</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq2" value="c" class="accent-luxury-gold"><span>Malas dan menunda-nunda</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq2" value="d" class="accent-luxury-gold"><span>Tanggung jawab</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq2" value="e" class="accent-luxury-gold"><span>Suka mengeluh</span></label>
+                    </div>
+                </div>
+                <!-- PGK 3 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">3. Berikut yang termasuk cabang-cabang iman menurut hadis adalah... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq3" value="a" class="accent-luxury-gold"><span>Mengucapkan Laa ilaaha illallaah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq3" value="b" class="accent-luxury-gold"><span>Menyingkirkan gangguan dari jalan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq3" value="c" class="accent-luxury-gold"><span>Rasa malu</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq3" value="d" class="accent-luxury-gold"><span>Berbuat maksiat</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq3" value="e" class="accent-luxury-gold"><span>Hasad dan dengki</span></label>
+                    </div>
+                </div>
+                <!-- PGK 4 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">4. Berikut yang termasuk akhlak mazmumah (tercela) adalah... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq4" value="a" class="accent-luxury-gold"><span>Berfoya-foya (israf)</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq4" value="b" class="accent-luxury-gold"><span>Riya'</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq4" value="c" class="accent-luxury-gold"><span>Tawadhu</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq4" value="d" class="accent-luxury-gold"><span>Takabur</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq4" value="e" class="accent-luxury-gold"><span>Sum'ah</span></label>
+                    </div>
+                </div>
+                <!-- PGK 5 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">5. Prinsip-prinsip yang harus terpenuhi dalam muamalah syariah adalah... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq5" value="a" class="accent-luxury-gold"><span>Bebas dari riba</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq5" value="b" class="accent-luxury-gold"><span>Bebas dari gharar (ketidakjelasan)</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq5" value="c" class="accent-luxury-gold"><span>Mengandung unsur judi</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq5" value="d" class="accent-luxury-gold"><span>Berdasarkan keridhaan kedua belah pihak</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq5" value="e" class="accent-luxury-gold"><span>Mengandung unsur kezaliman</span></label>
+                    </div>
+                </div>
+                <!-- PGK 6 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">6. Faktor-faktor yang mendukung penyebaran Islam di Indonesia antara lain... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq6" value="a" class="accent-luxury-gold"><span>Perdagangan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq6" value="b" class="accent-luxury-gold"><span>Perkawinan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq6" value="c" class="accent-luxury-gold"><span>Peperangan dan penjajahan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq6" value="d" class="accent-luxury-gold"><span>Pendidikan melalui pesantren</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq6" value="e" class="accent-luxury-gold"><span>Tasawuf</span></label>
+                    </div>
+                </div>
+                <!-- PGK 7 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">7. Dalil-dalil yang berkaitan dengan perintah bekerja dan berkompetisi dalam kebaikan terdapat dalam... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq7" value="a" class="accent-luxury-gold"><span>Q.S. Al-Ma'idah: 48</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq7" value="b" class="accent-luxury-gold"><span>Q.S. At-Taubah: 105</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq7" value="c" class="accent-luxury-gold"><span>Q.S. Al-Kautsar: 2</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq7" value="d" class="accent-luxury-gold"><span>Q.S. Al-Fatihah: 1</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq7" value="e" class="accent-luxury-gold"><span>Hadis tentang itqan dalam bekerja</span></label>
+                    </div>
+                </div>
+                <!-- PGK 8 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">8. Dampak negatif dari sikap riya' antara lain... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq8" value="a" class="accent-luxury-gold"><span>Menghapus pahala amal ibadah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq8" value="b" class="accent-luxury-gold"><span>Menimbulkan kesombongan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq8" value="c" class="accent-luxury-gold"><span>Meningkatkan keimanan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq8" value="d" class="accent-luxury-gold"><span>Merusak keikhlasan</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq8" value="e" class="accent-luxury-gold"><span>Mendatangkan ridha Allah</span></label>
+                    </div>
+                </div>
+                <!-- PGK 9 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">9. Produk-produk yang terdapat di bank syariah meliputi... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq9" value="a" class="accent-luxury-gold"><span>Tabungan dengan akad wadiah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq9" value="b" class="accent-luxury-gold"><span>Pembiayaan murabahah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq9" value="c" class="accent-luxury-gold"><span>Kredit berbunga</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq9" value="d" class="accent-luxury-gold"><span>Investasi mudharabah</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq9" value="e" class="accent-luxury-gold"><span>Deposito berbunga tetap</span></label>
+                    </div>
+                </div>
+                <!-- PGK 10 -->
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">10. Sikap yang mencerminkan pengamalan <em>Syu'bul Iman</em> sekaligus menghindari akhlak mazmumah adalah... <span class="text-xs text-luxury-gold">(Pilih lebih dari satu)</span></p>
+                    <div class="space-y-2">
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq10" value="a" class="accent-luxury-gold"><span>Hidup sederhana dan tidak berfoya-foya</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq10" value="b" class="accent-luxury-gold"><span>Beramal secara ikhlas tanpa pamer</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq10" value="c" class="accent-luxury-gold"><span>Menyombongkan prestasi kepada orang lain</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq10" value="d" class="accent-luxury-gold"><span>Rendah hati dan tidak takabur</span></label>
+                        <label class="flex items-center space-x-3 cursor-pointer"><input type="checkbox" name="cq10" value="e" class="accent-luxury-gold"><span>Boros dalam berbelanja untuk pamer</span></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== BAGIAN C: BENAR / SALAH (5 SOAL) ===================== -->
+        <section class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="font-serif text-2xl font-bold text-luxury-dark">✅ Bagian C – Benar atau Salah</h2>
+                <p class="text-gray-500 text-sm">5 soal · Skor 2 per soal · Total 10 poin · Tentukan apakah pernyataan Benar atau Salah</p>
+                <div class="gold-line"></div>
+            </div>
+            <div class="space-y-4" id="bs-container">
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">1. Q.S. Al-Ma'idah ayat 48 mengajarkan bahwa keberagaman umat manusia adalah sunnatullah dan merupakan ujian dari Allah SWT.</p>
+                    <div class="flex gap-4">
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-green-50"><input type="radio" name="bs1" value="true" class="accent-green-600"><span class="font-semibold text-green-700">Benar</span></label>
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-red-50"><input type="radio" name="bs1" value="false" class="accent-red-600"><span class="font-semibold text-red-700">Salah</span></label>
+                    </div>
+                </div>
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">2. Menurut hadis riwayat Muslim, cabang iman yang paling rendah adalah mengucapkan Laa ilaaha illallaah.</p>
+                    <div class="flex gap-4">
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-green-50"><input type="radio" name="bs2" value="true" class="accent-green-600"><span class="font-semibold text-green-700">Benar</span></label>
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-red-50"><input type="radio" name="bs2" value="false" class="accent-red-600"><span class="font-semibold text-red-700">Salah</span></label>
+                    </div>
+                </div>
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">3. Asuransi syariah menggunakan prinsip <em>transfer of risk</em> (pengalihan risiko) sama seperti asuransi konvensional.</p>
+                    <div class="flex gap-4">
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-green-50"><input type="radio" name="bs3" value="true" class="accent-green-600"><span class="font-semibold text-green-700">Benar</span></label>
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-red-50"><input type="radio" name="bs3" value="false" class="accent-red-600"><span class="font-semibold text-red-700">Salah</span></label>
+                    </div>
+                </div>
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">4. Wali Songo berperan sangat penting dalam penyebaran Islam di Pulau Jawa melalui berbagai pendekatan budaya dan pendidikan.</p>
+                    <div class="flex gap-4">
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-green-50"><input type="radio" name="bs4" value="true" class="accent-green-600"><span class="font-semibold text-green-700">Benar</span></label>
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-red-50"><input type="radio" name="bs4" value="false" class="accent-red-600"><span class="font-semibold text-red-700">Salah</span></label>
+                    </div>
+                </div>
+                <div class="card-q p-5 bg-white rounded-xl border border-gray-200">
+                    <p class="font-semibold mb-3">5. Riya' dan sum'ah sama-sama berkaitan dengan keinginan dipuji manusia, namun riya' melalui penglihatan sedangkan sum'ah melalui pendengaran.</p>
+                    <div class="flex gap-4">
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-green-50"><input type="radio" name="bs5" value="true" class="accent-green-600"><span class="font-semibold text-green-700">Benar</span></label>
+                        <label class="flex items-center space-x-2 cursor-pointer px-4 py-2 border rounded-lg hover:bg-red-50"><input type="radio" name="bs5" value="false" class="accent-red-600"><span class="font-semibold text-red-700">Salah</span></label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== BAGIAN D: MENJODOHKAN (5 SOAL) ===================== -->
+        <section class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="font-serif text-2xl font-bold text-luxury-dark">🔗 Bagian D – Menjodohkan</h2>
+                <p class="text-gray-500 text-sm">5 soal · Skor 2 per soal · Total 10 poin · Pasangkan istilah di kolom kiri dengan makna yang tepat</p>
+                <div class="gold-line"></div>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-6 space-y-4" id="match-container">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center p-3 bg-gray-50 rounded-lg">
+                    <p class="font-semibold">1. <em>Fastabiqul Khairat</em></p>
+                    <select id="m1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold outline-none">
+                        <option value="">— Pilih Jawaban —</option>
+                        <option value="a">Batu ujian / penjaga kebenaran</option>
+                        <option value="b">Berlomba-lomba dalam kebaikan</option>
+                        <option value="c">Kerajaan Islam pertama di Indonesia</option>
+                        <option value="d">Kesungguhan / kesempurnaan dalam bekerja</option>
+                        <option value="e">Saling menanggung risiko (asuransi syariah)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center p-3 bg-gray-50 rounded-lg">
+                    <p class="font-semibold">2. <em>Itqan</em></p>
+                    <select id="m2" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold outline-none">
+                        <option value="">— Pilih Jawaban —</option>
+                        <option value="a">Batu ujian / penjaga kebenaran</option>
+                        <option value="b">Berlomba-lomba dalam kebaikan</option>
+                        <option value="c">Kerajaan Islam pertama di Indonesia</option>
+                        <option value="d">Kesungguhan / kesempurnaan dalam bekerja</option>
+                        <option value="e">Saling menanggung risiko (asuransi syariah)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center p-3 bg-gray-50 rounded-lg">
+                    <p class="font-semibold">3. <em>Muhaimin</em></p>
+                    <select id="m3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold outline-none">
+                        <option value="">— Pilih Jawaban —</option>
+                        <option value="a">Batu ujian / penjaga kebenaran</option>
+                        <option value="b">Berlomba-lomba dalam kebaikan</option>
+                        <option value="c">Kerajaan Islam pertama di Indonesia</option>
+                        <option value="d">Kesungguhan / kesempurnaan dalam bekerja</option>
+                        <option value="e">Saling menanggung risiko (asuransi syariah)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center p-3 bg-gray-50 rounded-lg">
+                    <p class="font-semibold">4. <em>Takaful</em></p>
+                    <select id="m4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold outline-none">
+                        <option value="">— Pilih Jawaban —</option>
+                        <option value="a">Batu ujian / penjaga kebenaran</option>
+                        <option value="b">Berlomba-lomba dalam kebaikan</option>
+                        <option value="c">Kerajaan Islam pertama di Indonesia</option>
+                        <option value="d">Kesungguhan / kesempurnaan dalam bekerja</option>
+                        <option value="e">Saling menanggung risiko (asuransi syariah)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center p-3 bg-gray-50 rounded-lg">
+                    <p class="font-semibold">5. Samudera Pasai</p>
+                    <select id="m5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-luxury-gold outline-none">
+                        <option value="">— Pilih Jawaban —</option>
+                        <option value="a">Batu ujian / penjaga kebenaran</option>
+                        <option value="b">Berlomba-lomba dalam kebaikan</option>
+                        <option value="c">Kerajaan Islam pertama di Indonesia</option>
+                        <option value="d">Kesungguhan / kesempurnaan dalam bekerja</option>
+                        <option value="e">Saling menanggung risiko (asuransi syariah)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== HASIL & TOMBOL AKSI ===================== -->
+        <section class="bg-white rounded-2xl shadow-xl p-6 md:p-10 border border-luxury-gold/20 mb-12">
+            <h3 class="font-serif text-2xl font-bold text-luxury-emerald mb-6 text-center">📊 Hasil Ujian Tengah Semester</h3>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+                <div class="text-center p-4 bg-luxury-cream rounded-xl border border-luxury-gold/20">
+                    <p class="text-xs text-gray-500 uppercase tracking-wider">PG</p>
+                    <p class="text-2xl font-bold text-luxury-emerald" id="pg-score">0</p>
+                    <p class="text-xs text-gray-400">/50</p>
+                </div>
+                <div class="text-center p-4 bg-luxury-cream rounded-xl border border-luxury-gold/20">
+                    <p class="text-xs text-gray-500 uppercase tracking-wider">PG Kompleks</p>
+                    <p class="text-2xl font-bold text-luxury-emerald" id="pgk-score">0</p>
+                    <p class="text-xs text-gray-400">/30</p>
+                </div>
+                <div class="text-center p-4 bg-luxury-cream rounded-xl border border-luxury-gold/20">
+                    <p class="text-xs text-gray-500 uppercase tracking-wider">Benar/Salah</p>
+                    <p class="text-2xl font-bold text-luxury-emerald" id="bs-score">0</p>
+                    <p class="text-xs text-gray-400">/10</p>
+                </div>
+                <div class="text-center p-4 bg-luxury-cream rounded-xl border border-luxury-gold/20">
+                    <p class="text-xs text-gray-500 uppercase tracking-wider">Menjodohkan</p>
+                    <p class="text-2xl font-bold text-luxury-emerald" id="match-score">0</p>
+                    <p class="text-xs text-gray-400">/10</p>
+                </div>
+                <div class="text-center p-4 bg-luxury-dark rounded-xl col-span-2 md:col-span-1">
+                    <p class="text-xs text-luxury-gold uppercase tracking-wider">Total</p>
+                    <p class="text-3xl font-bold text-gold-gradient" id="total-score">0</p>
+                    <p class="text-xs text-gray-400">/100</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <button onclick="hitungNilai()" class="col-span-2 md:col-span-4 py-4 bg-luxury-emerald text-white font-bold rounded-lg hover:bg-luxury-dark transition duration-300 shadow-lg text-lg">
+                    ✉️ KIRIM JAWABAN & LIHAT HASIL
+                </button>
+                <button onclick="unduhSkor()" class="py-3 border border-luxury-gold text-luxury-gold font-semibold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm">
+                    📊 UNDUH SKOR
+                </button>
+                <button onclick="kirimEmail()" class="py-3 border border-luxury-gold text-luxury-gold font-semibold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm">
+                    ✉️ KIRIM EMAIL GURU
+                </button>
+                <button onclick="unduhPDF()" class="py-3 border border-luxury-gold text-luxury-gold font-semibold rounded-lg hover:bg-luxury-gold hover:text-luxury-dark transition duration-300 text-sm">
+                    📥 UNDUH PDF
+                </button>
+                <button onclick="mulaiUlang()" class="py-3 border border-gray-400 text-gray-600 font-semibold rounded-lg hover:bg-gray-100 transition duration-300 text-sm">
+                    🔄 MULAI ULANG
+                </button>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+            <a href="7.html" class="flex items-center text-luxury-emerald hover:text-luxury-gold font-semibold transition">← Pertemuan 7: Penyembelihan Hewan</a>
+            <a href="9.html" class="flex items-center text-luxury-emerald hover:text-luxury-gold font-semibold transition">Pertemuan 9: Makanan & Minuman →</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-luxury-dark text-gray-400 py-8 text-center border-t border-luxury-gold/20 mt-12">
+        <p class="text-sm">&copy; 2026 Yudriman, SIQ, S.Pd.I, M.Pd. | SMKN I KOTO BALINGKA</p>
+        <p class="text-xs mt-2 text-gray-600">Ujian Tengah Semester – Pendidikan Agama Islam Kelas X Semester 1</p>
+    </footer>
+
+    <!-- ===================== JAVASCRIPT ===================== -->
+    <script>
+        // === KUNCI JAWABAN ===
+        const kunciPG = { q1:'a', q2:'b', q3:'b', q4:'b', q5:'b', q6:'c', q7:'a', q8:'b', q9:'b', q10:'b', q11:'b', q12:'a', q13:'b', q14:'b', q15:'b', q16:'b', q17:'c', q18:'c', q19:'b', q20:'b' };
+        const kunciPGK = { cq1:['a','c','d'], cq2:['a','b','d'], cq3:['a','b','c'], cq4:['a','b','d','e'], cq5:['a','b','d'], cq6:['a','b','d','e'], cq7:['a','b','e'], cq8:['a','b','d'], cq9:['a','b','d'], cq10:['a','b','d'] };
+        const kunciBS = { bs1:'true', bs2:'false', bs3:'false', bs4:'true', bs5:'true' };
+        const kunciMatch = { m1:'b', m2:'d', m3:'a', m4:'e', m5:'c' };
+
+        function hitungNilai() {
+            const warningMsg = document.getElementById('warning-msg');
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const tanggal = document.getElementById('tanggal').value;
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !tanggal || !kelas) {
+                warningMsg.classList.remove('hidden');
+                alert('Mohon lengkapi semua data diri siswa terlebih dahulu!');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            // --- PG ---
+            let pgBenar = 0, pgLengkap = true;
+            for (let i = 1; i <= 20; i++) {
+                const sel = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!sel) { pgLengkap = false; break; }
+                if (sel.value === kunciPG[`q${i}`]) pgBenar++;
+            }
+            if (!pgLengkap) { warningMsg.classList.remove('hidden'); alert('Mohon jawab semua 20 soal Pilihan Ganda!'); return; }
+
+            // --- PG Kompleks ---
+            let pgkBenar = 0, pgkLengkap = true;
+            for (let i = 1; i <= 10; i++) {
+                const checks = document.querySelectorAll(`input[name="cq${i}"]:checked`);
+                if (checks.length === 0) { pgkLengkap = false; break; }
+                const selected = Array.from(checks).map(c => c.value).sort();
+                const correct = [...kunciPGK[`cq${i}`]].sort();
+                if (JSON.stringify(selected) === JSON.stringify(correct)) pgkBenar++;
+            }
+            if (!pgkLengkap) { warningMsg.classList.remove('hidden'); alert('Mohon jawab semua 10 soal PG Kompleks! (Pilih lebih dari satu jawaban)'); return; }
+
+            // --- Benar/Salah ---
+            let bsBenar = 0, bsLengkap = true;
+            for (let i = 1; i <= 5; i++) {
+                const sel = document.querySelector(`input[name="bs${i}"]:checked`);
+                if (!sel) { bsLengkap = false; break; }
+                if (sel.value === kunciBS[`bs${i}`]) bsBenar++;
+            }
+            if (!bsLengkap) { warningMsg.classList.remove('hidden'); alert('Mohon jawab semua 5 soal Benar/Salah!'); return; }
+
+            // --- Menjodohkan ---
+            let matchBenar = 0, matchLengkap = true;
+            for (let i = 1; i <= 5; i++) {
+                const sel = document.getElementById(`m${i}`).value;
+                if (!sel) { matchLengkap = false; break; }
+                if (sel === kunciMatch[`m${i}`]) matchBenar++;
+            }
+            if (!matchLengkap) { warningMsg.classList.remove('hidden'); alert('Mohon lengkapi semua 5 soal Menjodohkan!'); return; }
+
+            // --- Hitung Skor ---
+            const skorPG = pgBenar * 2.5;
+            const skorPGK = pgkBenar * 3;
+            const skorBS = bsBenar * 2;
+            const skorMatch = matchBenar * 2;
+            const total = skorPG + skorPGK + skorBS + skorMatch;
+
+            document.getElementById('pg-score').innerText = skorPG;
+            document.getElementById('pgk-score').innerText = skorPGK;
+            document.getElementById('bs-score').innerText = skorBS;
+            document.getElementById('match-score').innerText = skorMatch;
+            document.getElementById('total-score').innerText = total;
+
+            warningMsg.classList.add('hidden');
+            alert(`Terima kasih, ${nama}!\n\nSkor UTS Anda:\nPG: ${skorPG}/50\nPG Kompleks: ${skorPGK}/30\nBenar/Salah: ${skorBS}/10\nMenjodohkan: ${skorMatch}/10\n\nTOTAL: ${total}/100`);
+            document.getElementById('total-score').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function unduhSkor() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const pg = document.getElementById('pg-score').innerText;
+            const pgk = document.getElementById('pgk-score').innerText;
+            const bs = document.getElementById('bs-score').innerText;
+            const mt = document.getElementById('match-score').innerText;
+            const total = document.getElementById('total-score').innerText;
+            const teks = `HASIL UJIAN TENGAH SEMESTER\nPAI Kelas X Semester 1\n\nNama: ${nama}\nNIS: ${nis}\n\nSkor PG: ${pg}/50\nSkor PG Kompleks: ${pgk}/30\nSkor Benar/Salah: ${bs}/10\nSkor Menjodohkan: ${mt}/10\nTOTAL: ${total}/100`;
+            const blob = new Blob([teks], { type: 'text/plain' });
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `Skor_UTS_${nama}.txt`; a.click();
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            const nis = document.getElementById('nis').value || '-';
+            const total = document.getElementById('total-score').innerText;
+            const subject = `Hasil UTS PAI Kelas X - ${nama} (${nis})`;
+            const body = `Yth. Bapak Yudriman, SIQ, S.Pd.I, M.Pd,\n\nHasil UTS saya:\nNama: ${nama}\nNIS: ${nis}\nTotal Skor: ${total}/100\n\nTerima kasih.`;
+            window.location.href = `mailto:yudialthof@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function unduhPDF() {
+            alert('📥 Fitur unduh PDF memerlukan library seperti html2pdf.js untuk implementasi penuh.');
+        }
+
+        function mulaiUlang() {
+            if (!confirm('Yakin ingin mengosongkan semua jawaban?')) return;
+            document.getElementById('nama').value = '';
+            document.getElementById('nis').value = '';
+            document.getElementById('tanggal').value = '';
+            document.getElementById('kelas').value = '';
+            for (let i = 1; i <= 20; i++) document.querySelectorAll(`input[name="q${i}"]`).forEach(r => r.checked = false);
+            for (let i = 1; i <= 10; i++) document.querySelectorAll(`input[name="cq${i}"]`).forEach(r => r.checked = false);
+            for (let i = 1; i <= 5; i++) document.querySelectorAll(`input[name="bs${i}"]`).forEach(r => r.checked = false);
+            for (let i = 1; i <= 5; i++) document.getElementById(`m${i}`).value = '';
+            ['pg-score','pgk-score','bs-score','match-score','total-score'].forEach(id => document.getElementById(id).innerText = '0');
+            document.getElementById('warning-msg').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

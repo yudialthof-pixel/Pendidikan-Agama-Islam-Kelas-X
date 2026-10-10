@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1: Keterampilan Membuka dan Menutup Pelajaran - Micro Teaching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* === NAVIGATION === */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+        }
+
+        nav .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #fbbf24;
+        }
+
+        /* === MAIN === */
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        /* Chapter Header */
+        .chapter-header {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chapter-header::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .chapter-number {
+            display: inline-block;
+            background: #fbbf24;
+            color: #0f172a;
+            padding: 0.4rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .chapter-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .chapter-subtitle {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .chapter-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: white;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fbbf24;
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+        }
+
+        .content-section h2 {
+            color: #0f172a;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #fbbf24;
+        }
+
+        .content-section h3 {
+            color: #1e293b;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+        }
+
+        .content-section h4 {
+            color: #334155;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: #334155;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .content-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .content-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-section ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .content-section ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        table th {
+            background: #1e293b;
+            color: white;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        table tr:hover {
+            background: #f8fafc;
+        }
+
+        table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        /* === VIDEO CONTAINER === */
+        .video-container {
+            background: #f1f5f9;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid #fbbf24;
+        }
+
+        .video-container h4 {
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .video-container h4::before {
+            content: '🎬';
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #0f172a;
+            margin-top: 0.5rem;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-description {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .video-source {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 0.3rem;
+        }
+
+        /* Key Concept & Reflection */
+        .key-concept {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .key-concept h4 {
+            color: #1e40af;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .reflection {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .reflection h4 {
+            color: #92400e;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Case Study */
+        .case-study {
+            background: #f0fdf4;
+            border-left: 4px solid #22c55e;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .case-study h4 {
+            color: #166534;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* References */
+        .references {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .references h4 {
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .references ul {
+            list-style: none;
+            margin-left: 0;
+            font-size: 0.9rem;
+        }
+
+        .references ul li {
+            padding: 0.3rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #475569;
+        }
+
+        .references ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Formative Test */
+        .formative-test {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-top: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+
+        .test-header {
+            background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 1.8rem 2rem;
+            margin: -2.5rem -2.5rem 2rem -2.5rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .test-header h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .test-info {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        .student-data {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .student-data h3 {
+            color: #0f172a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #334155;
+            font-size: 0.85rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #fbbf24;
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+        }
+
+        .question-section {
+            margin-bottom: 2rem;
+        }
+
+        .question-section h3 {
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding: 1rem 1.5rem;
+            background: #f1f5f9;
+            border-radius: 12px;
+            border-left: 4px solid #fbbf24;
+        }
+
+        .question {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .question p {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #0f172a;
+        }
+
+        .options label {
+            display: block;
+            padding: 0.7rem 1rem;
+            margin-bottom: 0.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .options label:hover {
+            background: #eff6ff;
+            border-color: #3b82f6;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 0.8rem;
+        }
+
+        .options textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 0.8rem;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+            transition: border-color 0.2s;
+        }
+
+        .options textarea:focus {
+            outline: none;
+            border-color: #fbbf24;
+            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+        }
+
+        .score-display {
+            background: linear-gradient(145deg, #10b981, #059669);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 2rem 0;
+            display: none;
+        }
+
+        .score-display.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .score-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+
+        .warning-message {
+            background: #fee2e2;
+            border: 1px solid #ef4444;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .warning-message.show {
+            display: block;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-action {
+            flex: 1;
+            min-width: 180px;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: #0f172a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e293b;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.2);
+        }
+
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #059669;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-warning {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #d97706;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+        }
+
+        .btn-info {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-info:hover {
+            background: #2563eb;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-secondary {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #4b5563;
+            box-shadow: 0 8px 25px rgba(107, 114, 128, 0.2);
+        }
+
+        /* Chapter Footer */
+        .chapter-footer {
+            background: #f1f5f9;
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .chapter-footer a {
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 1rem;
+            transition: color 0.2s;
+        }
+
+        .chapter-footer a:hover {
+            color: #f59e0b;
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .chapter-title {
+                font-size: 1.8rem;
+            }
+            .chapter-header {
+                padding: 2rem 1.5rem;
+            }
+            .content-section,
+            .formative-test {
+                padding: 1.5rem;
+            }
+            .test-header {
+                margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+                padding: 1.5rem;
+            }
+            .action-buttons {
+                flex-direction: column;
+            }
+            .btn-action {
+                width: 100%;
+            }
+            nav ul {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+            .video-container {
+                padding: 1rem;
+            }
+            table {
+                font-size: 0.8rem;
+            }
+            table th,
+            table td {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chapter-title {
+                font-size: 1.5rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .chapter-nav .btn {
+                display: block;
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">MICRO TEACHING</div>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="index.html#bab">Daftar Bab</a></li>
+                <li><a href="index.html#kontak">Penulis</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <!-- Chapter Header -->
+            <div class="chapter-header">
+                <span class="chapter-number">Bab 1</span>
+                <h1 class="chapter-title">Keterampilan Membuka dan Menutup Pelajaran</h1>
+                <p class="chapter-subtitle">
+                    Memahami prinsip, komponen, dan teknik membuka serta menutup pembelajaran yang efektif
+                    untuk menciptakan suasana belajar yang kondusif dan bermakna
+                </p>
+                <div class="chapter-nav">
+                    <a href="index.html" class="btn-outline">← Kembali ke Daftar Bab</a>
+                    <a href="#sub1" class="btn">Mulai Membaca</a>
+                    <a href="2.html" class="btn">Bab Selanjutnya →</a>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 1: PENDAHULUAN -->
+            <!-- ============================================================ -->
+            <div class="content-section" id="sub1">
+                <h2>Pendahuluan</h2>
+                <p>
+                    Keterampilan membuka dan menutup pelajaran merupakan dua keterampilan dasar mengajar 
+                    yang sering diabaikan oleh guru pemula, padahal kedua keterampilan ini memiliki peran 
+                    yang sangat strategis dalam menentukan keberhasilan proses pembelajaran secara keseluruhan. 
+                    Seperti halnya sebuah pertunjukan yang membutuhkan pembukaan yang menarik dan penutupan 
+                    yang berkesan, demikian pula pembelajaran di kelas memerlukan keduanya untuk menciptakan 
+                    pengalaman belajar yang bermakna bagi siswa.
+                </p>
+                <p>
+                    <strong>Membuka pelajaran (set induction)</strong> adalah serangkaian kegiatan yang 
+                    dilakukan guru pada awal pembelajaran untuk menciptakan kondisi psikologis dan fisik 
+                    siswa agar siap menerima materi pelajaran (Brown, 2001). Kegiatan ini mencakup upaya 
+                    untuk menarik perhatian, membangkitkan motivasi, memberikan gambaran tentang materi 
+                    yang akan dipelajari, serta menghubungkan pengetahuan baru dengan pengetahuan yang 
+                    telah dimiliki siswa.
+                </p>
+                <p>
+                    <strong>Menutup pelajaran (closure)</strong> adalah kegiatan yang dilakukan guru di 
+                    akhir pembelajaran untuk memberikan kesimpulan, melakukan refleksi, dan memberikan 
+                    tindak lanjut (Gage & Berliner, 1998). Penutupan yang efektif membantu siswa 
+                    mengorganisasi informasi yang telah diperoleh, memperkuat pemahaman, dan mempersiapkan 
+                    mereka untuk pembelajaran selanjutnya.
+                </p>
+                <p>
+                    Dalam konteks pendidikan Indonesia, kedua keterampilan ini menjadi semakin penting 
+                    mengingat karakteristik siswa yang beragam, tuntutan kurikulum yang terus berkembang, 
+                    dan tantangan pembelajaran di era digital. Guru yang mampu membuka dan menutup pelajaran 
+                    dengan baik akan menciptakan pembelajaran yang tidak hanya mentransfer pengetahuan, 
+                    tetapi juga membangun keterampilan berpikir kritis, kreativitas, dan karakter siswa.
+                </p>
+
+                <!-- VIDEO: Pendahuluan -->
+                <div class="video-container" id="video-pendahuluan">
+                    <h4>Video: Pentingnya Keterampilan Membuka dan Menutup Pelajaran</h4>
+                    <div class="video-wrapper">
+                        <iframe id="video-pendahuluan-iframe" src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_1" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Simak video ini untuk memahami mengapa keterampilan membuka dan menutup pelajaran sangat krusial dalam proses pembelajaran.</p>
+                    <p class="video-source">Sumber: Youtube / Kanal Pendidikan</p>
+                </div>
+
+                <div class="key-concept">
+                    <h4>🔑 Konsep Kunci</h4>
+                    <p>
+                        <strong>Membuka Pelajaran (Set Induction):</strong> Kegiatan awal pembelajaran yang bertujuan menciptakan kesiapan belajar, memusatkan perhatian, membangkitkan motivasi, dan memberikan gambaran tentang materi yang akan dipelajari.<br><br>
+                        <strong>Menutup Pelajaran (Closure):</strong> Kegiatan akhir pembelajaran yang bertujuan menguatkan pemahaman, melakukan refleksi, memberikan apresiasi, dan menyiapkan siswa untuk pembelajaran selanjutnya.
+                    </p>
+                </div>
+
+                <div class="case-study">
+                    <h4>📖 Studi Kasus 1: Kegagalan Membuka Pelajaran</h4>
+                    <p>
+                        Di sebuah SMP di Jakarta, seorang guru matematika memulai pelajaran tanpa pembukaan yang jelas. Ia langsung menulis rumus di papan tulis dan mulai menjelaskan tanpa memastikan siswa siap. Akibatnya, siswa tampak bingung, tidak fokus, dan banyak yang tidak memahami materi. Setelah dievaluasi, hanya 30% siswa yang mampu menyelesaikan soal latihan dengan benar.
+                    </p>
+                    <p>
+                        <strong>Pembelajaran:</strong> Kegagalan membuka pelajaran berdampak pada rendahnya pemahaman siswa. Guru perlu menyadari bahwa pembukaan yang baik adalah fondasi untuk pembelajaran yang efektif.
+                    </p>
+                </div>
+
+                <div class="reflection">
+                    <h4>💭 Refleksi untuk Guru Indonesia</h4>
+                    <p>
+                        Di Indonesia dengan keragaman budaya dan bahasa, guru perlu menggunakan pendekatan yang kontekstual. Memulai pelajaran dengan cerita rakyat, permainan tradisional, atau contoh yang relevan dengan kehidupan sehari-hari siswa dapat menjadi strategi yang efektif. Selain itu, pemahaman terhadap karakteristik siswa di daerah masing-masing akan membantu guru memilih teknik pembukaan yang tepat.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 2: LANDASAN TEORETIS -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>1.1 Landasan Teoretis Keterampilan Membuka dan Menutup Pelajaran</h2>
+                <p>
+                    Pemahaman tentang landasan teoretis sangat penting bagi guru untuk mengimplementasikan 
+                    keterampilan membuka dan menutup pelajaran secara efektif. Beberapa teori belajar yang 
+                    relevan dengan kedua keterampilan ini akan diuraikan berikut ini.
+                </p>
+
+                <h3>1.1.1 Teori Belajar Ausubel: Advance Organizer</h3>
+                <p>
+                    David Ausubel (1968) mengembangkan teori belajar bermakna yang menekankan pentingnya 
+                    menghubungkan pengetahuan baru dengan pengetahuan yang sudah dimiliki siswa. Konsep 
+                    <strong>advance organizer</strong> yang diperkenalkannya sangat relevan dengan keterampilan 
+                    membuka pelajaran. Advance organizer adalah kerangka konseptual yang diberikan sebelum 
+                    pembelajaran dimulai untuk membantu siswa mengintegrasikan informasi baru.
+                </p>
+                <p>
+                    Dalam praktiknya, advance organizer dapat berupa pernyataan pengantar, pertanyaan esensial, 
+                    peta konsep, atau diagram yang memberikan gambaran umum tentang materi yang akan dipelajari. 
+                    Dengan advance organizer, siswa memiliki "tempat" untuk menempatkan pengetahuan baru yang 
+                    akan mereka peroleh.
+                </p>
+
+                <h3>1.1.2 Teori Gagné: Sembilan Peristiwa Pembelajaran</h3>
+                <p>
+                    Robert Gagné (1985) mengidentifikasi sembilan peristiwa pembelajaran yang harus terjadi 
+                    dalam proses pembelajaran. Dua di antaranya berkaitan langsung dengan keterampilan 
+                    membuka dan menutup pelajaran:
+                </p>
+                <ul>
+                    <li><strong>Peristiwa 1: Menarik Perhatian (Gaining Attention)</strong> — Guru harus memulai pembelajaran dengan cara yang menarik perhatian siswa.</li>
+                    <li><strong>Peristiwa 2: Menginformasikan Tujuan (Informing Learner of Objectives)</strong> — Guru menyampaikan tujuan pembelajaran agar siswa tahu apa yang diharapkan.</li>
+                    <li><strong>Peristiwa 3: Merangsang Ingatan (Stimulating Recall of Prior Learning)</strong> — Guru mengaitkan materi baru dengan pengetahuan yang sudah dimiliki siswa.</li>
+                    <li><strong>Peristiwa 8: Menilai Kinerja (Assessing Performance)</strong> — Guru mengevaluasi pemahaman siswa.</li>
+                    <li><strong>Peristiwa 9: Meningkatkan Retensi dan Transfer (Enhancing Retention and Transfer)</strong> — Guru memberikan penguatan dan tindak lanjut.</li>
+                </ul>
+
+                <h3>1.1.3 Teori Motivasi ARCS (Keller)</h3>
+                <p>
+                    John Keller (1987) mengembangkan model ARCS (Attention, Relevance, Confidence, Satisfaction) 
+                    yang sangat relevan dengan keterampilan membuka pelajaran. Model ini menekankan bahwa 
+                    untuk memotivasi siswa, guru harus:
+                </p>
+                <ul>
+                    <li><strong>Attention (Perhatian):</strong> Menarik dan mempertahankan perhatian siswa</li>
+                    <li><strong>Relevance (Relevansi):</strong> Menunjukkan relevansi materi dengan kehidupan siswa</li>
+                    <li><strong>Confidence (Kepercayaan Diri):</strong> Membangun keyakinan siswa bahwa mereka mampu belajar</li>
+                    <li><strong>Satisfaction (Kepuasan):</strong> Memberikan pengalaman belajar yang memuaskan</li>
+                </ul>
+
+                <div class="video-container" id="video-teori">
+                    <h4>Video: Landasan Teoretis Membuka dan Menutup Pelajaran</h4>
+                    <div class="video-wrapper">
+                        <iframe id="video-teori-iframe" src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_2" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Video ini menjelaskan teori-teori yang mendasari keterampilan membuka dan menutup pelajaran.</p>
+                    <p class="video-source">Sumber: Youtube / Kanal Pendidikan</p>
+                </div>
+
+                <div class="references">
+                    <h4>📚 Referensi Teoretis</h4>
+                    <ul>
+                        <li>Ausubel, D. P. (1968). <em>Educational Psychology: A Cognitive View</em>. New York: Holt, Rinehart and Winston.</li>
+                        <li>Gagné, R. M. (1985). <em>The Conditions of Learning and Theory of Instruction</em> (4th ed.). New York: Holt, Rinehart and Winston.</li>
+                        <li>Keller, J. M. (1987). Development and use of the ARCS model of instructional design. <em>Journal of Instructional Development</em>, 10(3), 2-10.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 3: KOMPONEN MEMBUKA PELAJARAN -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>1.2 Komponen-Komponen Keterampilan Membuka Pelajaran</h2>
+                <p>
+                    Keterampilan membuka pelajaran terdiri dari beberapa komponen yang saling terkait dan 
+                    harus dikuasai oleh guru. Penguasaan terhadap komponen-komponen ini akan menentukan 
+                    efektivitas pembukaan pembelajaran.
+                </p>
+
+                <h3>1.2.1 Menarik Perhatian Siswa (Gaining Attention)</h3>
+                <p>
+                    Langkah pertama dalam membuka pelajaran adalah menarik perhatian siswa. Menurut Gagné, 
+                    ini adalah "gerbang" yang harus dilalui sebelum siswa dapat memproses informasi. 
+                    Perhatian siswa dapat ditarik melalui berbagai cara:
+                </p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Teknik</th>
+                                <th>Deskripsi</th>
+                                <th>Contoh Penerapan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Variasi Gaya Mengajar</strong></td>
+                                <td>Menggunakan intonasi suara yang berbeda, gerakan tubuh, dan ekspresi wajah yang menarik</td>
+                                <td>Guru mengubah volume suara dari pelan menjadi keras saat menjelaskan konsep penting</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Media Pembelajaran</strong></td>
+                                <td>Menampilkan gambar, video, atau benda nyata yang relevan dengan materi</td>
+                                <td>Menampilkan video fenomena alam sebelum mempelajari ekosistem</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Storytelling</strong></td>
+                                <td>Menyampaikan cerita atau anekdot yang terkait dengan topik pembelajaran</td>
+                                <td>Bercerita tentang penemuan ilmiah sebelum mempelajari teori tersebut</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Demonstrasi</strong></td>
+                                <td>Memperagakan sesuatu yang menarik dan memancing rasa ingin tahu</td>
+                                <td>Demonstrasi percobaan kimia sederhana yang menimbulkan efek menarik</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pertanyaan Provokatif</strong></td>
+                                <td>Mengajukan pertanyaan yang menantang dan memicu rasa ingin tahu</td>
+                                <td>"Bayangkan jika tidak ada gravitasi, apa yang akan terjadi?"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>1.2.2 Memotivasi Siswa (Motivating)</h3>
+                <p>
+                    Setelah perhatian tertarik, guru perlu memotivasi siswa untuk belajar. Berdasarkan 
+                    model ARCS Keller, motivasi dapat dibangun melalui:
+                </p>
+                <ul>
+                    <li><strong>Menjelaskan manfaat:</strong> Menyampaikan kegunaan materi dalam kehidupan sehari-hari</li>
+                    <li><strong>Menunjukkan relevansi:</strong> Menghubungkan materi dengan pengalaman atau minat siswa</li>
+                    <li><strong>Memberikan tantangan:</strong> Menyajikan masalah atau tugas yang menantang namun dapat diselesaikan</li>
+                    <li><strong>Menciptakan rasa ingin tahu:</strong> Menyisakan pertanyaan yang belum terjawab untuk memicu eksplorasi</li>
+                </ul>
+
+                <div class="case-study">
+                    <h4>📖 Studi Kasus 2: Membangkitkan Motivasi dengan Relevensi</h4>
+                    <p>
+                        Di sebuah SMA di Yogyakarta, guru fisika memulai pelajaran tentang gerak parabola dengan 
+                        menunjukkan video pemain sepak bola yang menendang bola dengan akurasi tinggi. Ia bertanya, 
+                        "Mengapa pemain bisa memperkirakan lintasan bola?" Siswa menjadi antusias karena mereka 
+                        adalah penggemar sepak bola. Guru kemudian mengaitkan pertanyaan tersebut dengan konsep 
+                        gerak parabola yang akan dipelajari.
+                    </p>
+                    <p>
+                        <strong>Hasil:</strong> Siswa lebih termotivasi dan aktif berpartisipasi dalam pembelajaran 
+                        karena merasa materi relevan dengan minat mereka.
+                    </p>
+                </div>
+
+                <h3>1.2.3 Memberikan Acuan (Structuring)</h3>
+                <p>
+                    Memberikan acuan berarti memberikan gambaran yang jelas tentang apa yang akan dipelajari. 
+                    Komponen ini meliputi:
+                </p>
+                <ul>
+                    <li><strong>Menyampaikan tujuan pembelajaran:</strong> Menjelaskan kompetensi yang akan dicapai</li>
+                    <li><strong>Menjelaskan langkah-langkah:</strong> Menguraikan kegiatan yang akan dilakukan</li>
+                    <li><strong>Menyampaikan ruang lingkup:</strong> Menjelaskan batasan materi yang akan dibahas</li>
+                    <li><strong>Memberikan petunjuk:</strong> Menjelaskan cara belajar atau sumber yang dapat digunakan</li>
+                </ul>
+
+                <h3>1.2.4 Membuat Kaitan (Linking/Apersepsi)</h3>
+                <p>
+                    Membuat kaitan berarti menghubungkan materi yang akan dipelajari dengan pengetahuan 
+                    yang sudah dimiliki siswa. Ini sejalan dengan teori Ausubel tentang belajar bermakna.
+                </p>
+                <ul>
+                    <li><strong>Review materi sebelumnya:</strong> Mengulang singkat materi pertemuan sebelumnya</li>
+                    <li><strong>Apersepsi:</strong> Mengaitkan dengan pengalaman atau pengetahuan awal siswa</li>
+                    <li><strong>Advance organizer:</strong> Memberikan kerangka konseptual sebelum masuk ke detail materi</li>
+                    <li><strong>Brainstorming:</strong> Menggali pengetahuan awal siswa melalui curah pendapat</li>
+                </ul>
+
+                <div class="key-concept">
+                    <h4>💡 Tips Praktis</h4>
+                    <p>
+                        • Gunakan kombinasi beberapa teknik dalam pembukaan pelajaran<br>
+                        • Sesuaikan teknik dengan karakteristik siswa dan materi<br>
+                        • Pastikan pembukaan memakan waktu sekitar 5-10 menit<br>
+                        • Libatkan siswa secara aktif dalam proses pembukaan<br>
+                        • Catat efektivitas pembukaan untuk perbaikan di pertemuan berikutnya
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 4: KOMPONEN MENUTUP PELAJARAN -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>1.3 Komponen-Komponen Keterampilan Menutup Pelajaran</h2>
+                <p>
+                    Sama pentingnya dengan membuka pelajaran, menutup pelajaran juga memerlukan keterampilan 
+                    khusus. Penutupan yang efektif membantu siswa mengkonsolidasikan pembelajaran dan 
+                    mempersiapkan diri untuk pertemuan berikutnya.
+                </p>
+
+                <h3>1.3.1 Meninjau Kembali (Reviewing)</h3>
+                <p>
+                    Meninjau kembali merupakan kegiatan mengulang atau merangkum poin-poin penting dari 
+                    materi yang telah dipelajari. Menurut penelitian, review yang efektif dapat meningkatkan 
+                    retensi informasi hingga 30% (Sousa, 2011).
+                </p>
+                <ul>
+                    <li><strong>Merangkum:</strong> Membuat ringkasan singkat tentang materi utama</li>
+                    <li><strong>Membuat peta konsep:</strong> Menyusun konsep-konsep penting dalam bentuk visual</li>
+                    <li><strong>Highlighting:</strong> Menegaskan konsep atau keterampilan kunci</li>
+                    <li><strong>Q&A session:</strong> Sesi tanya jawab untuk mengklarifikasi hal-hal yang belum dipahami</li>
+                </ul>
+
+                <h3>1.3.2 Mengevaluasi (Evaluating)</h3>
+                <p>
+                    Evaluasi dilakukan untuk mengetahui tingkat pemahaman siswa. Bentuk evaluasi di akhir 
+                    pembelajaran dapat berupa:
+                </p>
+                <ul>
+                    <li><strong>Kuis singkat:</strong> 3-5 pertanyaan untuk menguji pemahaman</li>
+                    <li><strong>Demonstrasi:</strong> Meminta siswa mendemonstrasikan keterampilan yang telah dipelajari</li>
+                    <li><strong>Refleksi:</strong> Meminta siswa merefleksikan apa yang telah dipelajari</li>
+                    <li><strong>Exit ticket:</strong> Siswa menuliskan satu hal yang dipelajari dan satu pertanyaan yang masih ada</li>
+                </ul>
+
+                <div class="case-study">
+                    <h4>📖 Studi Kasus 3: Exit Ticket yang Efektif</h4>
+                    <p>
+                        Seorang guru bahasa Indonesia di SMP menggunakan exit ticket di akhir pelajaran. 
+                        Siswa diminta menuliskan:
+                    </p>
+                    <ol>
+                        <li>Satu hal baru yang dipelajari hari ini</li>
+                        <li>Satu hal yang masih membingungkan</li>
+                        <li>Saran untuk pertemuan berikutnya</li>
+                    </ol>
+                    <p>
+                        Dari exit ticket tersebut, guru mengetahui bahwa 70% siswa memahami materi, 
+                        20% masih bingung tentang satu konsep, dan 10% memiliki pertanyaan lanjutan. 
+                        Guru menggunakan informasi ini untuk merencanakan remedial dan pertemuan berikutnya.
+                    </p>
+                    <p>
+                        <strong>Hasil:</strong> Guru dapat memberikan perhatian khusus pada konsep yang 
+                        sulit dipahami dan menyesuaikan strategi pembelajaran.
+                    </p>
+                </div>
+
+                <h3>1.3.3 Memberikan Tindak Lanjut (Follow-up)</h3>
+                <p>
+                    Tindak lanjut penting untuk memastikan pembelajaran terus berlanjut. Bentuk tindak 
+                    lanjut dapat berupa:
+                </p>
+                <ul>
+                    <li><strong>Tugas:</strong> Memberikan latihan atau proyek untuk dikerjakan di rumah</li>
+                    <li><strong>Persiapan:</strong> Menyampaikan materi yang akan dipelajari selanjutnya</li>
+                    <li><strong>Rekomendasi:</strong> Menyarankan sumber belajar tambahan</li>
+                    <li><strong>Remedial/Pengayaan:</strong> Memberikan perlakuan khusus bagi siswa yang membutuhkan</li>
+                </ul>
+
+                <h3>1.3.4 Memberikan Apresiasi (Appreciating)</h3>
+                <p>
+                    Mengakhiri pembelajaran dengan apresiasi penting untuk membangun motivasi dan rasa 
+                    percaya diri siswa. Apresiasi dapat berupa:
+                </p>
+                <ul>
+                    <li><strong>Pujian:</strong> Menghargai usaha dan partisipasi siswa</li>
+                    <li><strong>Pengumuman prestasi:</strong> Menyampaikan pencapaian siswa</li>
+                    <li><strong>Ucapan terima kasih:</strong> Menghargai keterlibatan siswa</li>
+                    <li><strong>Pesan inspiratif:</strong> Menutup dengan kata-kata motivasi</li>
+                </ul>
+
+                <div class="video-container" id="video-komponen">
+                    <h4>Video: Komponen Menutup Pelajaran</h4>
+                    <div class="video-wrapper">
+                        <iframe id="video-komponen-iframe" src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_3" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Pelajari komponen-komponen penting dalam menutup pelajaran melalui video ini.</p>
+                    <p class="video-source">Sumber: Youtube / Kanal Pendidikan</p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 5: PRINSIP-PRINSIP -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>1.4 Prinsip-Prinsip dalam Membuka dan Menutup Pelajaran</h2>
+                <p>
+                    Agar pembukaan dan penutupan pelajaran efektif, beberapa prinsip berikut perlu diperhatikan.
+                </p>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Prinsip</th>
+                                <th>Deskripsi</th>
+                                <th>Implementasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Kebermaknaan</strong></td>
+                                <td>Kegiatan membuka dan menutup harus bermakna bagi siswa, bukan sekadar formalitas</td>
+                                <td>Setiap kegiatan harus memiliki tujuan yang jelas dan berkontribusi pada pencapaian kompetensi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kesinambungan</strong></td>
+                                <td>Pembukaan harus terkait dengan isi pelajaran, dan penutupan harus merupakan kesimpulan dari seluruh proses</td>
+                                <td>Tidak boleh ada kesenjangan antara pembukaan, isi, dan penutupan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fleksibilitas</strong></td>
+                                <td>Guru harus fleksibel dalam menerapkan teknik membuka dan menutup pelajaran</td>
+                                <td>Teknik yang digunakan harus disesuaikan dengan karakteristik siswa, materi, dan situasi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Antusiasme</strong></td>
+                                <td>Guru harus menunjukkan antusiasme dan semangat dalam membuka dan menutup pelajaran</td>
+                                <td>Energi positif guru akan menular kepada siswa dan menciptakan suasana belajar yang menyenangkan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Proporsi Waktu</strong></td>
+                                <td>Pembukaan dan penutupan harus proporsional</td>
+                                <td>5-10 menit untuk pembukaan dan 5-10 menit untuk penutupan dalam satu pertemuan (90 menit)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="key-concept">
+                    <h4>⚠️ Kesalahan yang Sering Terjadi</h4>
+                    <p>
+                        • Pembukaan terlalu panjang sehingga mengurangi waktu inti<br>
+                        • Penutupan terburu-buru karena kehabisan waktu<br>
+                        • Pembukaan tidak relevan dengan materi<br>
+                        • Penutupan hanya berupa "demikian pembelajaran hari ini"<br>
+                        • Tidak memberikan kesempatan siswa untuk bertanya<br>
+                        • Mengabaikan umpan balik dari siswa
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 6: TEKNIK INOVATIF -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>1.5 Teknik-Teknik Inovatif dalam Membuka dan Menutup Pelajaran</h2>
+                <p>
+                    Seiring perkembangan zaman dan tuntutan pembelajaran abad 21, muncul berbagai teknik 
+                    inovatif yang dapat digunakan untuk membuka dan menutup pelajaran.
+                </p>
+
+                <h3>1.5.1 Teknik Membuka Pelajaran</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Teknik</th>
+                                <th>Deskripsi</th>
+                                <th>Contoh</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Ice Breaking</strong></td>
+                                <td>Permainan singkat untuk mencairkan suasana</td>
+                                <td>Permainan "Tebak Gambar" atau "Siapa Aku"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pertanyaan Esensial</strong></td>
+                                <td>Mengajukan pertanyaan filosofis atau mendalam</td>
+                                <td>"Apa yang akan terjadi jika air tidak ada di bumi?"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fakta Mengejutkan</strong></td>
+                                <td>Menyajikan data atau fakta yang tidak terduga</td>
+                                <td>"Tahukah Anda, ada 100 miliar bintang di galaksi kita?"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Problem Posing</strong></td>
+                                <td>Menyajikan masalah nyata untuk dipecahkan</td>
+                                <td>"Bagaimana kita bisa mengurangi sampah plastik di sekolah?"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Video Trigger</strong></td>
+                                <td>Menampilkan video pendek yang relevan</td>
+                                <td>Video tentang perubahan iklim sebelum belajar lingkungan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mind Mapping</strong></td>
+                                <td>Membuat peta pikiran tentang topik yang akan dipelajari</td>
+                                <td>Siswa membuat peta konsep tentang "Pemanasan Global"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>KWL Chart</strong></td>
+                                <td>What I Know, What I Want to Know, What I Learned</td>
+                                <td>Siswa mengisi kolom "K" dan "W" di awal pelajaran</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Think-Pair-Share</strong></td>
+                                <td>Berpikir sendiri, berdiskusi berpasangan, berbagi</td>
+                                <td>Siswa menjawab pertanyaan, diskusi dengan teman, lalu presentasi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>1.5.2 Teknik Menutup Pelajaran</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Teknik</th>
+                                <th>Deskripsi</th>
+                                <th>Contoh</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>One Minute Paper</strong></td>
+                                <td>Siswa menuliskan refleksi dalam satu menit</td>
+                                <td>"Tuliskan satu hal yang paling Anda ingat hari ini"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Muddiest Point</strong></td>
+                                <td>Siswa menuliskan bagian yang paling sulit dipahami</td>
+                                <td>"Bagian mana yang masih membingungkan?"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>3-2-1</strong></td>
+                                <td>3 hal yang dipelajari, 2 hal yang menarik, 1 pertanyaan</td>
+                                <td>Siswa mengisi format 3-2-1 secara individu</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Summary Circle</strong></td>
+                                <td>Setiap siswa menyumbang satu kalimat ringkasan</td>
+                                <td>Siswa berbagi kalimat ringkasan secara bergiliran</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Prediction</strong></td>
+                                <td>Siswa memprediksi materi selanjutnya</td>
+                                <td>"Menurut kalian, apa yang akan kita pelajari besok?"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Applause</strong></td>
+                                <td>Tepuk tangan untuk mengapresiasi pembelajaran</td>
+                                <td>Tepuk tangan bersama untuk keberhasilan belajar</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quote of the Day</strong></td>
+                                <td>Menutup dengan kutipan inspiratif</td>
+                                <td>"Pendidikan adalah senjata paling ampuh untuk mengubah dunia" - Nelson Mandela</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Goal Setting</strong></td>
+                                <td>Siswa menetapkan tujuan untuk pembelajaran selanjutnya</td>
+                                <td>"Apa target Anda untuk pertemuan berikutnya?"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="video-container" id="video-teknik">
+                    <h4>Video: Teknik Inovatif Membuka dan Menutup Pelajaran</h4>
+                    <div class="video-wrapper">
+                        <iframe id="video-teknik-iframe" src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_4" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-description">Temukan berbagai teknik inovatif untuk membuka dan menutup pelajaran yang lebih menarik.</p>
+                    <p class="video-source">Sumber: Youtube / Kanal Pendidikan</p>
+                </div>
+
+                <div class="reflection">
+                    <h4>💡 Tips Memilih Teknik</h4>
+                    <p>
+                        • Variasikan teknik agar siswa tidak bosan<br>
+                        • Sesuaikan teknik dengan usia dan karakteristik siswa<br>
+                        • Libatkan siswa secara aktif dalam proses opening dan closing<br>
+                        • Gunakan bahasa yang sederhana dan mudah dipahami<br>
+                        • Berikan contoh konkret yang relevan dengan kehidupan siswa<br>
+                        • Evaluasi efektivitas teknik yang digunakan untuk perbaikan ke depannya
+                    </p>
+                </div>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- SECTION 7: KESIMPULAN -->
+            <!-- ============================================================ -->
+            <div class="content-section">
+                <h2>Kesimpulan</h2>
+                <p>
+                    Keterampilan membuka dan menutup pelajaran merupakan kompetensi fundamental yang harus 
+                    dikuasai oleh setiap guru. Pembukaan yang efektif akan menciptakan kesiapan belajar, 
+                    memusatkan perhatian, dan memotivasi siswa. Sementara itu, penutupan yang baik akan 
+                    menguatkan pemahaman, memberikan refleksi, dan mempersiapkan siswa untuk pembelajaran 
+                    selanjutnya.
+                </p>
+                <p>
+                    Berdasarkan tinjauan teoretis dari Ausubel, Gagné, dan Keller, dapat disimpulkan bahwa 
+                    membuka pelajaran harus memperhatikan aspek perhatian, motivasi, struktur, dan kaitan 
+                    dengan pengetahuan sebelumnya. Sementara menutup pelajaran harus mencakup aspek review, 
+                    evaluasi, tindak lanjut, dan apresiasi.
+                </p>
+                <p>
+                    Dalam konteks pendidikan Indonesia, penguasaan keterampilan ini menjadi semakin penting 
+                    untuk menciptakan pembelajaran yang berkualitas dan mampu menjawab tantangan zaman. 
+                    Guru perlu terus mengembangkan dan memvariasikan teknik-teknik membuka dan menutup 
+                    pelajaran agar pembelajaran selalu menarik, bermakna, dan berkesan.
+                </p>
+                <p>
+                    Dengan latihan dan refleksi yang terus-menerus, calon guru dapat menguasai keterampilan 
+                    ini dan menjadi pendidik yang efektif. Sebagai penutup, mari kita renungkan bahwa 
+                    pembelajaran yang baik dimulai dari pembukaan yang menarik dan diakhiri dengan penutupan 
+                    yang mengesankan.
+                </p>
+
+                <div class="references">
+                    <h4>📚 Daftar Pustaka</h4>
+                    <ul>
+                        <li>Arends, R. I. (2012). <em>Learning to Teach</em> (9th ed.). New York: McGraw-Hill.</li>
+                        <li>Ausubel, D. P. (1968). <em>Educational Psychology: A Cognitive View</em>. New York: Holt, Rinehart and Winston.</li>
+                        <li>Brown, H. D. (2001). <em>Teaching by Principles: An Interactive Approach to Language Pedagogy</em>. New York: Longman.</li>
+                        <li>Gagné, R. M. (1985). <em>The Conditions of Learning and Theory of Instruction</em> (4th ed.). New York: Holt, Rinehart and Winston.</li>
+                        <li>Gage, N. L., & Berliner, D. C. (1998). <em>Educational Psychology</em> (6th ed.). Boston: Houghton Mifflin.</li>
+                        <li>Joyce, B., Weil, M., & Calhoun, E. (2015). <em>Models of Teaching</em> (9th ed.). Boston: Pearson.</li>
+                        <li>Keller, J. M. (1987). Development and use of the ARCS model of instructional design. <em>Journal of Instructional Development</em>, 10(3), 2-10.</li>
+                        <li>Sousa, D. A. (2011). <em>How the Brain Learns</em> (4th ed.). Thousand Oaks: Corwin Press.</li>
+                        <li>Supriadi. (2024). <em>Micro Teaching: Keterampilan Dasar Mengajar untuk Calon Pendidik Profesional</em>. Bukittinggi: FTIK UIN Bukittinggi.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Chapter Footer -->
+            <div class="chapter-footer">
+                <p>
+                    <a href="index.html">← Kembali ke Daftar Bab</a> |
+                    <a href="#top">↑ Ke Atas</a> |
+                    <a href="2.html">Bab 2: Keterampilan Menjelaskan →</a>
+                </p>
+            </div>
+
+            <!-- ============================================================ -->
+            <!-- UJI FORMATIF -->
+            <!-- ============================================================ -->
+            <div class="formative-test" id="uji-formatif">
+                <div class="test-header">
+                    <h2>📋 Uji Formatif 1: Keterampilan Membuka dan Menutup Pelajaran</h2>
+                    <div class="test-info">
+                        <span>📝 Bagian A: Pilihan Ganda (10 soal, skor 10/soal)</span>
+                        <span>✍️ Bagian B: Essay (5 soal, skor 20/soal)</span>
+                        <span>📚 Materi: Konsep, komponen, prinsip, dan teknik membuka & menutup pelajaran</span>
+                    </div>
+                </div>
+
+                <div class="warning-message" id="warning-message">
+                    ⚠️ Mohon lengkapi semua data dan jawaban terlebih dahulu!
+                </div>
+
+                <!-- Student Data -->
+                <div class="student-data">
+                    <h3>📋 Data Mahasiswa</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nama">* Nama Lengkap</label>
+                            <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nim">* NIM</label>
+                            <input type="text" id="nim" placeholder="Masukkan NIM" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tanggal">📅 Tanggal Ujian</label>
+                            <input type="date" id="tanggal">
+                        </div>
+                        <div class="form-group">
+                            <label for="fakultas">Fakultas</label>
+                            <input type="text" id="fakultas" placeholder="Nama fakultas">
+                        </div>
+                        <div class="form-group">
+                            <label for="jurusan">Jurusan / Prodi</label>
+                            <input type="text" id="jurusan" placeholder="Program studi">
+                        </div>
+                        <div class="form-group">
+                            <label for="konsentrasi">Konsentrasi</label>
+                            <input type="text" id="konsentrasi" placeholder="Konsentrasi (jika ada)">
+                        </div>
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <select id="semester">
+                                <option value="">Pilih Semester</option>
+                                <option value="1">Semester 1</option>
+                                <option value="2">Semester 2</option>
+                                <option value="3">Semester 3</option>
+                                <option value="4">Semester 4</option>
+                                <option value="5">Semester 5</option>
+                                <option value="6">Semester 6</option>
+                                <option value="7">Semester 7</option>
+                                <option value="8">Semester 8</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="kelas">Kelas</label>
+                            <input type="text" id="kelas" placeholder="Kelas">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part A: Multiple Choice -->
+                <div class="question-section">
+                    <h3>📋 Bagian A – Pilihan Ganda</h3>
+                    <div id="multiple-choice-warning" class="warning-message">
+                        ⚠️ Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!
+                    </div>
+
+                    <div class="question">
+                        <p>1. Menurut Ausubel, konsep yang diberikan sebelum pembelajaran dimulai untuk membantu siswa mengintegrasikan informasi baru disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="a"> a. Advance organizer</label>
+                            <label><input type="radio" name="q1" value="b"> b. Closure</label>
+                            <label><input type="radio" name="q1" value="c"> c. Set induction</label>
+                            <label><input type="radio" name="q1" value="d"> d. Feedback</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>2. Dalam model ARCS Keller, huruf "R" menunjukkan...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="a"> a. Relevance</label>
+                            <label><input type="radio" name="q2" value="b"> b. Review</label>
+                            <label><input type="radio" name="q2" value="c"> c. Reflection</label>
+                            <label><input type="radio" name="q2" value="d"> d. Recognition</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>3. Peristiwa pembelajaran ke-9 menurut Gagné adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="a"> a. Menarik perhatian</label>
+                            <label><input type="radio" name="q3" value="b"> b. Menilai kinerja</label>
+                            <label><input type="radio" name="q3" value="c"> c. Meningkatkan retensi dan transfer</label>
+                            <label><input type="radio" name="q3" value="d"> d. Merangsang ingatan</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>4. Teknik "Exit Ticket" dalam menutup pelajaran adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="a"> a. Siswa keluar kelas tanpa tugas</label>
+                            <label><input type="radio" name="q4" value="b"> b. Siswa menuliskan satu hal yang dipelajari dan satu pertanyaan</label>
+                            <label><input type="radio" name="q4" value="c"> c. Guru memberikan tiket untuk keluar kelas</label>
+                            <label><input type="radio" name="q4" value="d"> d. Siswa mengisi absen kehadiran</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>5. Prinsip yang menyatakan bahwa pembukaan dan penutupan harus terkait dengan isi pelajaran disebut prinsip...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="a"> a. Kebermaknaan</label>
+                            <label><input type="radio" name="q5" value="b"> b. Kesinambungan</label>
+                            <label><input type="radio" name="q5" value="c"> c. Fleksibilitas</label>
+                            <label><input type="radio" name="q5" value="d"> d. Antusiasme</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>6. Proporsi waktu yang ideal untuk membuka dan menutup pelajaran dalam satu pertemuan (90 menit) adalah...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q6" value="a"> a. 20 menit opening, 20 menit closing</label>
+                            <label><input type="radio" name="q6" value="b"> b. 5-10 menit opening dan 5-10 menit closing</label>
+                            <label><input type="radio" name="q6" value="c"> c. 30 menit opening, 30 menit closing</label>
+                            <label><input type="radio" name="q6" value="d"> d. Tidak perlu opening dan closing</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>7. Teknik membuka pelajaran dengan menyajikan masalah nyata untuk dipecahkan siswa disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q7" value="a"> a. Ice Breaking</label>
+                            <label><input type="radio" name="q7" value="b"> b. Problem Posing</label>
+                            <label><input type="radio" name="q7" value="c"> c. Mind Mapping</label>
+                            <label><input type="radio" name="q7" value="d"> d. Storytelling</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>8. Menurut penelitian Sousa (2011), review yang efektif dapat meningkatkan retensi informasi hingga...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q8" value="a"> a. 10%</label>
+                            <label><input type="radio" name="q8" value="b"> b. 20%</label>
+                            <label><input type="radio" name="q8" value="c"> c. 30%</label>
+                            <label><input type="radio" name="q8" value="d"> d. 40%</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>9. Komponen keterampilan membuka pelajaran yang bertujuan menghubungkan materi baru dengan pengetahuan yang sudah dimiliki siswa disebut...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q9" value="a"> a. Gaining attention</label>
+                            <label><input type="radio" name="q9" value="b"> b. Motivating</label>
+                            <label><input type="radio" name="q9" value="c"> c. Structuring/Linking</label>
+                            <label><input type="radio" name="q9" value="d"> d. Evaluating</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>10. Teknik "3-2-1" dalam menutup pelajaran berarti...</p>
+                        <div class="options">
+                            <label><input type="radio" name="q10" value="a"> a. 3 soal, 2 jawaban, 1 nilai</label>
+                            <label><input type="radio" name="q10" value="b"> b. 3 hal yang dipelajari, 2 hal yang menarik, 1 pertanyaan</label>
+                            <label><input type="radio" name="q10" value="c"> c. 3 menit, 2 detik, 1 jam</label>
+                            <label><input type="radio" name="q10" value="d"> d. 3 siswa, 2 kelompok, 1 tugas</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Part B: Essay -->
+                <div class="question-section">
+                    <h3>✍️ Bagian B – Essay</h3>
+                    <div id="essay-warning" class="warning-message">
+                        ⚠️ Mohon isi semua 5 soal essay!
+                    </div>
+
+                    <div class="question">
+                        <p>1. Jelaskan secara komprehensif tentang teori Ausubel, Gagné, dan Keller yang menjadi landasan keterampilan membuka dan menutup pelajaran! Berikan contoh penerapannya dalam pembelajaran!</p>
+                        <div class="options">
+                            <textarea id="essay1" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>2. Bandingkan dan kontraskan komponen-komponen keterampilan membuka pelajaran dengan komponen-komponen keterampilan menutup pelajaran! Berikan contoh konkret untuk masing-masing komponen!</p>
+                        <div class="options">
+                            <textarea id="essay2" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>3. Analisis kesalahan-kesalahan yang sering dilakukan guru dalam membuka dan menutup pelajaran berdasarkan prinsip-prinsip yang telah dipelajari! Berikan solusi praktis untuk mengatasinya!</p>
+                        <div class="options">
+                            <textarea id="essay3" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>4. Rancang sebuah skenario membuka pelajaran untuk topik yang Anda kuasai dengan menggunakan minimal 3 teknik inovatif! Jelaskan mengapa Anda memilih teknik tersebut!</p>
+                        <div class="options">
+                            <textarea id="essay4" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>5. Berdasarkan studi kasus yang diberikan dalam bab ini, analisis faktor-faktor yang menyebabkan kegagalan pembelajaran dan bagaimana keterampilan membuka dan menutup pelajaran dapat menjadi solusi!</p>
+                        <div class="options">
+                            <textarea id="essay5" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Score Display -->
+                <div class="score-display" id="score-display">
+                    <h3>📊 Hasil Uji Formatif</h3>
+                    <div class="score-number" id="final-score">0</div>
+                    <p id="score-detail">Bagian A (PG): 0/100 | Bagian B (Essay): 0/100</p>
+                    <p id="score-message"></p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button type="button" class="btn-action btn-primary" onclick="calculateScore()">
+                        <span>✉️</span> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" class="btn-action btn-success" onclick="downloadPDF()">
+                        <span>📥</span> UNDUH PDF LENGKAP
+                    </button>
+                    <button type="button" class="btn-action btn-warning" onclick="downloadScoreOnly()">
+                        <span>📊</span> UNDUH SKOR SAJA
+                    </button>
+                    <button type="button" class="btn-action btn-info" onclick="sendEmail()">
+                        <span>✉️</span> KIRIM EMAIL DOSEN
+                    </button>
+                    <button type="button" class="btn-action btn-secondary" onclick="restartTest()">
+                        <span>🔄</span> MULAI ULANG
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // ============================================================
+        // KONFIGURASI LINK VIDEO - GANTI LINK DI BAWAH INI SESUAI KEBUTUHAN
+        // ============================================================
+        const VIDEO_LINKS = {
+            pendahuluan: 'https://www.youtube.com/embed/XEs3zf1KdQo?si=6iTeP_XVMwAu5KNL',
+            teori: 'https://www.youtube.com/embed/PLACEHOLDER_VIDEO_2',
+            komponen: 'https://www.youtube.com/embed/PLACEHOLDER_VIDEO_3',
+            teknik: 'https://www.youtube.com/embed/PLACEHOLDER_VIDEO_4'
+        };
+
+        // Fungsi untuk memperbarui semua link video
+        function updateVideoLinks() {
+            const iframes = {
+                'video-pendahuluan-iframe': VIDEO_LINKS.pendahuluan,
+                'video-teori-iframe': VIDEO_LINKS.teori,
+                'video-komponen-iframe': VIDEO_LINKS.komponen,
+                'video-teknik-iframe': VIDEO_LINKS.teknik
+            };
+
+            for (const [id, url] of Object.entries(iframes)) {
+                const iframe = document.getElementById(id);
+                if (iframe) {
+                    iframe.src = url;
+                }
+            }
+        }
+
+        // Panggil fungsi saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', updateVideoLinks);
+
+        // ============================================================
+        // SCRIPT UJI FORMATIF
+        // ============================================================
+        // Set today's date as default
+        document.getElementById('tanggal').valueAsDate = new Date();
+
+        // Answer key for multiple choice
+        const answerKey = {
+            q1: 'a',
+            q2: 'a',
+            q3: 'c',
+            q4: 'b',
+            q5: 'b',
+            q6: 'b',
+            q7: 'b',
+            q8: 'c',
+            q9: 'c',
+            q10: 'b'
+        };
+
+        // Calculate score
+        function calculateScore() {
+            // Validate student data
+            const nama = document.getElementById('nama').value.trim();
+            const nim = document.getElementById('nim').value.trim();
+
+            if (!nama || !nim) {
+                alert('⚠️ Mohon isi Nama Lengkap dan NIM terlebih dahulu!');
+                document.getElementById('warning-message').classList.add('show');
+                document.getElementById('nama').focus();
+                return;
+            }
+
+            // Check all multiple choice answered
+            let mcAnswered = 0;
+            for (let i = 1; i <= 10; i++) {
+                const answered = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answered) mcAnswered++;
+            }
+
+            if (mcAnswered < 10) {
+                alert(`⚠️ Anda baru menjawab ${mcAnswered} dari 10 soal pilihan ganda. Mohon lengkapi semua soal!`);
+                document.getElementById('multiple-choice-warning').classList.add('show');
+                document.getElementById('multiple-choice-warning').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            // Check all essays answered
+            let essayAnswered = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                if (answer.length > 10) essayAnswered++;
+            }
+
+            if (essayAnswered < 5) {
+                alert(`⚠️ Anda baru menjawab ${essayAnswered} dari 5 soal essay. Mohon lengkapi semua soal!`);
+                document.getElementById('essay-warning').classList.add('show');
+                document.getElementById('essay-warning').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            // Calculate MC score
+            let mcScore = 0;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answerKey[`q${i}`]) {
+                    mcScore += 10;
+                }
+            }
+
+            // Essay score (simulated - based on word count)
+            let essayScore = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value.trim();
+                const wordCount = answer.split(/\s+/).length;
+                const questionScore = Math.min(20, (wordCount / 50) * 20);
+                essayScore += questionScore;
+            }
+
+            const totalScore = mcScore + essayScore;
+
+            // Display score
+            document.getElementById('final-score').textContent = totalScore.toFixed(1);
+            document.getElementById('score-detail').textContent =
+                `Bagian A (PG): ${mcScore}/100 | Bagian B (Essay): ${essayScore.toFixed(1)}/100`;
+
+            let message = '';
+            if (totalScore >= 90) {
+                message = '🌟 Luar Biasa! Pemahaman Anda sangat baik!';
+            } else if (totalScore >= 80) {
+                message = '👍 Bagus! Terus tingkatkan pemahaman Anda!';
+            } else if (totalScore >= 70) {
+                message = '✓ Cukup baik. Pelajari kembali materi yang belum dipahami!';
+            } else if (totalScore >= 60) {
+                message = '⚠️ Perlu peningkatan. Disarankan untuk belajar lebih giat!';
+            } else {
+                message = '❌ Kurang. Mohon pelajari ulang materi bab ini!';
+            }
+            document.getElementById('score-message').textContent = message;
+
+            document.getElementById('score-display').classList.add('show');
+            document.getElementById('score-display').scrollIntoView({ behavior: 'smooth' });
+
+            const testData = {
+                nama,
+                nim,
+                tanggal: document.getElementById('tanggal').value,
+                fakultas: document.getElementById('fakultas').value,
+                jurusan: document.getElementById('jurusan').value,
+                konsentrasi: document.getElementById('konsentrasi').value,
+                semester: document.getElementById('semester').value,
+                kelas: document.getElementById('kelas').value,
+                mcScore,
+                essayScore: essayScore.toFixed(1),
+                totalScore: totalScore.toFixed(1),
+                timestamp: new Date().toISOString()
+            };
+
+            localStorage.setItem('ujiFormatif1_' + nim, JSON.stringify(testData));
+
+            alert(`✅ Jawaban berhasil dikirim!\n\nSkor Anda: ${totalScore.toFixed(1)}/200\n${message}`);
+        }
+
+        // Download PDF
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const nama = document.getElementById('nama').value || 'Belum diisi';
+            const nim = document.getElementById('nim').value || 'Belum diisi';
+            const tanggal = document.getElementById('tanggal').value || '-';
+
+            doc.setFontSize(16);
+            doc.text('UJI FORMATIF 1: KETERAMPILAN MEMBUKA DAN MENUTUP PELAJARAN', 105, 20, { align: 'center' });
+            doc.setFontSize(12);
+            doc.text('Micro Teaching - Dr. Supriadi, S.Ag., M.Pd', 105, 30, { align: 'center' });
+
+            doc.setFontSize(10);
+            doc.text(`Nama: ${nama}`, 20, 45);
+            doc.text(`NIM: ${nim}`, 20, 52);
+            doc.text(`Tanggal: ${tanggal}`, 20, 59);
+            doc.text(`Fakultas: ${document.getElementById('fakultas').value || '-'}`, 20, 66);
+            doc.text(`Prodi: ${document.getElementById('jurusan').value || '-'}`, 20, 73);
+
+            doc.setFontSize(12);
+            doc.text('JAWABAN PILIHAN GANDA:', 20, 85);
+            doc.setFontSize(10);
+            let y = 92;
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const answer = selected ? selected.value.toUpperCase() : '-';
+                const correct = answerKey[`q${i}`].toUpperCase();
+                const status = answer === correct ? '✓' : '✗';
+                doc.text(`${i}. ${answer} ${status}`, 20, y);
+                if (i === 5) {
+                    y = 92;
+                    doc.text('JAWABAN PILIHAN GANDA (lanjutan):', 100, 85);
+                } else {
+                    y += 7;
+                }
+            }
+
+            doc.addPage();
+            doc.setFontSize(12);
+            doc.text('JAWABAN ESSAY:', 20, 20);
+            doc.setFontSize(10);
+            let yPos = 30;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.getElementById(`essay${i}`).value;
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'bold');
+                doc.text(`Soal ${i}:`, 20, yPos);
+                yPos += 7;
+                doc.setFont(undefined, 'normal');
+                const splitText = doc.splitTextToSize(answer || 'Tidak dijawab', 170);
+                doc.text(splitText, 20, yPos);
+                yPos += splitText.length * 5 + 10;
+
+                if (yPos > 270) {
+                    doc.addPage();
+                    yPos = 20;
+                }
+            }
+
+            doc.save(`UjiFormatif1_${nim}_${nama.replace(/\s+/g, '_')}.pdf`);
+        }
+
+        // Download Score Only
+        function downloadScoreOnly() {
+            const nama = document.getElementById('nama').value || 'Belum diisi';
+            const nim = document.getElementById('nim').value || 'Belum diisi';
+            const scoreDisplay = document.getElementById('score-display');
+
+            if (!scoreDisplay.classList.contains('show')) {
+                alert('⚠️ Silakan kirim jawaban terlebih dahulu untuk melihat skor!');
+                return;
+            }
+
+            const mcScore = document.getElementById('score-detail').textContent.split('|')[0].split(':')[1].trim();
+            const essayScore = document.getElementById('score-detail').textContent.split('|')[1].split(':')[1].trim();
+            const totalScore = document.getElementById('final-score').textContent;
+
+            const content = `
+        HASIL UJI FORMATIF 1
+        KETERAMPILAN MEMBUKA DAN MENUTUP PELAJARAN
+        Micro Teaching - Dr. Supriadi, S.Ag., M.Pd
+
+        DATA MAHASISWA:
+        Nama: ${nama}
+        NIM: ${nim}
+        Tanggal: ${document.getElementById('tanggal').value || '-'}
+        Fakultas: ${document.getElementById('fakultas').value || '-'}
+        Prodi: ${document.getElementById('jurusan').value || '-'}
+
+        HASIL PENILAIAN:
+        Bagian A (Pilihan Ganda): ${mcScore}
+        Bagian B (Essay): ${essayScore}
+        TOTAL SKOR: ${totalScore}/200
+
+        ${document.getElementById('score-message').textContent}
+
+        Tanggal Cetak: ${new Date().toLocaleString('id-ID')}
+            `.trim();
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Skor_UjiFormatif1_${nim}.txt`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Send Email
+        function sendEmail() {
+            const nama = document.getElementById('nama').value;
+            const nim = document.getElementById('nim').value;
+
+            if (!nama || !nim) {
+                alert('⚠️ Mohon isi Nama dan NIM terlebih dahulu!');
+                return;
+            }
+
+            let subject = `Hasil Uji Formatif 1 - ${nama} (${nim})`;
+            let body = `Yth. Dr. Supriadi, S.Ag., M.Pd\n\n`;
+            body += `Berikut hasil Uji Formatif 1 saya:\n\n`;
+            body += `Nama: ${nama}\n`;
+            body += `NIM: ${nim}\n`;
+            body += `Tanggal: ${document.getElementById('tanggal').value}\n\n`;
+
+            if (document.getElementById('score-display').classList.contains('show')) {
+                body += `Skor Bagian A: ${document.getElementById('score-detail').textContent.split('|')[0].split(':')[1].trim()}\n`;
+                body += `Skor Bagian B: ${document.getElementById('score-detail').textContent.split('|')[1].split(':')[1].trim()}\n`;
+                body += `Total Skor: ${document.getElementById('final-score').textContent}/200\n\n`;
+                body += `${document.getElementById('score-message').textContent}\n\n`;
+            }
+
+            body += `Mohon bimbingan dan evaluasinya.\n\n`;
+            body += `Terima kasih.\n\n`;
+            body += `Hormat saya,\n${nama}`;
+
+            const mailtoLink = `mailto:supriadi@uinbukittinggi.ac.id?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+        }
+
+        // Restart Test
+        function restartTest() {
+            if (confirm('⚠️ Apakah Anda yakin ingin memulai ulang? Semua jawaban yang sudah diisi akan dihapus.')) {
+                document.querySelectorAll('input[type="text"], input[type="date"], textarea').forEach(input => {
+                    input.value = '';
+                });
+                document.querySelectorAll('select').forEach(select => {
+                    select.selectedIndex = 0;
+                });
+                document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    radio.checked = false;
+                });
+
+                document.querySelectorAll('.warning-message').forEach(msg => {
+                    msg.classList.remove('show');
+                });
+                document.getElementById('score-display').classList.remove('show');
+
+                document.getElementById('tanggal').valueAsDate = new Date();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                alert('✅ Tes telah direset. Silakan mulai mengerjakan ulang.');
+            }
+        }
+
+        // Auto-save
+        window.addEventListener('beforeunload', function() {
+            const formData = {
+                nama: document.getElementById('nama').value,
+                nim: document.getElementById('nim').value,
+                tanggal: document.getElementById('tanggal').value,
+                fakultas: document.getElementById('fakultas').value,
+                jurusan: document.getElementById('jurusan').value,
+                konsentrasi: document.getElementById('konsentrasi').value,
+                semester: document.getElementById('semester').value,
+                kelas: document.getElementById('kelas').value,
+                essays: {}
+            };
+
+            for (let i = 1; i <= 5; i++) {
+                formData.essays[`essay${i}`] = document.getElementById(`essay${i}`).value;
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    formData[`q${i}`] = selected.value;
+                }
+            }
+
+            localStorage.setItem('ujiFormatif1_draft', JSON.stringify(formData));
+        });
+
+        // Load draft
+        window.addEventListener('load', function() {
+            const draft = localStorage.getItem('ujiFormatif1_draft');
+            if (draft) {
+                const data = JSON.parse(draft);
+                if (data.nama) document.getElementById('nama').value = data.nama;
+                if (data.nim) document.getElementById('nim').value = data.nim;
+                if (data.tanggal) document.getElementById('tanggal').value = data.tanggal;
+                if (data.fakultas) document.getElementById('fakultas').value = data.fakultas;
+                if (data.jurusan) document.getElementById('jurusan').value = data.jurusan;
+                if (data.konsentrasi) document.getElementById('konsentrasi').value = data.konsentrasi;
+                if (data.semester) document.getElementById('semester').value = data.semester;
+                if (data.kelas) document.getElementById('kelas').value = data.kelas;
+
+                if (data.essays) {
+                    for (let i = 1; i <= 5; i++) {
+                        if (data.essays[`essay${i}`]) {
+                            document.getElementById(`essay${i}`).value = data.essays[`essay${i}`];
+                        }
+                    }
+                }
+
+                for (let i = 1; i <= 10; i++) {
+                    if (data[`q${i}`]) {
+                        const radio = document.querySelector(`input[name="q${i}"][value="${data[`q${i}`]}"]`);
+                        if (radio) radio.checked = true;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

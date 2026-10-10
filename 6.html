@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 6: Sejarah dan Tokoh Ulama Penyebar Islam di Indonesia</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- html2pdf.js for PDF Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        arabic: ['"Amiri"', 'serif'],
+                    },
+                    colors: {
+                        luxury: {
+                            900: '#022c22',
+                            800: '#064e3b',
+                            700: '#065f46',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                            cream: '#faf9f6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            line-height: 2.5;
+            font-size: 1.5rem;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; color: black; }
+        }
+    </style>
+</head>
+<body class="bg-luxury-cream text-gray-800 font-sans antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="index.html" class="text-white font-serif font-bold text-lg hover:text-luxury-gold transition-colors">PAI Kelas X</a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-luxury-gold transition-colors text-sm uppercase tracking-widest">Beranda</a>
+                    <a href="index.html#tentang" class="text-gray-300 hover:text-luxury-gold transition-colors text-sm uppercase tracking-widest">Penulis</a>
+                    <a href="index.html#materi" class="text-luxury-gold transition-colors text-sm uppercase tracking-widest">Daftar Bab</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER (For PDF Generation) -->
+    <div id="content-to-pdf" class="pt-20 pb-12">
+        
+        <!-- HEADER SECTION -->
+        <header class="bg-luxury-900 text-white py-16 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="inline-block px-4 py-1 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">Pertemuan 6</span>
+                <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Sejarah & Tokoh Ulama</h1>
+                <h2 class="font-serif text-2xl md:text-3xl text-luxury-gold mb-6">Penyebar Islam di Indonesia</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg font-light">
+                    Menelusuri perjalanan masuknya Islam ke Nusantara, peran para ulama dan Wali Songo, serta jejak kerajaan Islam yang membentuk peradaban Islam terbesar di dunia.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8 no-print">
+                    <a href="5.html" class="px-6 py-3 border border-gray-500 text-gray-300 rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300 text-sm font-semibold">← Bab Sebelumnya</a>
+                    <a href="#pendahuluan" class="px-6 py-3 bg-luxury-gold text-luxury-900 rounded-sm hover:bg-white transition-all duration-300 text-sm font-semibold">Mulai Membaca</a>
+                    <a href="7.html" class="px-6 py-3 border border-gray-500 text-gray-300 rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300 text-sm font-semibold">Bab Selanjutnya →</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+            <!-- PENDAHULUAN -->
+            <section id="pendahuluan" class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">Pendahuluan</h2>
+                <p class="text-gray-700 leading-relaxed text-lg text-justify">
+                    Indonesia hari ini merupakan negara dengan populasi muslim terbesar di dunia, dengan lebih dari 240 juta jiwa memeluk agama Islam. Keberhasilan ini bukanlah sesuatu yang terjadi secara instan, melainkan melalui proses panjang yang memakan waktu berabad-abad, melibatkan para pedagang, ulama, sufi, dan raja-raja yang dengan sabar menyebarkan ajaran Islam ke seluruh pelosok Nusantara.
+                </p>
+                <p class="text-gray-700 leading-relaxed text-lg text-justify">
+                    Memahami sejarah masuknya Islam ke Indonesia bukan hanya sekadar mempelajari masa lalu, tetapi juga menjadi cermin bagi generasi muda untuk mengambil hikmah, meneladani perjuangan para ulama, dan melanjutkan estafet dakwah di era modern. Bagi siswa SMKN 1 Koto Balingka, pemahaman ini akan memperkuat identitas keislaman dan kebangsaan, sekaligus memotivasi untuk menjadi muslim yang berprestasi dan berkontribusi bagi umat.
+                </p>
+            </section>
+
+            <!-- VIDEO PLACEHOLDER -->
+            <section class="bg-luxury-800 rounded-lg p-8 text-center text-white shadow-xl">
+                <h3 class="font-serif text-2xl font-semibold text-luxury-gold mb-4">🎥 Video Pembelajaran</h3>
+                <p class="mb-6 text-gray-300">Simak video ini untuk memahami perjalanan sejarah Islam di Indonesia dari abad ke-7 hingga masa kerajaan-kerajaan Islam.</p>
+                <div class="aspect-w-16 aspect-h-9 max-w-3xl mx-auto bg-black/30 rounded-lg flex items-center justify-center border border-luxury-gold/30 h-64">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-luxury-gold mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                        <span class="text-luxury-goldlight font-medium">Video: Sejarah Islam di Nusantara & Peran Wali Songo</span>
+                        <p class="text-xs text-gray-400 mt-2">Sumber: Kanal Sejarah Islam / Youtube</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KONSEP KUNCI -->
+            <section class="bg-white p-8 rounded-lg shadow-md border-l-4 border-luxury-gold">
+                <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-4">🔑 Konsep Kunci</h3>
+                <ul class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Teori Gujarat:</span>
+                        <span class="text-gray-700">Teori yang menyatakan Islam masuk ke Indonesia melalui pedagang dari India (Gujarat) pada abad ke-13 M. Dipelopori oleh Snouck Hurgronje.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Teori Mekkah/Arab:</span>
+                        <span class="text-gray-700">Teori yang menyatakan Islam masuk langsung dari Arab (Mekkah) pada abad ke-7 M. Dipelopori oleh T.W. Arnold dan Buya Hamka.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Teori Persia:</span>
+                        <span class="text-gray-700">Teori yang menyatakan Islam masuk melalui pedagang dari Persia. Dipelopori oleh Hoesein Djajadiningrat.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Teori Cina:</span>
+                        <span class="text-gray-700">Teori yang menyatakan Islam masuk melalui perantau Cina muslim. Dipelopori oleh Sumanto Al Qadri dan Slamet Muljana.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Wali Songo:</span>
+                        <span class="text-gray-700">Sembilan wali yang berperan besar dalam penyebaran Islam di Pulau Jawa melalui pendekatan budaya, pendidikan, dan sosial.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Kerajaan Islam:</span>
+                        <span class="text-gray-700">Kerajaan-kerajaan yang bercorak Islam di Nusantara, seperti Samudera Pasai, Malaka, Demak, Mataram Islam, Gowa-Tallo, Ternate-Tidore.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- STUDI KASUS -->
+            <section class="bg-luxury-cream p-8 rounded-lg border border-gray-200">
+                <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-4">📖 Studi Kasus: Strategi Dakwah Wali Songo</h3>
+                <p class="text-gray-700 leading-relaxed mb-4 italic">
+                    "Sunan Kalijaga, salah satu Wali Songo, menggunakan pendekatan yang sangat unik dalam menyebarkan Islam di Jawa. Beliau tidak menghapus budaya lokal secara paksa, melainkan mengislamkan budaya. Wayang kulit yang sebelumnya berisi cerita Hindu diubah isinya dengan nilai-nilai Islam, namun bentuknya tetap dipertahankan. Gamelan yang sebelumnya digunakan untuk ritual Hindu dijadikan sarana dakwah dengan lagu-lagu bernuansa Islam. Strategi ini membuat Islam diterima dengan mudah oleh masyarakat Jawa tanpa menimbulkan konflik budaya."
+                </p>
+                <div class="bg-luxury-900 text-luxury-goldlight p-4 rounded-md">
+                    <p class="font-semibold mb-1">💡 Pembelajaran:</p>
+                    <p>Dakwah yang efektif adalah dakwah yang memahami konteks budaya masyarakat. Wali Songo mengajarkan bahwa Islam dapat berakulturasi dengan budaya lokal selama tidak bertentangan dengan prinsip syariat. Pendekatan <em>bil-hikmah</em> (bijaksana) dan <em>bil-ma'ruf</em> (kebaikan) ini menjadi teladan bagi generasi muda dalam berdakwah di era modern.</p>
+                </div>
+            </section>
+
+            <!-- LANDASAN TEORETIS -->
+            <section class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">6.1 Landasan Teoretis (Dalil Naqli)</h2>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">6.1.1 Q.S. Ali Imran Ayat 104 tentang Perintah Dakwah</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            وَلْتَكُن مِّنكُمْ أُمَّةٌ يَدْعُونَ إِلَى الْخَيْرِ وَيَأْمُرُونَ بِالْمَعْرُوفِ وَيَنْهَوْنَ عَنِ الْمُنكَرِ ۚ وَأُولَٰئِكَ هُمُ الْمُفْلِحُونَ
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Dan hendaklah ada di antara kamu segolongan umat yang menyeru kepada kebajikan, menyuruh kepada yang ma'ruf dan mencegah dari yang munkar; merekalah orang-orang yang beruntung." (Q.S. Ali Imran: 104)
+                        </p>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Kandungan Ayat:</strong> Ayat ini menjadi landasan utama bagi para ulama dalam menyebarkan Islam ke Nusantara. Dakwah merupakan kewajiban kolektif (fardhu kifayah) yang harus dilakukan dengan cara yang bijaksana.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">6.1.2 Q.S. An-Nahl Ayat 125 tentang Metode Dakwah</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            ادْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِالْحِكْمَةِ وَالْمَوْعِظَةِ الْحَسَنَةِ ۖ وَجَادِلْهُم بِالَّتِي هِيَ أَحْسَنُ
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Serulah (manusia) kepada jalan Tuhanmu dengan hikmah dan pelajaran yang baik dan bantahlah mereka dengan cara yang baik." (Q.S. An-Nahl: 125)
+                        </p>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Kandungan Ayat:</strong> Metode dakwah yang digunakan para ulama Nusantara sangat sesuai dengan ayat ini—menggunakan hikmah (bijaksana), mau'izhah hasanah (nasihat yang baik), dan dialog yang santun.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">6.1.3 Hadis tentang Menyampaikan Ilmu</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            بَلِّغُوا عَنِّي وَلَوْ آيَةً
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Sampaikanlah dariku walau hanya satu ayat." (HR. Bukhari)
+                        </p>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Kandungan Hadis:</strong> Hadis ini menjadi semangat bagi para ulama untuk terus berdakwah, meskipun hanya sedikit yang dapat disampaikan. Setiap muslim memiliki tanggung jawab untuk menjadi agen perubahan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KOMPONEN MATERI -->
+            <section class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">6.2 Uraian Materi Pokok</h2>
+                
+                <div class="space-y-6">
+
+                    <!-- 6.2.1 SEJARAH MASUKNYA ISLAM -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-xl font-bold text-luxury-800 mb-3">6.2.1 Sejarah Masuknya Islam ke Indonesia</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3">Para sejarawan mengemukakan beberapa teori tentang masuknya Islam ke Nusantara:</p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4 mb-3">
+                            <div class="bg-luxury-cream p-4 rounded-md">
+                                <p class="font-bold text-luxury-900 mb-1">🕌 Teori Gujarat (India)</p>
+                                <p class="text-gray-600 text-xs leading-relaxed">Islam masuk melalui pedagang Gujarat pada abad ke-13 M. Bukti: batu nisan Sultan Malik as-Saleh (1297 M) yang bercorak Gujarat. Tokoh: Snouck Hurgronje, Moquette.</p>
+                            </div>
+                            <div class="bg-luxury-cream p-4 rounded-md">
+                                <p class="font-bold text-luxury-900 mb-1">🕋 Teori Mekkah (Arab)</p>
+                                <p class="text-gray-600 text-xs leading-relaxed">Islam masuk langsung dari Arab pada abad ke-7 M (abad ke-1 H). Bukti: adanya perkampungan Arab (Barus) di Sumatera pada abad ke-7. Tokoh: T.W. Arnold, Buya Hamka.</p>
+                            </div>
+                            <div class="bg-luxury-cream p-4 rounded-md">
+                                <p class="font-bold text-luxury-900 mb-1">🏺 Teori Persia</p>
+                                <p class="text-gray-600 text-xs leading-relaxed">Islam masuk melalui pedagang Persia. Bukti: kesamaan tradisi Islam Nusantara dengan budaya Persia (peringatan 10 Muharram/Asyura). Tokoh: Hoesein Djajadiningrat.</p>
+                            </div>
+                            <div class="bg-luxury-cream p-4 rounded-md">
+                                <p class="font-bold text-luxury-900 mb-1">🏮 Teori Cina</p>
+                                <p class="text-gray-600 text-xs leading-relaxed">Islam masuk melalui perantau Cina muslim. Bukti: catatan Cina tentang pemukiman muslim di Sumatera, dan tradisi Cina muslim di Jawa. Tokoh: Slamet Muljana, Sumanto Al Qadri.</p>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2"><strong>Saluran-Saluran Islamisasi:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                            <li><strong>Perdagangan:</strong> Jalur utama masuknya Islam melalui pedagang muslim di jalur sutra maritim.</li>
+                            <li><strong>Perkawinan:</strong> Pedagang muslim menikahi wanita pribumi, termasuk putri raja.</li>
+                            <li><strong>Pendidikan (Pesantren):</strong> Para ulama mendirikan pesantren untuk mendidik santri.</li>
+                            <li><strong>Tasawuf:</strong> Pendekatan sufi yang mudah dipahami masyarakat Nusantara.</li>
+                            <li><strong>Kesenian & Budaya:</strong> Wayang, gamelan, tembang, dan sastra sebagai media dakwah.</li>
+                            <li><strong>Politik:</strong> Raja masuk Islam, kemudian rakyatnya mengikuti.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 6.2.2 PERAN & TOKOH ULAMA -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-xl font-bold text-luxury-800 mb-3">6.2.2 Peran dan Tokoh Ulama Penyebar Islam</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Wali Songo (Sembilan Wali di Jawa):</strong></p>
+                        
+                        <div class="grid md:grid-cols-3 gap-3 mb-4">
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Gresik</p>
+                                <p class="text-gray-600 text-xs">(Maulana Malik Ibrahim)</p>
+                                <p class="text-gray-500 text-xs mt-1">Pionir dakwah di Jawa</p>
+                            </div>
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Ampel</p>
+                                <p class="text-gray-600 text-xs">(Raden Rahmat)</p>
+                                <p class="text-gray-500 text-xs mt-1">Pendiri pesantren pertama</p>
+                            </div>
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Bonang</p>
+                                <p class="text-gray-600 text-xs">(Maulana Makdum Ibrahim)</p>
+                                <p class="text-gray-500 text-xs mt-1">Dakwah lewat gamelan</p>
+                            </div>
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Drajat</p>
+                                <p class="text-gray-600 text-xs">(Raden Qasim)</p>
+                                <p class="text-gray-500 text-xs mt-1">Dakwah lewat kesalehan sosial</p>
+                            </div>
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Giri</p>
+                                <p class="text-gray-600 text-xs">(Raden Paku)</p>
+                                <p class="text-gray-500 text-xs mt-1">Pusat dakwah ke Indonesia Timur</p>
+                            </div>
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Kudus</p>
+                                <p class="text-gray-600 text-xs">(Ja'far Shadiq)</p>
+                                <p class="text-gray-500 text-xs mt-1">Dakwah toleran kepada Hindu</p>
+                            </div>
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Kalijaga</p>
+                                <p class="text-gray-600 text-xs">(Raden Said)</p>
+                                <p class="text-gray-500 text-xs mt-1">Dakwah lewat wayang & budaya</p>
+                            </div>
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Muria</p>
+                                <p class="text-gray-600 text-xs">(Raden Umar Said)</p>
+                                <p class="text-gray-500 text-xs mt-1">Dakwah di daerah pegunungan</p>
+                            </div>
+                            <div class="bg-luxury-cream p-3 rounded-md text-center">
+                                <p class="font-bold text-luxury-900 text-sm">Sunan Gunung Jati</p>
+                                <p class="text-gray-600 text-xs">(Syarif Hidayatullah)</p>
+                                <p class="text-gray-500 text-xs mt-1">Sultan Cirebon & dakwah di Jawa Barat</p>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2"><strong>Strategi Dakwah Wali Songo:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                            <li>Menggunakan pendekatan budaya tanpa menghapus tradisi lokal yang tidak bertentangan dengan syariat.</li>
+                            <li>Mendirikan pesantren sebagai pusat pendidikan dan dakwah.</li>
+                            <li>Menggunakan kesenian (wayang, gamelan, tembang) sebagai media dakwah.</li>
+                            <li>Menikah dengan putri bangsawan untuk memperluas pengaruh.</li>
+                            <li>Melibatkan diri dalam pemerintahan sebagai penasihat raja.</li>
+                            <li>Mengajarkan Islam secara bertahap (tadrij) sesuai pemahaman masyarakat.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 6.2.3 JEJAK KERAJAAN ISLAM -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-xl font-bold text-luxury-800 mb-3">6.2.3 Jejak Kerajaan Islam di Indonesia</h4>
+                        
+                        <table class="w-full text-sm text-gray-600 border-collapse">
+                            <thead>
+                                <tr class="bg-luxury-900 text-luxury-gold">
+                                    <th class="p-2 text-left border border-luxury-700">Kerajaan</th>
+                                    <th class="p-2 text-left border border-luxury-700">Lokasi</th>
+                                    <th class="p-2 text-left border border-luxury-700">Abad</th>
+                                    <th class="p-2 text-left border border-luxury-700">Tokoh Penting</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Samudera Pasai</td>
+                                    <td class="p-2 border border-gray-200">Aceh</td>
+                                    <td class="p-2 border border-gray-200">13</td>
+                                    <td class="p-2 border border-gray-200">Sultan Malik as-Saleh</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-gray-200 font-semibold">Malaka</td>
+                                    <td class="p-2 border border-gray-200">Malaysia</td>
+                                    <td class="p-2 border border-gray-200">15</td>
+                                    <td class="p-2 border border-gray-200">Sultan Iskandar Syah</td>
+                                </tr>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Demak</td>
+                                    <td class="p-2 border border-gray-200">Jawa Tengah</td>
+                                    <td class="p-2 border border-gray-200">15</td>
+                                    <td class="p-2 border border-gray-200">Raden Patah</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-gray-200 font-semibold">Aceh Darussalam</td>
+                                    <td class="p-2 border border-gray-200">Aceh</td>
+                                    <td class="p-2 border border-gray-200">16</td>
+                                    <td class="p-2 border border-gray-200">Sultan Iskandar Muda</td>
+                                </tr>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Pajang</td>
+                                    <td class="p-2 border border-gray-200">Jawa Tengah</td>
+                                    <td class="p-2 border border-gray-200">16</td>
+                                    <td class="p-2 border border-gray-200">Jaka Tingkir</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-gray-200 font-semibold">Mataram Islam</td>
+                                    <td class="p-2 border border-gray-200">Yogyakarta</td>
+                                    <td class="p-2 border border-gray-200">16-17</td>
+                                    <td class="p-2 border border-gray-200">Sultan Agung</td>
+                                </tr>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Banten</td>
+                                    <td class="p-2 border border-gray-200">Banten</td>
+                                    <td class="p-2 border border-gray-200">16</td>
+                                    <td class="p-2 border border-gray-200">Sultan Hasanuddin</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-gray-200 font-semibold">Gowa-Tallo</td>
+                                    <td class="p-2 border border-gray-200">Makassar</td>
+                                    <td class="p-2 border border-gray-200">16</td>
+                                    <td class="p-2 border border-gray-200">Sultan Hasanuddin</td>
+                                </tr>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Ternate-Tidore</td>
+                                    <td class="p-2 border border-gray-200">Maluku</td>
+                                    <td class="p-2 border border-gray-200">15</td>
+                                    <td class="p-2 border border-gray-200">Sultan Baabullah</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mt-4 mb-2"><strong>Peran Kerajaan Islam:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                            <li>Menjadi pusat penyebaran Islam di wilayah masing-masing.</li>
+                            <li>Membangun masjid-masjid agung sebagai pusat ibadah dan pendidikan.</li>
+                            <li>Mengirim ulama dan mubaligh ke daerah-daerah pedalaman.</li>
+                            <li>Mengembangkan perdagangan maritim yang menghubungkan Nusantara dengan dunia Islam.</li>
+                            <li>Melindungi umat Islam dari ancaman kolonialisme.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REFLEKSI -->
+            <section class="bg-luxury-800 text-white p-8 rounded-lg shadow-lg">
+                <h3 class="font-serif text-2xl font-bold text-luxury-gold mb-4">💭 Refleksi untuk Siswa</h3>
+                <p class="leading-relaxed mb-4">
+                    Sebagai generasi penerus di SMKN 1 Koto Balingka, renungkanlah:
+                </p>
+                <ul class="space-y-2 text-luxury-goldlight list-decimal list-inside">
+                    <li>Apa yang dapat saya teladani dari perjuangan para ulama dan Wali Songo?</li>
+                    <li>Bagaimana saya bisa melanjutkan dakwah di era digital dengan cara yang bijaksana?</li>
+                    <li>Apa peran saya sebagai siswa SMK dalam membangun peradaban Islam di Indonesia?</li>
+                    <li>Bagaimana saya bisa menjaga harmoni antara identitas Islam dan kebangsaan Indonesia?</li>
+                </ul>
+            </section>
+
+            <!-- KESIMPULAN & DAFTAR PUSTAKA -->
+            <section class="space-y-8">
+                <div>
+                    <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block mb-4">Kesimpulan</h2>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Sejarah masuknya Islam ke Indonesia merupakan perjalanan panjang yang melibatkan berbagai saluran: perdagangan, perkawinan, pendidikan, tasawuf, kesenian, dan politik. Para ulama, khususnya Wali Songo, berhasil mengislamkan Nusantara dengan pendekatan yang bijaksana, menghormati budaya lokal, dan mengajarkan Islam secara bertahap. Kerajaan-kerajaan Islam yang muncul di berbagai wilayah turut memperkuat eksistensi Islam di Indonesia. Warisan peradaban Islam ini menjadi fondasi bagi Indonesia sebagai negara dengan populasi muslim terbesar di dunia. Generasi muda muslim, termasuk siswa SMKN 1 Koto Balingka, memiliki tanggung jawab untuk melanjutkan estafet perjuangan ini dengan menjadi muslim yang berilmu, berakhlak, dan berprestasi.
+                    </p>
+                </div>
+                
+                <div>
+                    <h2 class="font-serif text-2xl font-bold text-luxury-900 mb-4">📚 Daftar Pustaka</h2>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas X SMA/SMK</em>. Jakarta: Kemendikbud.</li>
+                        <li>Al-Qur'an dan Terjemahannya. (2019). Jakarta: Kementerian Agama RI.</li>
+                        <li>Ricklefs, M. C. (2008). <em>Sejarah Indonesia Modern 1200–2008</em>. Jakarta: Serambi.</li>
+                        <li>Hamka. (2016). <em>Sejarah Umat Islam</em>. Jakarta: Republika.</li>
+                        <li>Yatim, Badri. (2008). <em>Sejarah Peradaban Islam di Indonesia</em>. Jakarta: Rajawali Press.</li>
+                        <li>Yudriman, M.Pd. (2024). <em>Modul Ajar PAI Kelas X SMKN 1 Koto Balingka</em>.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- UJI FORMATIF SECTION -->
+    <section id="uji-formatif" class="bg-luxury-cream border-t-4 border-luxury-gold py-16 no-print">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-luxury-900 mb-3">📋 Uji Formatif 6</h2>
+                <p class="text-gray-600">Materi: Sejarah dan Tokoh Ulama Penyebar Islam di Indonesia</p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    Mohon lengkapi semua data dan jawaban terlebih dahulu!
+                </div>
+            </div>
+
+            <form id="quizForm" class="space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                
+                <!-- DATA SISWA -->
+                <div class="bg-luxury-50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>📋</span> Data Siswa
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" id="nama" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" id="nis" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select id="kelas" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X-1">X-1</option>
+                                <option value="X-2">X-2</option>
+                                <option value="X-3">X-3</option>
+                                <option value="X-4">X-4</option>
+                                <option value="X-5">X-5</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" id="tanggal" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN A: PILIHAN GANDA -->
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>📝</span> Bagian A – Pilihan Ganda (10 Soal, Skor 10/Soal)
+                    </h3>
+                    <div class="space-y-6" id="pg-questions">
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">1. Teori yang menyatakan bahwa Islam masuk ke Indonesia melalui pedagang dari India (Gujarat) pada abad ke-13 M disebut...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Teori Mekkah</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Teori Gujarat</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Teori Persia</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Teori Cina</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">2. Tokoh yang memelopori Teori Mekkah (bahwa Islam masuk langsung dari Arab pada abad ke-7 M) adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Snouck Hurgronje</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. T.W. Arnold dan Buya Hamka</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Hoesein Djajadiningrat</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Slamet Muljana</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">3. Wali Songo adalah sebutan untuk...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Sembilan raja Islam di Jawa</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Sembilan ulama penyebar Islam di Jawa</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Sembilan kerajaan Islam di Indonesia</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Sembilan pesantren tertua di Jawa</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">4. Wali Songo yang dikenal menggunakan wayang dan gamelan sebagai media dakwah adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Sunan Gresik</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Sunan Kudus</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Sunan Kalijaga</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Sunan Gunung Jati</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">5. Kerajaan Islam pertama di Indonesia yang terletak di Aceh adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Demak</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Samudera Pasai</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Mataram Islam</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Gowa-Tallo</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">6. Q.S. Ali Imran ayat 104 berisi perintah untuk...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Melaksanakan shalat lima waktu</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Menyeru kepada kebajikan, menyuruh yang ma'ruf, mencegah yang munkar</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Menunaikan zakat dan puasa</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Menunaikan haji bagi yang mampu</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">7. Sunan Ampel dikenal sebagai...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Pendiri pesantren pertama di Jawa</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Sultan pertama Demak</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Penakluk Malaka</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Penyebar Islam di Maluku</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">8. Saluran utama masuknya Islam ke Nusantara pada awalnya adalah melalui...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Penaklukan militer</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Perdagangan</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Penjajahan</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Misi gereja</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">9. Kerajaan Mataram Islam mencapai puncak kejayaan pada masa pemerintahan...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Sultan Agung</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Raden Patah</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Sultan Iskandar Muda</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Sultan Hasanuddin</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">10. Salah satu strategi dakwah Wali Songo yang paling efektif adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Menggunakan kekuatan militer</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Memaksa masyarakat untuk masuk Islam</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Menghormati budaya lokal dan berdakwah secara bertahap</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Mengisolasi diri dari masyarakat</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN B: ESSAY -->
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>✍️</span> Bagian B – Essay (5 Soal, Skor 20/Soal)
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">1. Jelaskan empat teori tentang masuknya Islam ke Indonesia (Gujarat, Mekkah, Persia, Cina) beserta bukti dan tokoh yang memelopori masing-masing teori!</p>
+                            <textarea id="essay1" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">2. Sebutkan dan jelaskan enam saluran Islamisasi ke Nusantara! Saluran mana yang menurut Anda paling dominan, dan mengapa?</p>
+                            <textarea id="essay2" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">3. Sebutkan nama-nama Wali Songo beserta nama asli dan strategi dakwah masing-masing!</p>
+                            <textarea id="essay3" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">4. Analisis peran kerajaan-kerajaan Islam di Indonesia dalam penyebaran Islam! Sebutkan minimal 5 kerajaan beserta tokoh pentingnya!</p>
+                            <textarea id="essay4" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">5. Berdasarkan studi kasus tentang strategi dakwah Wali Songo, bagaimana Anda sebagai siswa SMKN 1 Koto Balingka dapat meneladani pendekatan dakwah mereka di era digital saat ini?</p>
+                            <textarea id="essay5" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HASIL & AKSI -->
+                <div class="bg-luxury-900 text-white p-6 rounded-lg border border-luxury-gold">
+                    <h3 class="font-serif text-xl font-bold text-luxury-gold mb-4">📊 Hasil Uji Formatif</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white/10 p-4 rounded-md">
+                            <p class="text-sm text-gray-300">Bagian A (Pilihan Ganda)</p>
+                            <p class="text-3xl font-bold text-luxury-gold" id="score-pg">0 / 100</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-md">
+                            <p class="text-sm text-gray-300">Bagian B (Essay)</p>
+                            <p class="text-3xl font-bold text-luxury-gold">Dinilai Guru</p>
+                            <p class="text-xs text-gray-400 mt-1">*Skor essay akan dihitung manual oleh pengajar</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <button type="button" onclick="hitungNilai()" class="flex-1 bg-luxury-gold text-luxury-900 font-bold py-3 px-6 rounded-md hover:bg-white transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                            KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="unduhPDF()" class="flex-1 border border-luxury-gold text-luxury-gold font-bold py-3 px-6 rounded-md hover:bg-luxury-gold hover:text-luxury-900 transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            UNDUH PDF LENGKAP
+                        </button>
+                        <button type="button" onclick="kirimEmail()" class="flex-1 border border-gray-500 text-gray-300 font-bold py-3 px-6 rounded-md hover:border-luxury-gold hover:text-luxury-gold transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            KIRIM EMAIL GURU
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-6 py-3 text-gray-400 hover:text-white transition-colors duration-300 text-sm font-semibold">
+                            🔄 MULAI ULANG
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-luxury-900 text-white border-t border-luxury-gold/20 py-8 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 text-sm">&copy; 2026 Yudriman, M.Pd - SMKN 1 Koto Balingka. Seluruh hak cipta dilindungi undang-undang.</p>
+            <div class="mt-4 flex justify-center gap-4 text-sm">
+                <a href="index.html" class="text-luxury-gold hover:text-white transition-colors">Kembali ke Beranda</a>
+                <span class="text-gray-600">|</span>
+                <a href="#top" class="text-luxury-gold hover:text-white transition-colors">Ke Atas</a>
+                <span class="text-gray-600">|</span>
+                <a href="7.html" class="text-luxury-gold hover:text-white transition-colors">Bab 7: Review & Pendalaman →</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda
+        const kunciJawaban = {
+            q1: 'b', q2: 'b', q3: 'b', q4: 'c', q5: 'b',
+            q6: 'b', q7: 'a', q8: 'b', q9: 'a', q10: 'c'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value;
+
+            if (!nama || !nis || !kelas || !tanggal) {
+                alert('⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!');
+                return;
+            }
+
+            let answeredCount = 0;
+            let score = 0;
+            
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    answeredCount++;
+                    if (selected.value === kunciJawaban[`q${i}`]) {
+                        score += 10;
+                    }
+                }
+            }
+
+            if (answeredCount < 10) {
+                alert(`⚠️ Anda baru menjawab ${answeredCount} dari 10 soal Pilihan Ganda. Mohon lengkapi semua jawaban!`);
+                return;
+            }
+
+            for (let i = 1; i <= 5; i++) {
+                const essayVal = document.getElementById(`essay${i}`).value.trim();
+                if (essayVal.length < 10) {
+                    alert(`⚠️ Mohon isi jawaban Essay nomor ${i} dengan lebih lengkap!`);
+                    return;
+                }
+            }
+
+            document.getElementById('score-pg').innerText = `${score} / 100`;
+            document.getElementById('score-pg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil dikirim!\n\nNilai Pilihan Ganda Anda: ${score}/100\nNilai Essay akan dinilai oleh guru.\n\nSilakan unduh PDF atau kirim via email sebagai bukti pengerjaan.`);
+        }
+
+        function unduhPDF() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const element = document.getElementById('content-to-pdf');
+            const opt = {
+                margin:       [10, 10, 10, 10],
+                filename:     `Uji_Formatif_6_${nama.replace(/\s+/g, '_')}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            const scoreText = document.getElementById('score-pg').innerText;
+            const scoreDiv = document.createElement('div');
+            scoreDiv.className = 'print-only p-4 border-2 border-green-600 mb-4 bg-green-50';
+            scoreDiv.innerHTML = `<h3 class="font-bold text-xl">Hasil Uji Formatif 6</h3><p>Nilai Pilihan Ganda: ${scoreText}</p><p>Status: Sudah Dikerjakan</p>`;
+            element.appendChild(scoreDiv);
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                element.removeChild(scoreDiv);
+            });
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const score = document.getElementById('score-pg').innerText;
+
+            if (!nama) {
+                alert('Mohon isi data diri terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = `Hasil Uji Formatif 6 - ${nama} (${kelas})`;
+            const body = `Yth. Bapak Yudriman, M.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 6 (Sejarah & Tokoh Ulama Penyebar Islam di Indonesia) saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${score}\n\nCatatan: Jawaban Essay terlampir dalam dokumen PDF yang telah saya unduh.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:yudialthof@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetForm() {
+            if (confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('score-pg').innerText = '0 / 100';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('tanggal').valueAsDate = new Date();
+        });
+    </script>
+</body>
+</html>

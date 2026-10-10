@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 5: Penerapan Fikih Muamalah dalam Asuransi, Perbankan & Koperasi</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- html2pdf.js for PDF Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        arabic: ['"Amiri"', 'serif'],
+                    },
+                    colors: {
+                        luxury: {
+                            900: '#022c22',
+                            800: '#064e3b',
+                            700: '#065f46',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                            cream: '#faf9f6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            line-height: 2.5;
+            font-size: 1.5rem;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; color: black; }
+        }
+    </style>
+</head>
+<body class="bg-luxury-cream text-gray-800 font-sans antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="index.html" class="text-white font-serif font-bold text-lg hover:text-luxury-gold transition-colors">PAI Kelas X</a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-luxury-gold transition-colors text-sm uppercase tracking-widest">Beranda</a>
+                    <a href="index.html#tentang" class="text-gray-300 hover:text-luxury-gold transition-colors text-sm uppercase tracking-widest">Penulis</a>
+                    <a href="index.html#materi" class="text-luxury-gold transition-colors text-sm uppercase tracking-widest">Daftar Bab</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER (For PDF Generation) -->
+    <div id="content-to-pdf" class="pt-20 pb-12">
+        
+        <!-- HEADER SECTION -->
+        <header class="bg-luxury-900 text-white py-16 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="inline-block px-4 py-1 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">Pertemuan 5</span>
+                <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Penerapan Fikih Muamalah</h1>
+                <h2 class="font-serif text-2xl md:text-3xl text-luxury-gold mb-6">dalam Asuransi, Perbankan & Koperasi</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg font-light">
+                    Memahami prinsip-prinsip fikih muamalah dan penerapannya dalam lembaga keuangan syariah modern sebagai solusi ekonomi yang adil, transparan, dan berkah.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8 no-print">
+                    <a href="4.html" class="px-6 py-3 border border-gray-500 text-gray-300 rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300 text-sm font-semibold">← Bab Sebelumnya</a>
+                    <a href="#pendahuluan" class="px-6 py-3 bg-luxury-gold text-luxury-900 rounded-sm hover:bg-white transition-all duration-300 text-sm font-semibold">Mulai Membaca</a>
+                    <a href="6.html" class="px-6 py-3 border border-gray-500 text-gray-300 rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300 text-sm font-semibold">Bab Selanjutnya →</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+            <!-- PENDAHULUAN -->
+            <section id="pendahuluan" class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">Pendahuluan</h2>
+                <p class="text-gray-700 leading-relaxed text-lg text-justify">
+                    Fikih muamalah adalah bagian dari hukum Islam yang mengatur hubungan antarmanusia dalam bidang ekonomi, perdagangan, dan transaksi keuangan. Dalam era globalisasi dan modernisasi ekonomi, umat Islam dihadapkan pada kebutuhan untuk memahami bagaimana prinsip-prinsip syariah dapat diterapkan dalam lembaga keuangan modern seperti asuransi, perbankan, dan koperasi.
+                </p>
+                <p class="text-gray-700 leading-relaxed text-lg text-justify">
+                    Bagi siswa SMKN 1 Koto Balingka yang kelak akan memasuki dunia kerja dan dunia usaha, pemahaman tentang lembaga keuangan syariah menjadi bekal yang sangat penting. Indonesia sebagai negara dengan populasi muslim terbesar di dunia memiliki potensi besar dalam mengembangkan ekonomi syariah. Dengan memahami prinsip-prinsip fikih muamalah, siswa dapat menjadi pelaku ekonomi yang cerdas, beretika, dan berkah dalam setiap transaksi yang dilakukan.
+                </p>
+            </section>
+
+            <!-- VIDEO PLACEHOLDER -->
+            <section class="bg-luxury-800 rounded-lg p-8 text-center text-white shadow-xl">
+                <h3 class="font-serif text-2xl font-semibold text-luxury-gold mb-4">🎥 Video Pembelajaran</h3>
+                <p class="mb-6 text-gray-300">Simak video ini untuk memahami prinsip fikih muamalah dan penerapannya dalam lembaga keuangan syariah di Indonesia.</p>
+                <div class="aspect-w-16 aspect-h-9 max-w-3xl mx-auto bg-black/30 rounded-lg flex items-center justify-center border border-luxury-gold/30 h-64">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-luxury-gold mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                        <span class="text-luxury-goldlight font-medium">Video: Fikih Muamalah & Lembaga Keuangan Syariah</span>
+                        <p class="text-xs text-gray-400 mt-2">Sumber: Kanal Pendidikan Islam / Youtube</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KONSEP KUNCI -->
+            <section class="bg-white p-8 rounded-lg shadow-md border-l-4 border-luxury-gold">
+                <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-4">🔑 Konsep Kunci</h3>
+                <ul class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Fikih Muamalah:</span>
+                        <span class="text-gray-700">Hukum Islam yang mengatur hubungan antarmanusia dalam bidang ekonomi, jual beli, sewa-menyewa, dan transaksi keuangan lainnya.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Asuransi Syariah:</span>
+                        <span class="text-gray-700">Sistem perlindungan bersama (<em>ta'awun</em>) yang berdasarkan prinsip tolong-menolong dan saling menanggung risiko di antara para peserta, tanpa unsur riba, gharar, dan maysir.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Bank Syariah:</span>
+                        <span class="text-gray-700">Lembaga keuangan yang beroperasi berdasarkan prinsip syariah Islam, menggunakan akad-akad seperti mudharabah, musyarakah, murabahah, dan ijarah, serta bebas dari riba.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Koperasi Syariah:</span>
+                        <span class="text-gray-700">Koperasi yang menjalankan kegiatan usahanya berdasarkan prinsip syariah, mengedepankan asas kekeluargaan, keadilan, dan kemaslahatan bersama.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Riba, Gharar, Maysir:</span>
+                        <span class="text-gray-700">Tiga hal yang dilarang dalam muamalah Islam. <em>Riba</em> = bunga/tambahan yang tidak sah; <em>Gharar</em> = ketidakjelasan/penipuan; <em>Maysir</em> = perjudian/spekulasi.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- STUDI KASUS -->
+            <section class="bg-luxury-cream p-8 rounded-lg border border-gray-200">
+                <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-4">📖 Studi Kasus: Memilih Pembiayaan untuk Usaha Keluarga</h3>
+                <p class="text-gray-700 leading-relaxed mb-4 italic">
+                    "Ayah seorang siswa SMKN 1 Koto Balingka ingin mengembangkan usaha bengkel las miliknya. Ia membutuhkan modal tambahan sebesar Rp50 juta. Dua lembaga keuangan menawarkan pinjaman: Bank Konvensional menawarkan pinjaman dengan bunga 12% per tahun, sementara Bank Syariah menawarkan pembiayaan dengan akad murabahah (jual beli dengan margin keuntungan yang disepakati di awal). Sang ayah bingung memilih karena secara nominal, cicilan keduanya terlihat mirip. Namun, setelah berkonsultasi dengan ustaz setempat, ia memahami bahwa secara prinsip, keduanya sangat berbeda dari sisi kehalalan dan keberkahan."
+                </p>
+                <div class="bg-luxury-900 text-luxury-goldlight p-4 rounded-md">
+                    <p class="font-semibold mb-1">💡 Pembelajaran:</p>
+                    <p>Kasus ini menunjukkan pentingnya memahami perbedaan mendasar antara sistem konvensional dan syariah. Meskipun secara nominal terlihat mirip, prinsip akad dan landasan hukumnya sangat berbeda. Bank syariah menggunakan akad jual beli (murabahah) yang halal, sementara bank konvensional menggunakan sistem bunga (riba) yang diharamkan dalam Islam.</p>
+                </div>
+            </section>
+
+            <!-- LANDASAN TEORETIS -->
+            <section class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">5.1 Landasan Teoretis (Dalil Naqli)</h2>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">5.1.1 Q.S. Al-Baqarah Ayat 275 tentang Larangan Riba</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            الَّذِينَ يَأْكُلُونَ الرِّبَا لَا يَقُومُونَ إِلَّا كَمَا يَقُومُ الَّذِي يَتَخَبَّطُهُ الشَّيْطَانُ مِنَ الْمَسِّ ۚ ذَٰلِكَ بِأَنَّهُمْ قَالُوا إِنَّمَا الْبَيْعُ مِثْلُ الرِّبَا ۗ وَأَحَلَّ اللَّهُ الْبَيْعَ وَحَرَّمَ الرِّبَا
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Orang-orang yang memakan (mengambil) riba tidak dapat berdiri melainkan seperti berdirinya orang yang kemasukan setan karena gila. Yang demikian itu karena mereka berkata bahwa jual beli sama dengan riba. Padahal <strong>Allah telah menghalalkan jual beli dan mengharamkan riba</strong>." (Q.S. Al-Baqarah: 275)
+                        </p>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Kandungan Ayat:</strong> Allah SWT secara tegas membedakan antara jual beli yang halal dengan riba yang haram. Ini menjadi landasan utama mengapa lembaga keuangan syariah menggunakan akad jual beli, bukan sistem bunga.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">5.1.2 Q.S. Al-Ma'idah Ayat 2 tentang Tolong-Menolong</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ ۖ وَلَا تَعَاوَنُوا عَلَى الْإِثْمِ وَالْعُدْوَانِ
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Dan tolong-menolonglah kamu dalam (mengerjakan) kebajikan dan takwa, dan jangan tolong-menolong dalam berbuat dosa dan permusuhan." (Q.S. Al-Ma'idah: 2)
+                        </p>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Kandungan Ayat:</strong> Ayat ini menjadi dasar prinsip <em>ta'awun</em> (tolong-menolong) dalam asuransi syariah dan koperasi syariah, di mana para peserta saling membantu menanggung risiko bersama.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">5.1.3 Hadis tentang Larangan Riba, Gharar, dan Maysir</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            عَنْ أَبِي هُرَيْرَةَ رَضِيَ اللَّهُ عَنْهُ أَنَّ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَهَى عَنْ بَيْعِ الْغَرَرِ
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Dari Abu Hurairah ra., bahwasanya Rasulullah SAW melarang jual beli yang mengandung gharar (ketidakjelasan)." (HR. Muslim)
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KOMPONEN MATERI -->
+            <section class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">5.2 Uraian Materi Pokok</h2>
+                
+                <div class="space-y-6">
+
+                    <!-- 5.2.1 ASURANSI SYARIAH -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-xl font-bold text-luxury-800 mb-3">5.2.1 Asuransi Syariah</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Pengertian:</strong> Asuransi syariah (takaful) adalah usaha saling melindungi dan tolong-menolong di antara sejumlah orang/pihak melalui investasi dalam bentuk aset dan/atau tabarru' yang memberikan pola pengembalian untuk menghadapi risiko tertentu melalui akad yang sesuai dengan syariah.</p>
+                        
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2"><strong>Prinsip-Prinsip Utama:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1 mb-3">
+                            <li><strong>Ta'awun (Tolong-menolong):</strong> Para peserta saling menanggung risiko bersama, bukan mentransfer risiko kepada perusahaan.</li>
+                            <li><strong>Tabarru' (Hibah/Dana Kebajikan):</strong> Sebagian premi disisihkan sebagai dana sosial untuk membantu peserta yang terkena musibah.</li>
+                            <li><strong>Bebas Riba, Gharar, Maysir:</strong> Tidak ada unsur bunga, ketidakjelasan, dan perjudian dalam pengelolaan dana.</li>
+                            <li><strong>Investasi Halal:</strong> Dana peserta hanya diinvestasikan pada instrumen yang halal dan sesuai syariah.</li>
+                        </ul>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2"><strong>Perbedaan dengan Asuransi Konvensional:</strong></p>
+                        <table class="w-full text-sm text-gray-600 border-collapse mb-3">
+                            <thead>
+                                <tr class="bg-luxury-900 text-luxury-gold">
+                                    <th class="p-2 text-left border border-luxury-700">Aspek</th>
+                                    <th class="p-2 text-left border border-luxury-700">Asuransi Syariah</th>
+                                    <th class="p-2 text-left border border-luxury-700">Asuransi Konvensional</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Konsep</td>
+                                    <td class="p-2 border border-gray-200">Tolong-menolong (ta'awun)</td>
+                                    <td class="p-2 border border-gray-200">Jual beli risiko (transfer of risk)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-gray-200 font-semibold">Dana</td>
+                                    <td class="p-2 border border-gray-200">Dana tabarru' (milik peserta)</td>
+                                    <td class="p-2 border border-gray-200">Premi (milik perusahaan)</td>
+                                </tr>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Investasi</td>
+                                    <td class="p-2 border border-gray-200">Hanya instrumen halal</td>
+                                    <td class="p-2 border border-gray-200">Bebas (termasuk riba)</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-gray-200 font-semibold">Pengawasan</td>
+                                    <td class="p-2 border border-gray-200">Dewan Pengawas Syariah (DPS)</td>
+                                    <td class="p-2 border border-gray-200">Tidak ada DPS</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 5.2.2 BANK SYARIAH -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-xl font-bold text-luxury-800 mb-3">5.2.2 Bank Syariah</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Pengertian:</strong> Bank syariah adalah bank yang menjalankan kegiatan usahanya berdasarkan prinsip syariah Islam, yaitu hukum Islam yang bersumber dari Al-Qur'an dan Hadis. Bank syariah tidak menggunakan sistem bunga (riba), melainkan menggunakan berbagai akad yang halal.</p>
+                        
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2"><strong>Akad-Akad Utama dalam Bank Syariah:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-2 mb-3">
+                            <li><strong>Mudharabah (Bagi Hasil):</strong> Kerja sama antara pemilik modal (shahibul maal) dan pengelola (mudharib). Keuntungan dibagi sesuai nisbah yang disepakati, kerugian ditanggung pemilik modal kecuali karena kelalaian pengelola.</li>
+                            <li><strong>Musyarakah (Kerja Sama Modal):</strong> Dua pihak atau lebih menyertakan modal untuk suatu usaha. Keuntungan dan kerugian dibagi secara proporsional.</li>
+                            <li><strong>Murabahah (Jual Beli dengan Margin):</strong> Bank membeli barang yang dibutuhkan nasabah, lalu menjualnya kembali dengan harga pokok ditambah margin keuntungan yang disepakati. Ini adalah akad yang paling umum digunakan.</li>
+                            <li><strong>Ijarah (Sewa):</strong> Bank menyewakan suatu aset kepada nasabah dengan imbalan sewa yang disepakati.</li>
+                            <li><strong>Wadiah (Titipan):</strong> Nasabah menitipkan dana kepada bank untuk dijaga keamanannya, dan bank boleh memberikan bonus (athaya) secara sukarela.</li>
+                        </ul>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2"><strong>Perbedaan dengan Bank Konvensional:</strong></p>
+                        <table class="w-full text-sm text-gray-600 border-collapse mb-3">
+                            <thead>
+                                <tr class="bg-luxury-900 text-luxury-gold">
+                                    <th class="p-2 text-left border border-luxury-700">Aspek</th>
+                                    <th class="p-2 text-left border border-luxury-700">Bank Syariah</th>
+                                    <th class="p-2 text-left border border-luxury-700">Bank Konvensional</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Landasan</td>
+                                    <td class="p-2 border border-gray-200">Al-Qur'an & Hadis</td>
+                                    <td class="p-2 border border-gray-200">Hukum positif / keuntungan</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-gray-200 font-semibold">Keuntungan</td>
+                                    <td class="p-2 border border-gray-200">Bagi hasil / margin jual beli</td>
+                                    <td class="p-2 border border-gray-200">Bunga (interest)</td>
+                                </tr>
+                                <tr class="bg-luxury-cream">
+                                    <td class="p-2 border border-gray-200 font-semibold">Hubungan</td>
+                                    <td class="p-2 border border-gray-200">Kemitraan / penjual-pembeli</td>
+                                    <td class="p-2 border border-gray-200">Debitur-kreditur</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 border border-gray-200 font-semibold">Risiko</td>
+                                    <td class="p-2 border border-gray-200">Ditanggung bersama</td>
+                                    <td class="p-2 border border-gray-200">Ditanggung nasabah</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 5.2.3 KOPERASI SYARIAH -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-xl font-bold text-luxury-800 mb-3">5.2.3 Koperasi Syariah</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Pengertian:</strong> Koperasi syariah adalah koperasi yang menjalankan kegiatan usahanya berdasarkan prinsip syariah Islam. Koperasi ini menggabungkan nilai-nilai kekeluargaan koperasi dengan prinsip-prinsip muamalah Islam, sehingga menghasilkan lembaga ekonomi yang adil dan berkah.</p>
+                        
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2"><strong>Prinsip-Prinsip Utama:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1 mb-3">
+                            <li><strong>Asas Kekeluargaan:</strong> Sesuai dengan Pasal 33 UUD 1945 dan nilai ukhuwah Islamiyah.</li>
+                            <li><strong>Keadilan:</strong> Pembagian keuntungan (SHU) dilakukan secara adil berdasarkan kontribusi anggota.</li>
+                            <li><strong>Transparansi:</strong> Pengelolaan dana dilakukan secara terbuka dan dapat dipertanggungjawabkan.</li>
+                            <li><strong>Bebas Riba:</strong> Tidak ada sistem bunga dalam simpan pinjam; menggunakan akad murabahah, mudharabah, atau qardhul hasan (pinjaman kebajikan tanpa bunga).</li>
+                            <li><strong>Kemaslahatan:</strong> Kegiatan usaha ditujukan untuk kesejahteraan anggota dan masyarakat, bukan semata-mata keuntungan.</li>
+                        </ul>
+
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2"><strong>Produk Koperasi Syariah:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                            <li><strong>Simpanan Wadiah:</strong> Tabungan titipan yang dijamin keamanannya.</li>
+                            <li><strong>Simpanan Mudharabah:</strong> Tabungan investasi dengan sistem bagi hasil.</li>
+                            <li><strong>Pembiayaan Murabahah:</strong> Pembiayaan jual beli untuk kebutuhan modal usaha atau barang.</li>
+                            <li><strong>Qardhul Hasan:</strong> Pinjaman kebajikan tanpa bunga untuk anggota yang membutuhkan.</li>
+                            <li><strong>Zakat, Infaq, Shadaqah:</strong> Koperasi juga berfungsi sebagai lembaga pengumpul dan penyalur ZIS.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REFLEKSI -->
+            <section class="bg-luxury-800 text-white p-8 rounded-lg shadow-lg">
+                <h3 class="font-serif text-2xl font-bold text-luxury-gold mb-4">💭 Refleksi untuk Siswa</h3>
+                <p class="leading-relaxed mb-4">
+                    Sebagai calon profesional muda di SMKN 1 Koto Balingka, renungkanlah:
+                </p>
+                <ul class="space-y-2 text-luxury-goldlight list-decimal list-inside">
+                    <li>Apakah saya sudah memahami perbedaan mendasar antara sistem keuangan konvensional dan syariah?</li>
+                    <li>Jika kelak saya memiliki usaha, apakah saya akan memilih lembaga keuangan syariah sebagai mitra? Mengapa?</li>
+                    <li>Bagaimana saya bisa menerapkan prinsip-prinsip muamalah (jujur, adil, transparan) dalam transaksi sehari-hari?</li>
+                    <li>Apa peran saya sebagai generasi muda muslim dalam mengembangkan ekonomi syariah di Indonesia?</li>
+                </ul>
+            </section>
+
+            <!-- KESIMPULAN & DAFTAR PUSTAKA -->
+            <section class="space-y-8">
+                <div>
+                    <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block mb-4">Kesimpulan</h2>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Fikih muamalah memberikan pedoman yang jelas bagi umat Islam dalam bertransaksi dan mengelola keuangan secara halal dan berkah. Penerapannya dalam lembaga keuangan modern seperti asuransi syariah, bank syariah, dan koperasi syariah membuktikan bahwa prinsip-prinsip Islam sangat relevan dan mampu menjawab tantangan ekonomi kontemporer. Ketiga lembaga ini memiliki kesamaan prinsip, yaitu bebas dari riba, gharar, dan maysir, serta mengedepankan asas tolong-menolong, keadilan, dan kemaslahatan bersama. Bagi siswa SMK, memahami fikih muamalah sejak dini akan membentuk karakter ekonomi yang beretika dan siap menjadi pelaku ekonomi syariah yang handal di masa depan.
+                    </p>
+                </div>
+                
+                <div>
+                    <h2 class="font-serif text-2xl font-bold text-luxury-900 mb-4">📚 Daftar Pustaka</h2>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas X SMA/SMK</em>. Jakarta: Kemendikbud.</li>
+                        <li>Al-Qur'an dan Terjemahannya. (2019). Jakarta: Kementerian Agama RI.</li>
+                        <li>Antonio, M. S. (2001). <em>Bank Syariah: Dari Teori ke Praktik</em>. Jakarta: Gema Insani Press.</li>
+                        <li>Dewan Syariah Nasional MUI. (2000). <em>Himpunan Fatwa DSN-MUI tentang Lembaga Keuangan Syariah</em>.</li>
+                        <li>Imam Muslim. <em>Shahih Muslim</em>, Kitab Al-Buyu', Hadis tentang Gharar.</li>
+                        <li>Yudriman, M.Pd. (2024). <em>Modul Ajar PAI Kelas X SMKN 1 Koto Balingka</em>.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- UJI FORMATIF SECTION -->
+    <section id="uji-formatif" class="bg-luxury-cream border-t-4 border-luxury-gold py-16 no-print">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-luxury-900 mb-3">📋 Uji Formatif 5</h2>
+                <p class="text-gray-600">Materi: Penerapan Fikih Muamalah dalam Asuransi, Perbankan & Koperasi</p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    Mohon lengkapi semua data dan jawaban terlebih dahulu!
+                </div>
+            </div>
+
+            <form id="quizForm" class="space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                
+                <!-- DATA SISWA -->
+                <div class="bg-luxury-50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>📋</span> Data Siswa
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" id="nama" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" id="nis" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select id="kelas" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X-1">X-1</option>
+                                <option value="X-2">X-2</option>
+                                <option value="X-3">X-3</option>
+                                <option value="X-4">X-4</option>
+                                <option value="X-5">X-5</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" id="tanggal" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN A: PILIHAN GANDA -->
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>📝</span> Bagian A – Pilihan Ganda (10 Soal, Skor 10/Soal)
+                    </h3>
+                    <div class="space-y-6" id="pg-questions">
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">1. Fikih muamalah adalah bagian dari hukum Islam yang mengatur...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Hubungan manusia dengan Allah dalam ibadah</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Hubungan antarmanusia dalam bidang ekonomi dan transaksi</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Hukum waris dan pernikahan saja</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Hukum pidana dalam Islam</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">2. Prinsip utama asuransi syariah yang membedakan dengan asuransi konvensional adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Transfer of risk (pengalihan risiko)</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Ta'awun (tolong-menolong) dan tabarru' (dana kebajikan)</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Sistem bunga tetap</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Premi yang lebih mahal</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">3. Akad mudharabah dalam bank syariah adalah akad yang berbasis...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Jual beli dengan margin</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Sewa-menyewa aset</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Bagi hasil antara pemilik modal dan pengelola</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Pinjaman dengan bunga</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">4. Akad murabahah yang paling umum digunakan dalam bank syariah adalah akad...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Bagi hasil</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Jual beli dengan harga pokok ditambah margin yang disepakati</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Sewa-menyewa</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Titipan dana</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">5. Tiga hal yang dilarang dalam muamalah Islam adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Jual beli, sewa, dan bagi hasil</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Riba, gharar, dan maysir</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Tabarru', wadiah, dan ijarah</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Mudharabah, musyarakah, dan murabahah</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">6. Q.S. Al-Baqarah ayat 275 secara tegas menyatakan bahwa Allah telah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Mengharamkan jual beli dan menghalalkan riba</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Menghalalkan jual beli dan mengharamkan riba</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Mengharamkan keduanya</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Menghalalkan keduanya</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">7. Qardhul hasan dalam koperasi syariah adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Pinjaman dengan bunga tinggi</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Pinjaman kebajikan tanpa bunga</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Investasi saham</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Asuransi jiwa</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">8. Dalam asuransi syariah, dana yang disisihkan untuk membantu peserta yang terkena musibah disebut...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Dana premi</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Dana tabarru'</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Dana riba</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Dana deposito</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">9. Lembaga yang mengawasi kesesuaian operasional bank syariah dengan prinsip Islam adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Dewan Komisaris</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Dewan Pengawas Syariah (DPS)</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Bank Indonesia</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Kementerian Keuangan</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">10. Akad musyarakah berbeda dengan mudharabah karena dalam musyarakah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Hanya satu pihak yang menyertakan modal</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Semua pihak menyertakan modal dan menanggung risiko bersama</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Tidak ada pembagian keuntungan</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Hanya berlaku untuk asuransi</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN B: ESSAY -->
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>✍️</span> Bagian B – Essay (5 Soal, Skor 20/Soal)
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">1. Jelaskan pengertian fikih muamalah dan sebutkan tiga hal yang dilarang dalam muamalah Islam beserta dalilnya!</p>
+                            <textarea id="essay1" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">2. Bandingkan prinsip-prinsip asuransi syariah dengan asuransi konvensional! Mengapa asuransi syariah lebih sesuai dengan prinsip Islam?</p>
+                            <textarea id="essay2" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">3. Jelaskan perbedaan antara akad mudharabah, musyarakah, dan murabahah dalam bank syariah, serta berikan contoh penerapannya!</p>
+                            <textarea id="essay3" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">4. Analisis peran koperasi syariah dalam pemberdayaan ekonomi umat di Indonesia, khususnya di lingkungan pedesaan seperti Koto Balingka!</p>
+                            <textarea id="essay4" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">5. Berdasarkan studi kasus di atas, jelaskan mengapa ayah siswa tersebut sebaiknya memilih pembiayaan bank syariah dengan akad murabahah dibandingkan pinjaman bank konvensional dengan sistem bunga!</p>
+                            <textarea id="essay5" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HASIL & AKSI -->
+                <div class="bg-luxury-900 text-white p-6 rounded-lg border border-luxury-gold">
+                    <h3 class="font-serif text-xl font-bold text-luxury-gold mb-4">📊 Hasil Uji Formatif</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white/10 p-4 rounded-md">
+                            <p class="text-sm text-gray-300">Bagian A (Pilihan Ganda)</p>
+                            <p class="text-3xl font-bold text-luxury-gold" id="score-pg">0 / 100</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-md">
+                            <p class="text-sm text-gray-300">Bagian B (Essay)</p>
+                            <p class="text-3xl font-bold text-luxury-gold">Dinilai Guru</p>
+                            <p class="text-xs text-gray-400 mt-1">*Skor essay akan dihitung manual oleh pengajar</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <button type="button" onclick="hitungNilai()" class="flex-1 bg-luxury-gold text-luxury-900 font-bold py-3 px-6 rounded-md hover:bg-white transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                            KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="unduhPDF()" class="flex-1 border border-luxury-gold text-luxury-gold font-bold py-3 px-6 rounded-md hover:bg-luxury-gold hover:text-luxury-900 transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            UNDUH PDF LENGKAP
+                        </button>
+                        <button type="button" onclick="kirimEmail()" class="flex-1 border border-gray-500 text-gray-300 font-bold py-3 px-6 rounded-md hover:border-luxury-gold hover:text-luxury-gold transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            KIRIM EMAIL GURU
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-6 py-3 text-gray-400 hover:text-white transition-colors duration-300 text-sm font-semibold">
+                            🔄 MULAI ULANG
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-luxury-900 text-white border-t border-luxury-gold/20 py-8 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 text-sm">&copy; 2026 Yudriman, M.Pd - SMKN 1 Koto Balingka. Seluruh hak cipta dilindungi undang-undang.</p>
+            <div class="mt-4 flex justify-center gap-4 text-sm">
+                <a href="index.html" class="text-luxury-gold hover:text-white transition-colors">Kembali ke Beranda</a>
+                <span class="text-gray-600">|</span>
+                <a href="#top" class="text-luxury-gold hover:text-white transition-colors">Ke Atas</a>
+                <span class="text-gray-600">|</span>
+                <a href="6.html" class="text-luxury-gold hover:text-white transition-colors">Bab 6: Sejarah Islam Indonesia →</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda
+        const kunciJawaban = {
+            q1: 'b', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
+            q6: 'b', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value;
+
+            if (!nama || !nis || !kelas || !tanggal) {
+                alert('⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!');
+                return;
+            }
+
+            let answeredCount = 0;
+            let score = 0;
+            
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    answeredCount++;
+                    if (selected.value === kunciJawaban[`q${i}`]) {
+                        score += 10;
+                    }
+                }
+            }
+
+            if (answeredCount < 10) {
+                alert(`⚠️ Anda baru menjawab ${answeredCount} dari 10 soal Pilihan Ganda. Mohon lengkapi semua jawaban!`);
+                return;
+            }
+
+            for (let i = 1; i <= 5; i++) {
+                const essayVal = document.getElementById(`essay${i}`).value.trim();
+                if (essayVal.length < 10) {
+                    alert(`⚠️ Mohon isi jawaban Essay nomor ${i} dengan lebih lengkap!`);
+                    return;
+                }
+            }
+
+            document.getElementById('score-pg').innerText = `${score} / 100`;
+            document.getElementById('score-pg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil dikirim!\n\nNilai Pilihan Ganda Anda: ${score}/100\nNilai Essay akan dinilai oleh guru.\n\nSilakan unduh PDF atau kirim via email sebagai bukti pengerjaan.`);
+        }
+
+        function unduhPDF() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const element = document.getElementById('content-to-pdf');
+            const opt = {
+                margin:       [10, 10, 10, 10],
+                filename:     `Uji_Formatif_5_${nama.replace(/\s+/g, '_')}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            const scoreText = document.getElementById('score-pg').innerText;
+            const scoreDiv = document.createElement('div');
+            scoreDiv.className = 'print-only p-4 border-2 border-green-600 mb-4 bg-green-50';
+            scoreDiv.innerHTML = `<h3 class="font-bold text-xl">Hasil Uji Formatif 5</h3><p>Nilai Pilihan Ganda: ${scoreText}</p><p>Status: Sudah Dikerjakan</p>`;
+            element.appendChild(scoreDiv);
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                element.removeChild(scoreDiv);
+            });
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const score = document.getElementById('score-pg').innerText;
+
+            if (!nama) {
+                alert('Mohon isi data diri terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = `Hasil Uji Formatif 5 - ${nama} (${kelas})`;
+            const body = `Yth. Bapak Yudriman, M.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 5 (Fikih Muamalah) saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${score}\n\nCatatan: Jawaban Essay terlampir dalam dokumen PDF yang telah saya unduh.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:yudialthof@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetForm() {
+            if (confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('score-pg').innerText = '0 / 100';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('tanggal').valueAsDate = new Date();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 4: Menghindari Akhlak Mazmumah dalam Kehidupan</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- html2pdf.js for PDF Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        arabic: ['"Amiri"', 'serif'],
+                    },
+                    colors: {
+                        luxury: {
+                            900: '#022c22',
+                            800: '#064e3b',
+                            700: '#065f46',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                            cream: '#faf9f6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            line-height: 2.5;
+            font-size: 1.5rem;
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; color: black; }
+        }
+    </style>
+</head>
+<body class="bg-luxury-cream text-gray-800 font-sans antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="index.html" class="text-white font-serif font-bold text-lg hover:text-luxury-gold transition-colors">PAI Kelas X</a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-300 hover:text-luxury-gold transition-colors text-sm uppercase tracking-widest">Beranda</a>
+                    <a href="index.html#tentang" class="text-gray-300 hover:text-luxury-gold transition-colors text-sm uppercase tracking-widest">Penulis</a>
+                    <a href="index.html#materi" class="text-luxury-gold transition-colors text-sm uppercase tracking-widest">Daftar Bab</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER (For PDF Generation) -->
+    <div id="content-to-pdf" class="pt-20 pb-12">
+        
+        <!-- HEADER SECTION -->
+        <header class="bg-luxury-900 text-white py-16 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23d4af37\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="inline-block px-4 py-1 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">Pertemuan 4</span>
+                <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4">Menghindari Akhlak Mazmumah</h1>
+                <h2 class="font-serif text-2xl md:text-3xl text-luxury-gold mb-6">dalam Kehidupan Sehari-hari</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg font-light">
+                    Memahami bahaya sikap berfoya-foya, riya, sum'ah, dan takabur, serta membiasakan diri dengan akhlak terpuji untuk meraih kebahagiaan dunia dan akhirat.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4 mt-8 no-print">
+                    <a href="3.html" class="px-6 py-3 border border-gray-500 text-gray-300 rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300 text-sm font-semibold">← Bab Sebelumnya</a>
+                    <a href="#pendahuluan" class="px-6 py-3 bg-luxury-gold text-luxury-900 rounded-sm hover:bg-white transition-all duration-300 text-sm font-semibold">Mulai Membaca</a>
+                    <a href="5.html" class="px-6 py-3 border border-gray-500 text-gray-300 rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300 text-sm font-semibold">Bab Selanjutnya →</a>
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+            <!-- PENDAHULUAN -->
+            <section id="pendahuluan" class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">Pendahuluan</h2>
+                <p class="text-gray-700 leading-relaxed text-lg text-justify">
+                    Akhlak mazmumah (tercela) adalah sifat-sifat buruk yang dapat merusak kepribadian, menjauhkan manusia dari ridha Allah, dan merugikan diri sendiri maupun orang lain. Di era modern yang penuh dengan godaan materialisme dan budaya pamer di media sosial, empat penyakit hati ini—<strong>berfoya-foya, riya, sum'ah, dan takabur</strong>—menjadi semakin relevan untuk diwaspadai, terutama oleh generasi muda.
+                </p>
+                <p class="text-gray-700 leading-relaxed text-lg text-justify">
+                    Bagi siswa SMKN 1 Koto Balingka yang sedang dalam proses pembentukan karakter, memahami dan menghindari akhlak mazmumah adalah fondasi penting untuk menjadi pribadi yang berakhlak mulia. Rasulullah SAW diutus untuk menyempurnakan akhlak, dan tugas kita sebagai umatnya adalah membersihkan hati dari sifat-sifat tercela ini agar dapat meraih kebahagiaan sejati di dunia dan di akhirat.
+                </p>
+            </section>
+
+            <!-- VIDEO PLACEHOLDER -->
+            <section class="bg-luxury-800 rounded-lg p-8 text-center text-white shadow-xl">
+                <h3 class="font-serif text-2xl font-semibold text-luxury-gold mb-4">🎥 Video Pembelajaran</h3>
+                <p class="mb-6 text-gray-300">Simak video ini untuk memahami bahaya akhlak mazmumah dan cara menghindarinya dalam kehidupan sehari-hari.</p>
+                <div class="aspect-w-16 aspect-h-9 max-w-3xl mx-auto bg-black/30 rounded-lg flex items-center justify-center border border-luxury-gold/30 h-64">
+                    <div class="text-center">
+                        <svg class="w-16 h-16 text-luxury-gold mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/></svg>
+                        <span class="text-luxury-goldlight font-medium">Video: Bahaya Akhlak Mazmumah & Cara Menghindarinya</span>
+                        <p class="text-xs text-gray-400 mt-2">Sumber: Kanal Pendidikan Islam / Youtube</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KONSEP KUNCI -->
+            <section class="bg-white p-8 rounded-lg shadow-md border-l-4 border-luxury-gold">
+                <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-4">🔑 Konsep Kunci</h3>
+                <ul class="space-y-4">
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Akhlak Mazmumah:</span>
+                        <span class="text-gray-700">Sifat-sifat tercela yang harus dihindari oleh setiap muslim karena dapat merusak hati dan menjauhkan dari Allah SWT.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Berfoya-foya (Tabzir/Israf):</span>
+                        <span class="text-gray-700">Menggunakan harta untuk hal-hal yang tidak bermanfaat, berlebihan, atau melanggar syariat. <em>Tabzir</em> = menghamburkan; <em>Israf</em> = melampaui batas.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Riya:</span>
+                        <span class="text-gray-700">Melakukan ibadah atau amal saleh dengan niat ingin dilihat dan dipuji oleh orang lain, bukan karena Allah.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Sum'ah:</span>
+                        <span class="text-gray-700">Melakukan amal saleh dengan niat ingin didengar dan dibicarakan oleh orang lain (berbeda dengan riya yang ingin dilihat).</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="font-bold text-luxury-700 min-w-[150px]">Takabur:</span>
+                        <span class="text-gray-700">Sifat sombong, merasa lebih baik dari orang lain, dan menolak kebenaran. Merupakan dosa besar yang paling dibenci Allah.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- STUDI KASUS -->
+            <section class="bg-luxury-cream p-8 rounded-lg border border-gray-200">
+                <h3 class="font-serif text-2xl font-bold text-luxury-900 mb-4">📖 Studi Kasus: Fenomena "Flexing" di Media Sosial</h3>
+                <p class="text-gray-700 leading-relaxed mb-4 italic">
+                    "Seorang siswa di SMKN 1 Koto Balingka sering memposting foto-foto barang mewah, liburan, dan pencapaian di media sosial dengan tujuan agar dipuji dan dianggap sukses oleh teman-temannya. Ia juga sering membeli barang-barang yang tidak terlalu dibutuhkan hanya untuk pamer. Di sisi lain, ia enggan membantu teman yang kesulitan karena merasa dirinya lebih hebat. Akibatnya, ia kehilangan teman sejati, hartanya cepat habis, dan hatinya tidak pernah merasa tenang."
+                </p>
+                <div class="bg-luxury-900 text-luxury-goldlight p-4 rounded-md">
+                    <p class="font-semibold mb-1">💡 Pembelajaran:</p>
+                    <p>Kasus ini menunjukkan kombinasi dari empat akhlak mazmumah: <em>berfoya-foya</em> (membeli barang tidak perlu), <em>riya</em> (ingin dilihat), <em>sum'ah</em> (ingin dibicarakan), dan <em>takabur</em> (merasa lebih hebat). Fenomena "flexing" di era digital adalah bentuk modern dari penyakit hati ini yang harus diwaspadai oleh generasi muda.</p>
+                </div>
+            </section>
+
+            <!-- LANDASAN TEORETIS -->
+            <section class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">4.1 Landasan Teoretis (Dalil Naqli)</h2>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">4.1.1 Q.S. Al-Isra Ayat 26-27 tentang Larangan Berfoya-foya</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            وَآتِ ذَا الْقُرْبَىٰ حَقَّهُ وَالْمِسْكِينَ وَابْنَ السَّبِيلِ وَلَا تُبَذِّرْ تَبْذِيرًا ﴿٢٦﴾ إِنَّ الْمُبَذِّرِينَ كَانُوا إِخْوَانَ الشَّيَاطِينِ ۖ وَكَانَ الشَّيْطَانُ لِرَبِّهِ كَفُورًا
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Dan berikanlah kepada keluarga-keluarga yang dekat akan haknya, kepada orang miskin dan orang yang dalam perjalanan; dan janganlah kamu menghambur-hamburkan (hartamu) secara boros. Sesungguhnya pemboros-pemboros itu adalah saudara-saudara syaitan dan syaitan itu adalah sangat ingkar kepada Tuhannya." (Q.S. Al-Isra: 26-27)
+                        </p>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Kandungan Ayat:</strong> Allah SWT melarang keras perbuatan tabzir (menghamburkan harta) dan menyamakan pelakunya dengan saudara syaitan. Ini menunjukkan betapa bahayanya sikap berfoya-foya dalam pandangan Islam.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">4.1.2 Hadis tentang Larangan Riya</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            إِنَّ أَخْوَفَ مَا أَخَافُ عَلَيْكُمْ الشِّرْكُ الْأَصْغَرُ قَالُوا وَمَا الشِّرْكُ الْأَصْغَرُ يَا رَسُولَ اللَّهِ قَالَ الرِّيَاءُ
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Sesungguhnya yang paling aku takutkan menimpa kalian adalah syirik kecil." Para sahabat bertanya, "Apa syirik kecil itu, wahai Rasulullah?" Beliau menjawab, "<strong>Riya</strong>." (HR. Ahmad)
+                        </p>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Kandungan Hadis:</strong> Rasulullah SAW menyebut riya sebagai "syirik kecil" karena dapat menghapus pahala amal dan menjadikannya sia-sia di hadapan Allah.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif text-xl font-semibold text-luxury-800 mb-3">4.1.3 Hadis tentang Larangan Takabur</h3>
+                        <p class="arabic-text text-right text-luxury-900 mb-3 bg-luxury-cream p-4 rounded-lg border border-luxury-gold/20">
+                            لَا يَدْخُلُ الْجَنَّةَ مَنْ كَانَ فِي قَلْبِهِ مِثْقَالُ ذَرَّةٍ مِنْ كِبْرٍ
+                        </p>
+                        <p class="text-gray-700 leading-relaxed text-justify">
+                            <strong>Artinya:</strong> "Tidak akan masuk surga orang yang di dalam hatinya terdapat kesombongan sebesar biji sawi." (HR. Muslim)
+                        </p>
+                        <p class="text-gray-600 mt-2 text-sm"><strong>Kandungan Hadis:</strong> Takabur (sombong) adalah penghalang utama untuk masuk surga. Bahkan kesombongan yang sangat kecil saja dapat menghalangi seseorang dari rahmat Allah.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KOMPONEN MATERI -->
+            <section class="space-y-6">
+                <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block">4.2 Uraian Materi Pokok</h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-lg font-bold text-luxury-800 mb-2">1. Sikap Hidup Berfoya-foya (Tabzir & Israf)</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Pengertian:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1 mb-3">
+                            <li><strong>Tabzir:</strong> Menggunakan harta untuk hal-hal yang tidak bermanfaat atau maksiat.</li>
+                            <li><strong>Israf:</strong> Berlebih-lebihan dalam hal yang sebenarnya boleh, melebihi batas kebutuhan.</li>
+                        </ul>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Contoh dalam kehidupan siswa:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                            <li>Membeli makanan berlebihan hingga terbuang.</li>
+                            <li>Menghabiskan uang saku untuk game online atau belanja tidak perlu.</li>
+                            <li>Menggunakan listrik dan air secara boros di sekolah.</li>
+                        </ul>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-3"><strong>Dampak negatif:</strong> Harta cepat habis, tidak memiliki tabungan, tidak bisa bersedekah, dan mendapat dosa.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-lg font-bold text-luxury-800 mb-2">2. Riya dan Sum'ah</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Pengertian:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1 mb-3">
+                            <li><strong>Riya:</strong> Beramal dengan niat ingin <em>dilihat</em> orang lain (visual).</li>
+                            <li><strong>Sum'ah:</strong> Beramal dengan niat ingin <em>didengar</em> orang lain (audio).</li>
+                        </ul>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Contoh dalam kehidupan siswa:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                            <li>Riya: Rajin shalat hanya ketika ada guru atau teman yang melihat, memposting ibadah di media sosial untuk dipuji.</li>
+                            <li>Sum'ah: Mengerjakan tugas dengan suara keras agar didengar teman, menceritakan amal saleh agar dibicarakan.</li>
+                        </ul>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-3"><strong>Dampak negatif:</strong> Menghapus pahala amal, menjadikan amal sia-sia, hati tidak tenang, dan termasuk syirik kecil.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-lg font-bold text-luxury-800 mb-2">3. Takabur (Sombong)</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Pengertian:</strong> Merasa dirinya lebih baik dari orang lain dan menolak kebenaran. Rasulullah SAW mendefinisikan takabur sebagai: <em>"Menolak kebenaran dan meremehkan orang lain."</em> (HR. Muslim)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Jenis-jenis takabur:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1 mb-3">
+                            <li>Takabur karena kekayaan.</li>
+                            <li>Takabur karena kepintaran/ilmu.</li>
+                            <li>Takabur karena keturunan/kedudukan.</li>
+                            <li>Takabur karena fisik/kecantikan/ketampanan.</li>
+                        </ul>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-3"><strong>Contoh dalam kehidupan siswa:</strong></p>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                            <li>Tidak mau belajar dari teman yang dianggap kurang pintar.</li>
+                            <li>Meremehkan guru saat memberikan nasihat.</li>
+                            <li>Merasa lebih hebat karena memiliki gadget mahal.</li>
+                        </ul>
+                        <p class="text-gray-600 text-sm leading-relaxed mt-3"><strong>Dampak negatif:</strong> Dijauhi teman, tidak mendapat rahmat Allah, terhalang masuk surga, dan dibenci oleh manusia.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:border-luxury-gold transition-colors">
+                        <h4 class="font-serif text-lg font-bold text-luxury-800 mb-2">4. Cara Menghindari Akhlak Mazmumah</h4>
+                        <ul class="text-gray-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                            <li><strong>Muraqabah:</strong> Merasa selalu diawasi oleh Allah SWT dalam setiap tindakan.</li>
+                            <li><strong>Muhasabah:</strong> Melakukan introspeksi diri secara rutin atas niat dan perbuatan.</li>
+                            <li><strong>Mengingat kematian:</strong> Menyadari bahwa semua harta dan kedudukan akan ditinggalkan.</li>
+                            <li><strong>Bersedekah secara sembunyi:</strong> Melatih keikhlasan dengan beramal tanpa ingin dipuji.</li>
+                            <li><strong>Bergaul dengan orang shaleh:</strong> Lingkungan yang baik akan mempengaruhi karakter.</li>
+                            <li><strong>Memperbanyak istighfar:</strong> Memohon ampun atas dosa-dosa yang telah dilakukan.</li>
+                            <li><strong>Belajar dari kisah orang terdahulu:</strong> Mengambil pelajaran dari kisah Qarun, Fir'aun, dan lainnya.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- REFLEKSI -->
+            <section class="bg-luxury-800 text-white p-8 rounded-lg shadow-lg">
+                <h3 class="font-serif text-2xl font-bold text-luxury-gold mb-4">💭 Refleksi untuk Siswa</h3>
+                <p class="leading-relaxed mb-4">
+                    Sebagai siswa SMKN 1 Koto Balingka di era digital, renungkanlah:
+                </p>
+                <ul class="space-y-2 text-luxury-goldlight list-decimal list-inside">
+                    <li>Apakah saya sering membeli barang yang tidak saya butuhkan hanya untuk pamer di media sosial?</li>
+                    <li>Sudahkah saya beribadah dengan ikhlas karena Allah, atau masih ada keinginan untuk dipuji?</li>
+                    <li>Apakah saya pernah meremehkan teman atau guru karena merasa lebih pintar atau lebih mampu?</li>
+                    <li>Apa satu akhlak mazmumah yang paling dominan dalam diri saya, dan bagaimana cara mengatasinya?</li>
+                </ul>
+            </section>
+
+            <!-- KESIMPULAN & DAFTAR PUSTAKA -->
+            <section class="space-y-8">
+                <div>
+                    <h2 class="font-serif text-3xl font-bold text-luxury-900 border-b-2 border-luxury-gold pb-2 inline-block mb-4">Kesimpulan</h2>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Akhlak mazmumah seperti berfoya-foya, riya, sum'ah, dan takabur adalah penyakit hati yang harus dihindari oleh setiap muslim. Keempat sifat ini tidak hanya merusak hubungan dengan Allah (habluminallah), tetapi juga merusak hubungan dengan sesama manusia (habluminannas). Q.S. Al-Isra ayat 26-27 dan hadis-hadis Rasulullah SAW memberikan peringatan keras terhadap pelaku akhlak mazmumah. Sebagai generasi muda muslim, siswa harus membiasakan diri dengan akhlak terpuji, menjaga keikhlasan dalam beramal, dan selalu introspeksi diri agar terhindar dari sifat-sifat tercela ini.
+                    </p>
+                </div>
+                
+                <div>
+                    <h2 class="font-serif text-2xl font-bold text-luxury-900 mb-4">📚 Daftar Pustaka</h2>
+                    <ul class="text-gray-600 text-sm space-y-2 list-disc list-inside">
+                        <li>Kementerian Agama RI. (2021). <em>Pendidikan Agama Islam dan Budi Pekerti Kelas X SMA/SMK</em>. Jakarta: Kemendikbud.</li>
+                        <li>Al-Qur'an dan Terjemahannya. (2019). Jakarta: Kementerian Agama RI.</li>
+                        <li>Imam Ahmad. <em>Musnad Ahmad</em>, Hadis tentang Riya.</li>
+                        <li>Imam Muslim. <em>Shahih Muslim</em>, Kitab Al-Iman, Hadis tentang Takabur.</li>
+                        <li>Al-Ghazali. <em>Ihya' Ulumuddin</em>, Bab Penyakit Hati.</li>
+                        <li>Yudriman, M.Pd. (2024). <em>Modul Ajar PAI Kelas X SMKN 1 Koto Balingka</em>.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- UJI FORMATIF SECTION -->
+    <section id="uji-formatif" class="bg-luxury-cream border-t-4 border-luxury-gold py-16 no-print">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-luxury-900 mb-3">📋 Uji Formatif 4</h2>
+                <p class="text-gray-600">Materi: Menghindari Akhlak Mazmumah dalam Kehidupan Sehari-hari</p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    Mohon lengkapi semua data dan jawaban terlebih dahulu!
+                </div>
+            </div>
+
+            <form id="quizForm" class="space-y-8 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                
+                <!-- DATA SISWA -->
+                <div class="bg-luxury-50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>📋</span> Data Siswa
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" id="nama" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" id="nis" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select id="kelas" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X-1">X-1</option>
+                                <option value="X-2">X-2</option>
+                                <option value="X-3">X-3</option>
+                                <option value="X-4">X-4</option>
+                                <option value="X-5">X-5</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" id="tanggal" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN A: PILIHAN GANDA -->
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>📝</span> Bagian A – Pilihan Ganda (10 Soal, Skor 10/Soal)
+                    </h3>
+                    <div class="space-y-6" id="pg-questions">
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">1. Menghambur-hamburkan harta untuk hal yang tidak bermanfaat dalam Islam disebut...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Tabzir</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Riya</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Takabur</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Sum'ah</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">2. Melakukan ibadah dengan niat ingin dilihat oleh orang lain disebut...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Sum'ah</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Riya</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Takabur</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Israf</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">3. Beramal dengan niat ingin didengar dan dibicarakan oleh orang lain disebut...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Tabzir</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Riya</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Sum'ah</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Takabur</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">4. Merasa dirinya lebih baik dari orang lain dan menolak kebenaran disebut...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Takabur</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Israf</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Riya</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q4" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Tabzir</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">5. Larangan berfoya-foya (tabzir) terdapat dalam Al-Qur'an surah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Al-Isra ayat 26-27</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Al-Baqarah ayat 183</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Al-Ma'idah ayat 3</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q5" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. An-Nisa ayat 1</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">6. Berlebih-lebihan dalam hal yang sebenarnya boleh (melebihi batas kebutuhan) disebut...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Riya</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Takabur</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Israf</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q6" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Sum'ah</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">7. Menurut Q.S. Al-Isra ayat 27, orang yang tabzir disamakan dengan...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Orang-orang munafik</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Orang-orang kafir</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Saudara-saudara syaitan</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q7" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Orang-orang fasik</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">8. Menurut hadis riwayat Muslim, orang yang di dalam hatinya terdapat kesombongan sebesar biji sawi...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Tidak akan masuk surga</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Akan mendapat rezeki berlimpah</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Akan dihormati orang lain</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q8" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Akan menjadi pemimpin</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">9. Sikap yang dapat menghilangkan riya dan sum'ah adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Pamer amal di media sosial</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Menceritakan amal kepada semua orang</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Ikhlas dan menyembunyikan amal saleh</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q9" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Beramal hanya ketika ada yang melihat</label>
+                            </div>
+                        </div>
+
+                        <div class="question-block p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">10. Cara terbaik untuk menghindari takabur adalah...</p>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="a" class="text-luxury-gold focus:ring-luxury-gold"> a. Merasa diri paling pintar</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="b" class="text-luxury-gold focus:ring-luxury-gold"> b. Memperhatikan niat dan menyadari bahwa semua kelebihan adalah titipan Allah</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="c" class="text-luxury-gold focus:ring-luxury-gold"> c. Meremehkan orang lain</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q10" value="d" class="text-luxury-gold focus:ring-luxury-gold"> d. Menolak nasihat dari siapa pun</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN B: ESSAY -->
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-luxury-900 mb-4 flex items-center gap-2">
+                        <span>✍️</span> Bagian B – Essay (5 Soal, Skor 20/Soal)
+                    </h3>
+                    <div class="space-y-6">
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">1. Jelaskan perbedaan antara tabzir dan israf, serta berikan contoh konkret keduanya dalam kehidupan siswa!</p>
+                            <textarea id="essay1" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">2. Jelaskan perbedaan antara riya dan sum'ah, serta bagaimana dampaknya terhadap pahala amal seseorang!</p>
+                            <textarea id="essay2" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">3. Tuliskan Q.S. Al-Isra ayat 26-27 beserta artinya, dan jelaskan kandungan ayat tersebut terkait larangan berfoya-foya!</p>
+                            <textarea id="essay3" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">4. Analisis fenomena "flexing" di media sosial dari perspektif akhlak mazmumah, dan berikan solusi Islami untuk mengatasinya!</p>
+                            <textarea id="essay4" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="font-medium text-gray-800 mb-3">5. Sebutkan dan jelaskan 5 cara praktis untuk menghindari akhlak mazmumah dalam kehidupan sehari-hari sebagai siswa SMKN 1 Koto Balingka!</p>
+                            <textarea id="essay5" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-luxury-gold focus:border-luxury-gold outline-none transition-all" placeholder="Tulis jawaban Anda di sini..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HASIL & AKSI -->
+                <div class="bg-luxury-900 text-white p-6 rounded-lg border border-luxury-gold">
+                    <h3 class="font-serif text-xl font-bold text-luxury-gold mb-4">📊 Hasil Uji Formatif</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div class="bg-white/10 p-4 rounded-md">
+                            <p class="text-sm text-gray-300">Bagian A (Pilihan Ganda)</p>
+                            <p class="text-3xl font-bold text-luxury-gold" id="score-pg">0 / 100</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded-md">
+                            <p class="text-sm text-gray-300">Bagian B (Essay)</p>
+                            <p class="text-3xl font-bold text-luxury-gold">Dinilai Guru</p>
+                            <p class="text-xs text-gray-400 mt-1">*Skor essay akan dihitung manual oleh pengajar</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <button type="button" onclick="hitungNilai()" class="flex-1 bg-luxury-gold text-luxury-900 font-bold py-3 px-6 rounded-md hover:bg-white transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                            KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="unduhPDF()" class="flex-1 border border-luxury-gold text-luxury-gold font-bold py-3 px-6 rounded-md hover:bg-luxury-gold hover:text-luxury-900 transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            UNDUH PDF LENGKAP
+                        </button>
+                        <button type="button" onclick="kirimEmail()" class="flex-1 border border-gray-500 text-gray-300 font-bold py-3 px-6 rounded-md hover:border-luxury-gold hover:text-luxury-gold transition-colors duration-300 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            KIRIM EMAIL DOSEN
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-6 py-3 text-gray-400 hover:text-white transition-colors duration-300 text-sm font-semibold">
+                            🔄 MULAI ULANG
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-luxury-900 text-white border-t border-luxury-gold/20 py-8 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 text-sm">&copy; 2026 Yudriman, M.Pd - SMKN 1 Koto Balingka. Seluruh hak cipta dilindungi undang-undang.</p>
+            <div class="mt-4 flex justify-center gap-4 text-sm">
+                <a href="index.html" class="text-luxury-gold hover:text-white transition-colors">Kembali ke Beranda</a>
+                <span class="text-gray-600">|</span>
+                <a href="#top" class="text-luxury-gold hover:text-white transition-colors">Ke Atas</a>
+                <span class="text-gray-600">|</span>
+                <a href="5.html" class="text-luxury-gold hover:text-white transition-colors">Bab 5: Fikih Muamalah →</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda
+        const kunciJawaban = {
+            q1: 'a', q2: 'b', q3: 'c', q4: 'a', q5: 'a',
+            q6: 'c', q7: 'c', q8: 'a', q9: 'c', q10: 'b'
+        };
+
+        function hitungNilai() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const tanggal = document.getElementById('tanggal').value;
+
+            if (!nama || !nis || !kelas || !tanggal) {
+                alert('⚠️ Mohon lengkapi semua Data Siswa terlebih dahulu!');
+                return;
+            }
+
+            let answeredCount = 0;
+            let score = 0;
+            
+            for (let i = 1; i <= 10; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    answeredCount++;
+                    if (selected.value === kunciJawaban[`q${i}`]) {
+                        score += 10;
+                    }
+                }
+            }
+
+            if (answeredCount < 10) {
+                alert(`⚠️ Anda baru menjawab ${answeredCount} dari 10 soal Pilihan Ganda. Mohon lengkapi semua jawaban!`);
+                return;
+            }
+
+            for (let i = 1; i <= 5; i++) {
+                const essayVal = document.getElementById(`essay${i}`).value.trim();
+                if (essayVal.length < 10) {
+                    alert(`⚠️ Mohon isi jawaban Essay nomor ${i} dengan lebih lengkap!`);
+                    return;
+                }
+            }
+
+            document.getElementById('score-pg').innerText = `${score} / 100`;
+            document.getElementById('score-pg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`✅ Jawaban berhasil dikirim!\n\nNilai Pilihan Ganda Anda: ${score}/100\nNilai Essay akan dinilai oleh guru.\n\nSilakan unduh PDF atau kirim via email sebagai bukti pengerjaan.`);
+        }
+
+        function unduhPDF() {
+            const nama = document.getElementById('nama').value || 'Siswa';
+            
+            const element = document.getElementById('content-to-pdf');
+            const opt = {
+                margin:       [10, 10, 10, 10],
+                filename:     `Uji_Formatif_4_${nama.replace(/\s+/g, '_')}.pdf`,
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            const scoreText = document.getElementById('score-pg').innerText;
+            const scoreDiv = document.createElement('div');
+            scoreDiv.className = 'print-only p-4 border-2 border-green-600 mb-4 bg-green-50';
+            scoreDiv.innerHTML = `<h3 class="font-bold text-xl">Hasil Uji Formatif 4</h3><p>Nilai Pilihan Ganda: ${scoreText}</p><p>Status: Sudah Dikerjakan</p>`;
+            element.appendChild(scoreDiv);
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                element.removeChild(scoreDiv);
+            });
+        }
+
+        function kirimEmail() {
+            const nama = document.getElementById('nama').value;
+            const nis = document.getElementById('nis').value;
+            const kelas = document.getElementById('kelas').value;
+            const score = document.getElementById('score-pg').innerText;
+
+            if (!nama) {
+                alert('Mohon isi data diri terlebih dahulu sebelum mengirim email.');
+                return;
+            }
+
+            const subject = `Hasil Uji Formatif 4 - ${nama} (${kelas})`;
+            const body = `Yth. Bapak Yudriman, M.Pd,\n\nBerikut adalah hasil pengerjaan Uji Formatif 4 (Akhlak Mazmumah) saya:\n\nNama: ${nama}\nNIS: ${nis}\nKelas: ${kelas}\nNilai Pilihan Ganda: ${score}\n\nCatatan: Jawaban Essay terlampir dalam dokumen PDF yang telah saya unduh.\n\nHormat saya,\n${nama}`;
+            
+            window.location.href = `mailto:yudialthof@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+
+        function resetForm() {
+            if (confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.getElementById('score-pg').innerText = '0 / 100';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('tanggal').valueAsDate = new Date();
+        });
+    </script>
+</body>
+</html>
